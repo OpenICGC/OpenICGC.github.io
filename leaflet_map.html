@@ -1,0 +1,64 @@
+<html lang="ca">
+  <head>
+  <title>Raster ICGC  </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ICGC" />
+  <meta name="description" content="Exemple Leaflet">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js">  </script>
+  <style>
+  body {
+    margin: 0;
+  }
+  #map {
+    height: 500px;
+    width: 100%;
+    background-color: #ffffff
+  }
+  </style>
+  <script>
+  function init() {
+    var map = L.map('map', {
+      center: [41.6863, 2.4382],
+      zoom: 10,
+      attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+    var topoICGC = L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg', {
+      maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+
+    var topoICGCWEB = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    }).addTo(map);
+
+    var topoICGCDark = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+
+    var ortoICGC =
+      L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg', {
+        maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+      });
+    var hibridICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+    var hibrida = L.layerGroup([ortoICGC, hibridICGC]);
+    var mapaBase = {
+      'Mapa clàssic': topoICGC,
+      'Mapa web': topoICGCWEB,
+      'Mapa fosc': topoICGCDark,
+      'Híbrid': hibrida
+    };
+    controlCapas = L.control.layers(mapaBase, null, {
+      collapsed: false
+    });
+    controlCapas.addTo(map)
+  }
+  </script>
+ </head>
+ <body onLoad="init()">
+  <div id="map">  </div>
+ </body>
+ </html>

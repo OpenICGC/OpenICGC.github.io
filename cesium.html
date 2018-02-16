@@ -1,0 +1,146 @@
+<html lang="ca">
+
+<head>
+  <title>Terrenys ICGC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ICGC" />
+  <meta name="description" content="Exemple Leaflet">
+  <meta name="robots" content="index,follow">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .soft {
+      background-color: #f7f7f7
+    }
+
+    .titol {
+      padding: 15px
+    }
+
+    .container {
+      border: 1px solid #f7f7f7
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="pro">
+      <div class="titol">
+        <strong>Exemple serveis terrenys ICGC </strong>
+        <br>
+        <div>
+          <p>Bases de referència</p>
+        </div>
+      </div>
+    </div>
+
+    <iframe src="cesium_map.html" frameborder=0 width="100%" height="500"></iframe>
+    <hr>
+    <div class="soft">
+    <pre><code class="prettyprint">
+  &#x3C;html lang="ca"&#x3E;
+  &#x3C;head&#x3E;
+  &#x3C;title&#x3E;Ejemplo 3 Cesium &#x3C;/title&#x3E;
+  &#x3C;meta charset="utf-8" /&#x3E;
+  &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
+  &#x3C;meta name="author" content="autor" /&#x3E;
+  &#x3C;meta name="description" content="descripción página"&#x3E;
+  &#x3C;meta name="robots" content="index,follow"&#x3E;
+  &#x3C;link rel="stylesheet" href="https://www.instamaps.cat/llibreries/cesium/Widgets/widgets.css" /&#x3E;
+  &#x3C;script src="https://www.instamaps.cat/llibreries/cesium/Cesium.js"&#x3E; &#x3C;/script&#x3E;
+  &#x3C;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&#x3E; &#x3C;/script&#x3E;
+  &#x3C;style&#x3E;
+   #map {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     overflow: hidden;
+     padding: 0;
+     font-family: sans-serif;
+   }
+
+   html {
+     height: 100%;
+   }
+
+   body {
+     padding: 0;
+     margin: 0;
+     overflow: hidden;
+     height: 100%;
+   }
+  &#x3C;/style&#x3E;
+  &#x3C;script&#x3E;
+   var map;
+   $(document).ready(function() {
+     map = new Cesium.Viewer('map', {
+       imageryProvider: new Cesium.createOpenStreetMapImageryProvider({
+         url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
+         fileExtension: 'jpeg',
+         maximumLevel: 19,
+         credit: 'Institut Cartogràfic i Geològic de Catalunya'
+       }),
+       timeline: false,
+       navigationHelpButton: true,
+       scene3DOnly: true,
+       fullscreenButton: true,
+       baseLayerPicker: false,
+       homeButton: false,
+       vrButton: true,
+       navigationHelpButton: false,
+       infoBox: true,
+       sceneModePicker: false,
+       animation: false,
+       geocoder: false,
+       sceneMode: Cesium.SceneMode.SCENE3D,
+       terrainProvider: new Cesium.CesiumTerrainProvider({
+         url: 'https://tilemaps.icgc.cat/terrenys/demextes/',
+
+       })
+     });
+
+     map.camera.flyTo({
+       destination: Cesium.Cartesian3.fromDegrees(1.70632, 42.20390, 16000),
+       duration: 0,
+       complete: function() {
+         setTimeout(function() {
+           map.camera.flyTo({
+             destination: Cesium.Cartesian3.fromDegrees(1.70325, 42.20398, 5000),
+             orientation: {
+               heading: Cesium.Math.toRadians(0.0),
+               pitch: Cesium.Math.toRadians(-45.0), //tilt
+             },
+             easingFunction: Cesium.EasingFunction.LINEAR_NONE
+           });
+         }, 1000);
+       }
+     });
+
+   });
+  &#x3C;/script&#x3E;
+  &#x3C;/head&#x3E;
+  &#x3C;body&#x3E;
+  &#x3C;div id="map"&#x3E; &#x3C;/div&#x3E;
+  &#x3C;/body&#x3E;
+  &#x3C;/html&#x3E;
+    </code></pre>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Vector-Tiles ICGC</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%
+    }
+    #menu {
+      position: absolute;
+    z-index: 1000;
+    background: #fff;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    top: 5px;
+    left: 5px;
+    border-radius: 7px;
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.75);
+    }
+  </style>
+  <script>
+    var map;
+    function init() {
+      mapboxgl.accessToken = '<no token for ICGC>';
+      map = new mapboxgl.Map({
+        container: 'map',
+        style: 'https://tilemaps.icgc.cat/tileserver/styles/blavos.json',
+        center: [2.16859, 41.3954],
+        zoom: 13,
+        pitch: 45
+      });
+      map.addControl(new mapboxgl.NavigationControl());
+      map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+          watchPosition: true
+        }
+      }));
+    }
+  </script>
+</head>
+<body onload="init()">
+  <div id='menu'>
+    <input id='blavos' type='radio' name='rtoggle' value='blavos' checked='checked'>
+    <label for='blavos'>blavos</label>
+    <input id='clar' type='radio' name='rtoggle' value='clar'>
+    <label for='clar'>clar</label>
+    <input id='fosc' type='radio' name='rtoggle' value='fosc'>
+    <label for='fosc'>fosc</label>
+    <input id='gris' type='radio' name='rtoggle' value='gris'>
+    <label for='gris'>gris</label>
+    <input id='icgc5m' type='radio' name='rtoggle' value='icgc5m'>
+    <label for='icgc5m'>icgc5m</label>
+    <input id='icgc25m' type='radio' name='rtoggle' value='icgc25m'>
+    <label for='icgc25m'>icgc25m</label>
+    <input id='polit' type='radio' name='rtoggle' value='polit'>
+    <label for='polit'>polit</label>
+  </div>
+  <div id="map"></div>
+  <script>
+    var layerList = document.getElementById('menu');
+    var inputs = layerList.getElementsByTagName('input');
+
+    function switchLayer(layer) {
+      var layerId = layer.target.id;
+      map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/' + layerId + '.json');
+    }
+
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].onclick = switchLayer;
+    }
+  </script>
+</body>
+</html>

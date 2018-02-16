@@ -1,0 +1,118 @@
+<html lang="ca">
+<head>
+  <title>Raster ICGC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ICGC" />
+  <meta name="description" content="Exemple Leaflet">
+  <meta name="robots" content="index,follow">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .soft{
+background-color: #f7f7f7
+
+    }
+    .titol{
+      padding: 15px
+    }
+    .container{
+      border:1px solid #f7f7f7
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+  <div class="pro">
+    <div class="titol">
+    <strong>Exemple serveis rasters ICGC </strong>
+    <br><div><p>Bases de referència</p></div>
+  </div>
+</div>
+
+<iframe src="leaflet_map.html" frameborder=0 width="100%" height="500"></iframe>
+<hr>
+  <div class="soft">
+    <pre><code class="prettyprint">
+  &#x3C;html lang="ca"&#x3E;
+  &#x3C;head&#x3E;
+  &#x3C;title&#x3E;Raster ICGC  &#x3C;/title&#x3E;
+  &#x3C;meta charset="utf-8" /&#x3E;
+  &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
+  &#x3C;meta name="author" content="ICGC" /&#x3E;
+  &#x3C;meta name="description" content="Exemple Leaflet"&#x3E;
+  &#x3C;meta name="robots" content="index,follow"&#x3E;
+  &#x3C;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css" /&#x3E;
+  &#x3C;script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js"&#x3E;  &#x3C;/script&#x3E;
+  &#x3C;style&#x3E;
+  body {
+    margin: 0;
+  }
+  #map {
+    height: 500px;
+    width: 100%;
+    background-color: #ffffff
+  }
+  &#x3C;/style&#x3E;
+  &#x3C;script&#x3E;
+  function init() {
+    var map = L.map('map', {
+      center: [41.6863, 2.4382],
+      zoom: 10,
+      attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+    var topoICGC = L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg', {
+      maxZoom: 19
+    });
+
+    var topoICGCWEB = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18
+    }).addTo(map);
+
+    var topoICGCDark = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18
+    });
+
+    var ortoICGC =
+      L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg', {
+        maxZoom: 19
+      });
+    var hibridICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18
+    });
+    var hibrida = L.layerGroup([ortoICGC, hibridICGC]);
+    var mapaBase = {
+      'Mapa clàssic': topoICGC,
+      'Mapa web': topoICGCWEB,
+      'Mapa fosc': topoICGCDark,
+      'Híbrid': hibrida
+    };
+    controlCapas = L.control.layers(mapaBase, null, {
+      collapsed: false
+    });
+    controlCapas.addTo(map)
+  }
+  &#x3C;/script&#x3E;
+ &#x3C;/head&#x3E;
+ &#x3C;body onLoad="init()"&#x3E;
+  &#x3C;div id="map"&#x3E;  &#x3C;/div&#x3E;
+ &#x3C;/body&#x3E;
+ &#x3C;/html&#x3E;
+
+    </code></pre>
+  </div>
+</div>
+</body>
+
+</html>

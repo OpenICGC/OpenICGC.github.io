@@ -1,0 +1,90 @@
+<html lang="ca">
+<head>
+  <title>Ejemplo 3 Cesium</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="autor" />
+  <meta name="description" content="descripción página">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="https://www.instamaps.cat/llibreries/cesium/Widgets/widgets.css" />
+  <script src="https://www.instamaps.cat/llibreries/cesium/Cesium.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    #map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+  </style>
+  <script>
+    var map;
+    $(document).ready(function() {
+      map = new Cesium.Viewer('map', {
+        imageryProvider: new Cesium.createOpenStreetMapImageryProvider({
+          url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
+          fileExtension: 'jpeg',
+          maximumLevel: 19,
+          credit: 'Institut Cartogràfic i Geològic de Catalunya'
+        }),
+        timeline: false,
+        navigationHelpButton: true,
+        scene3DOnly: true,
+        fullscreenButton: true,
+        baseLayerPicker: false,
+        homeButton: false,
+        vrButton: true,
+        navigationHelpButton: false,
+        infoBox: true,
+        sceneModePicker: false,
+        animation: false,
+        geocoder: false,
+        sceneMode: Cesium.SceneMode.SCENE3D,
+        terrainProvider: new Cesium.CesiumTerrainProvider({
+          url: 'https://tilemaps.icgc.cat/terrenys/demextes/',
+
+        })
+      });
+
+      map.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(1.70632, 42.20390, 16000),
+        duration: 0,
+        complete: function() {
+          setTimeout(function() {
+            map.camera.flyTo({
+              destination: Cesium.Cartesian3.fromDegrees(1.70325, 42.20398, 5000),
+              orientation: {
+                heading: Cesium.Math.toRadians(0.0),
+                pitch: Cesium.Math.toRadians(-45.0), //tilt
+              },
+              easingFunction: Cesium.EasingFunction.LINEAR_NONE
+            });
+          }, 1000);
+        }
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="map"></div>
+</body>
+
+</html>
