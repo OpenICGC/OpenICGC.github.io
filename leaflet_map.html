@@ -46,9 +46,9 @@
     });
     var hibrida = L.layerGroup([ortoICGC, hibridICGC]);
     var mapaBase = {
-      'Mapa clàssic': topoICGC,
-      'Mapa web': topoICGCWEB,
-      'Mapa fosc': topoICGCDark,
+      'Clàssic': topoICGC,
+      'Web': topoICGCWEB,
+      'Fosc': topoICGCDark,
       'Híbrid': hibrida
     };
     controlCapas = L.control.layers(mapaBase, null, {
