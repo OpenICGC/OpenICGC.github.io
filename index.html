@@ -36,6 +36,21 @@
       line-height: 40px;
       background-color: #f5f5f5;
     }
+
+    small {
+      font-size: 60% !important;
+    }
+
+    .col img {
+      margin-top: 15px;
+
+    }
+
+    .row{
+
+      border-bottom: 1px dotted #dedada;
+    }
+
   </style>
 </head>
 
@@ -44,8 +59,12 @@
     <nav class="navbar navbar-light bg-light">
       <h4>
         Tile servers Catalunya
+        <br>
+        <small>
+          Serveis tessel·lats online basats en dades ICGC
+        </small>
       </h4>
-      
+
       <span>
         <a href="http://www.icgc.cat/" target="_blank">
           <img width=100 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/ICGC.svg/1200px-ICGC.svg.png">
@@ -55,32 +74,83 @@
         </a>
       </span>
     </nav>
+    <br>
     <div class="alert alert-default">
-      <h5>Vector Tiles
+      <h5>Estils per Vector Tiles
         <i class="fas fa-globe"></i>
         </i>
       </h5>
       <ul>
-        <li>Blavós
-          <p> https://tilemaps.icgc.cat/tileserver/styles/blavos.json</p>
+        <li>
+          <div class="row">
+            <div class="col">
+              Blavós
+              <p> https://tilemaps.icgc.cat/tileserver/styles/blavos.json</p>
+            </div>
+            <div class="col">
+              <img src="img/blavos.png">
+            </div>
+          </div>
         </li>
-        <li>Clar
+        <li>
+            <div class="row">
+                <div class="col">Clar
           <p> https://tilemaps.icgc.cat/tileserver/styles/clar.json</p>
+        </div>
+        <div class="col">
+          <img src="img/clar.png">
+        </div>
+      </div>
         </li>
-        <li>Fosc
+        <li>
+            <div class="row">
+                <div class="col">Fosc
           <p> https://tilemaps.icgc.cat/tileserver/styles/fosc.json</p>
+        </div>
+        <div class="col">
+          <img src="img/fosc.png">
+        </div>
+      </div>
         </li>
-        <li>Gris
+        <li>
+            <div class="row">
+                <div class="col">Gris
           <p> https://tilemaps.icgc.cat/tileserver/styles/gris.json</p>
+        </div>
+        <div class="col">
+          <img src="img/gris.png">
+        </div>
+      </div>
         </li>
-        <li>ICGC5M
+        <li>
+            <div class="row">
+                <div class="col">ICGC5M
           <p> https://tilemaps.icgc.cat/tileserver/styles/icgc5m.json</p>
+        </div>
+        <div class="col">
+          <img src="img/5m.png">
+        </div>
+      </div>
         </li>
-        <li>ICGC25M
+        <li>
+            <div class="row">
+            <div class="col">ICGC25M
           <p> https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json</p>
+        </div>
+        <div class="col">
+          <img src="img/25m.png">
+        </div>
+      </div>
         </li>
-        <li>Polit
+        <li>
+            <div class="row">
+                <div class="col">Polit
           <p> https://tilemaps.icgc.cat/tileserver/styles/polit.json</p>
+        </div>
+        <div class="col">
+          <img src="img/polit.png">
+        </div>
+      </div>
         </li>
       </ul>
       <div>
@@ -95,7 +165,7 @@
       </div>
     </div>
     <div class="alert alert-default ">
-      <h5 class="alert-heading">Raster Tiles
+      <h5 class="alert-heading">Bases Raster Tiles
         <i class="fas fa-map"></i>
       </h5>
       <ul>
@@ -114,13 +184,13 @@
         <li>Topogràfic web gris
           <p> https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png</p>
         </li>
-        <li>Hibrid
+        <li>Híbrid - Base híbrida ortoforto i topogràfic
           <p> https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png</p>
         </li>
         <li>Topogràfic web fosc
           <p> https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png</p>
         </li>
-        <li>Toponímia
+        <li>Toponímia - Capa transparent de toponímia
           <p> https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png</p>
         </li>
       </ul>

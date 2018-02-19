@@ -37,29 +37,51 @@
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
+    var topoICGCGris = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+
     var ortoICGC =
       L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg', {
         maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
+
+    var ortoICGC_H =
+      L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg', {
+        maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+      });
+
+      var ortoAugICGC =
+      L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg', {
+        maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+      });
+
     var hibridICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png', {
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
-    var hibrida = L.layerGroup([ortoICGC, hibridICGC]);
+
+    var toponimICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png', {
+        maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+      });
+
+    var hibrida = L.layerGroup([ortoICGC_H, hibridICGC]);
     var mapaBase = {
+      'Ortofoto': ortoICGC,
+      'Orto Aug.': ortoAugICGC,
       'Clàssic': topoICGC,
       'Web': topoICGCWEB,
       'Fosc': topoICGCDark,
-      'Híbrid': hibrida
+      'Gris': topoICGCGris,
+      'Híbrid': hibrida,
+          
     };
-    controlCapas = L.control.layers(mapaBase, null, {
+    var overlay={
+      'Toponímia':toponimICGC
+    }
+    controlCapas = L.control.layers(mapaBase, overlay, {
       collapsed: false
     });
     controlCapas.addTo(map)
-
-
-
-
-
 
   }
   </script>

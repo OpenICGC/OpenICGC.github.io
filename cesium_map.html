@@ -61,18 +61,18 @@
 
         })
       });
-
+ 
       map.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(1.70632, 42.20390, 16000),
         duration: 0,
         complete: function() {
           setTimeout(function() {
             map.camera.flyTo({
-              destination: Cesium.Cartesian3.fromDegrees(1.70325, 42.20398, 5000),
-              orientation: {
-                heading: Cesium.Math.toRadians(0.0),
-                pitch: Cesium.Math.toRadians(-45.0), //tilt
-              },
+              destination : new Cesium.Cartesian3(4729244.983163969, 143571.72049952167, 4266387.882877819),
+              orientation : {
+              direction : new Cesium.Cartesian3(-0.1689927316633657, -0.9849949286281356, 0.03502066849458571), 
+              up : new Cesium.Cartesian3(0.7269595744661987, -0.10057128172725824, 0.6792754922589654)
+            },
               easingFunction: Cesium.EasingFunction.LINEAR_NONE
             });
           }, 1000);
@@ -80,6 +80,7 @@
       });
 
     });
+
   </script>
 </head>
 
