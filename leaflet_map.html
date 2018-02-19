@@ -72,13 +72,11 @@
       'Web': topoICGCWEB,
       'Fosc': topoICGCDark,
       'Gris': topoICGCGris,
-      'Híbrid': hibrida,
+      'Híbrid': hibrida
           
     };
-    var overlay={
-      'Toponímia':toponimICGC
-    }
-    controlCapas = L.control.layers(mapaBase, overlay, {
+    
+    controlCapas = L.control.layers(mapaBase, null, {
       collapsed: false
     });
     controlCapas.addTo(map)
