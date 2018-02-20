@@ -131,8 +131,7 @@
                 animation: false,
                 geocoder: false,
                 sceneMode: Cesium.SceneMode.SCENE3D,
-                terrainProvider: terrain5M
-        
+                terrainProvider: terrain5M       
               });
         
               map.camera.flyTo({
@@ -154,41 +153,33 @@
               });
         
               var layerList = document.getElementById('menu');
-              var inputs = layerList.getElementsByTagName('input');
-        
+              var inputs = layerList.getElementsByTagName('input');       
               function switchLayer(layer) {
                 var layerId = layer.target.id;
                 if (layerId == 'icgc') {
                   map.terrainProvider = terrain5M;
                 } else {
-                  map.terrainProvider = terrain30M;
-        
+                  map.terrainProvider = terrain30M;        
                 }
-              }
-        
+              }       
               for (var i = 0; i &#x3C; inputs.length; i++) {
                 inputs[i].onclick = switchLayer;
-              }
-              
+              }              
             }
           &#x3C;/script&#x3E;
-        &#x3C;/head&#x3E;
-        
+        &#x3C;/head&#x3E;       
         &#x3C;body onLoad=initApp()&#x3E;
           &#x3C;div id='menu'&#x3E;
             &#x3C;input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'&#x3E;
             &#x3C;label for='icgc'&#x3E;Terreny ICGC 5M&#x3C;/label&#x3E;
             &#x3C;input id='nasa' type='radio' name='rtoggle' value='nasa'&#x3E;
-            &#x3C;label for='nasa'&#x3E;Terreny NASA 30M&#x3C;/label&#x3E;
-        
+            &#x3C;label for='nasa'&#x3E;Terreny NASA 30M&#x3C;/label&#x3E;      
           &#x3C;/div&#x3E;
           &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-        &#x3C;/body&#x3E;
-        
+        &#x3C;/body&#x3E;       
         &#x3C;/html&#x3E;
     </code></pre>
     </div>
   </div>
 </body>
-
 </html>
