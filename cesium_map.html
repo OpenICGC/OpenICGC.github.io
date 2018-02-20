@@ -1,4 +1,5 @@
 <html lang="ca">
+
 <head>
   <title>Ejemplo 3 Cesium</title>
   <meta charset="utf-8" />
@@ -8,7 +9,6 @@
   <meta name="robots" content="index,follow">
   <link rel="stylesheet" href="https://www.instamaps.cat/llibreries/cesium/Widgets/widgets.css" />
   <script src="https://www.instamaps.cat/llibreries/cesium/Cesium.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
     #map {
       position: absolute;
@@ -20,6 +20,21 @@
       overflow: hidden;
       padding: 0;
       font-family: sans-serif;
+    }
+
+    #menu {
+      position: absolute;
+      z-index: 1000;
+      background: #fff;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+      top: 5px;
+      left: 5px;
+      border-radius: 7px;
+      -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+      font-size: 80%;
     }
 
     html {
@@ -35,7 +50,16 @@
   </style>
   <script>
     var map;
-    $(document).ready(function() {
+
+    function initApp() {
+      var terrain30M = new Cesium.CesiumTerrainProvider({
+        url: 'https://assets.agi.com/stk-terrain/world'
+      });
+
+      var terrain5M = new Cesium.CesiumTerrainProvider({
+        url: 'https://tilemaps.icgc.cat/terrenys/demextes/'
+      });
+
       map = new Cesium.Viewer('map', {
         imageryProvider: new Cesium.createOpenStreetMapImageryProvider({
           url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
@@ -56,35 +80,59 @@
         animation: false,
         geocoder: false,
         sceneMode: Cesium.SceneMode.SCENE3D,
-        terrainProvider: new Cesium.CesiumTerrainProvider({
-          url: 'https://tilemaps.icgc.cat/terrenys/demextes/',
+        terrainProvider: terrain5M
 
-        })
       });
- 
+
       map.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(1.70632, 42.20390, 16000),
         duration: 0,
-        complete: function() {
-          setTimeout(function() {
+        complete: function () {
+          setTimeout(function () {
             map.camera.flyTo({
-              destination : new Cesium.Cartesian3(4729244.983163969, 143571.72049952167, 4266387.882877819),
-              orientation : {
-              direction : new Cesium.Cartesian3(-0.1689927316633657, -0.9849949286281356, 0.03502066849458571), 
-              up : new Cesium.Cartesian3(0.7269595744661987, -0.10057128172725824, 0.6792754922589654)
-            },
+              destination: new Cesium.Cartesian3(4729244.983163969, 143571.72049952167, 4266387.882877819),
+              orientation: {
+                direction: new Cesium.Cartesian3(-0.1689927316633657, -0.9849949286281356,
+                  0.03502066849458571),
+                up: new Cesium.Cartesian3(0.7269595744661987, -0.10057128172725824, 0.6792754922589654)
+              },
               easingFunction: Cesium.EasingFunction.LINEAR_NONE
             });
           }, 1000);
         }
       });
 
-    });
+      var layerList = document.getElementById('menu');
+      var inputs = layerList.getElementsByTagName('input');
 
+      function switchLayer(layer) {
+        var layerId = layer.target.id;
+        if (layerId == 'icgc') {
+          map.terrainProvider = terrain5M;
+        } else {
+          map.terrainProvider = terrain30M;
+
+        }
+      }
+
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = switchLayer;
+      }
+
+
+
+    }
   </script>
 </head>
 
-<body>
+<body onLoad=initApp()>
+  <div id='menu'>
+    <input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'>
+    <label for='icgc'>Terreny ICGC 5M</label>
+    <input id='nasa' type='radio' name='rtoggle' value='nasa'>
+    <label for='nasa'>Terreny NASA 30M</label>
+
+  </div>
   <div id="map"></div>
 </body>
 
