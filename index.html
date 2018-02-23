@@ -25,7 +25,7 @@
       background-color: #f7f7f7;
     }
 
-    p {
+    span {
       color: green
     }
 
@@ -40,32 +40,29 @@
     small {
       font-size: 60% !important;
     }
-
     .col img {
       margin-top: 15px;
-    float: right; 
+      float: right;
 
     }
-
     .row {
-
       border-bottom: 1px dotted #dedada;
     }
 
 
     @media screen and (max-width: 500px) {
-
       body {
-
         font-size: 80% !important;
       }
-
       .col img {
-
         width: 300px !important;
-        ;
       }
-
+    }
+    .btn-copy {
+      cursor: pointer
+    }
+    .raster{
+          font-size: 0.88em;
     }
   </style>
 </head>
@@ -100,8 +97,12 @@
         <li>
           <div class="row">
             <div class="col">
-              Blavós
-              <p> https://tilemaps.icgc.cat/tileserver/styles/blavos.json</p>
+              Blavós<br>
+              <span>https://tilemaps.icgc.cat/tileserver/styles/blavos.json</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/blavos.json"
+                title="Copiar enllaç">
+              </span>
             </div>
             <div class="col">
               <img src="img/blavos.png">
@@ -110,8 +111,13 @@
         </li>
         <li>
           <div class="row">
-            <div class="col">Clar
-              <p> https://tilemaps.icgc.cat/tileserver/styles/clar.json</p>
+            <div class="col">
+              Clar<br>
+              <span>https://tilemaps.icgc.cat/tileserver/styles/clar.json</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/clar.json"
+                title="Copiar enllaç">
+              </span>
             </div>
             <div class="col">
               <img src="img/clar.png">
@@ -120,8 +126,12 @@
         </li>
         <li>
           <div class="row">
-            <div class="col">Fosc
-              <p> https://tilemaps.icgc.cat/tileserver/styles/fosc.json</p>
+            <div class="col">Fosc<br>
+              <span> https://tilemaps.icgc.cat/tileserver/styles/fosc.json</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/fosc.json"
+                title="Copiar enllaç">
+              </span>
             </div>
             <div class="col">
               <img src="img/fosc.png">
@@ -130,8 +140,12 @@
         </li>
         <li>
           <div class="row">
-            <div class="col">Gris
-              <p> https://tilemaps.icgc.cat/tileserver/styles/gris.json</p>
+            <div class="col">Gris<br>
+              <span> https://tilemaps.icgc.cat/tileserver/styles/gris.json</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/gris.json"
+                title="Copiar enllaç">
+              </span>
             </div>
             <div class="col">
               <img src="img/gris.png">
@@ -140,8 +154,12 @@
         </li>
         <li>
           <div class="row">
-            <div class="col">ICGC5M
-              <p> https://tilemaps.icgc.cat/tileserver/styles/icgc5m.json</p>
+            <div class="col">ICGC5M<br>
+              <span> https://tilemaps.icgc.cat/tileserver/styles/icgc5m.json</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/icgc5m.json"
+                title="Copiar enllaç">
+              </span>
             </div>
             <div class="col">
               <img src="img/5m.png">
@@ -150,8 +168,12 @@
         </li>
         <li>
           <div class="row">
-            <div class="col">ICGC25M
-              <p> https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json</p>
+            <div class="col">ICGC25M<br>
+              <span> https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json"
+                title="Copiar enllaç">
+              </span>
             </div>
             <div class="col">
               <img src="img/25m.png">
@@ -160,8 +182,12 @@
         </li>
         <li>
           <div class="row">
-            <div class="col">Polit
-              <p> https://tilemaps.icgc.cat/tileserver/styles/polit.json</p>
+            <div class="col">Polit<br>
+              <span> https://tilemaps.icgc.cat/tileserver/styles/polit.json</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/polit.json"
+                title="Copiar enllaç">
+              </span>
             </div>
             <div class="col">
               <img src="img/polit.png">
@@ -184,78 +210,118 @@
       <h5 class="alert-heading">Bases Raster Tiles
         <i class="fas fa-map"></i>
       </h5>
-      <ul>
-        <li><div class="row">
-          <div class="col">Ortofoto
-          <p> https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg</p>
-        </div>
-        <div class="col">
-          <img src="img/rasorto.png">
-        </div>
-      </div>
+      <ul class="raster">
+        <li>
+          <div class="row">
+            <div class="col-7">Ortofoto<br>
+              <span>https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rasorto.png">
+            </div>
+          </div>
         </li>
-        <li><div class="row">
-          <div class="col">Topogràfic clàssic
-          <p> https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg</p>
-        </div>
-        <div class="col">
-          <img src="img/rasclassic.png">
-        </div>
-      </div>
+        <li>
+          <div class="row">
+            <div class="col-7">Topogràfic clàssic<br>
+              <span>https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rasclassic.png">
+            </div>
+          </div>
         </li>
-        <li><div class="row">
-          <div class="col">Topogràfic web
-          <p> https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png</p>
-        </div>
-        <div class="col">
-          <img src="img/rasweb.png">
-        </div>
-      </div>
+        <li>
+          <div class="row">
+            <div class="col-7">Topogràfic web<br>
+              <span>https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rasweb.png">
+            </div>
+          </div>
         </li>
-        <li><div class="row">
-          <div class="col">Ortofoto augmentada
-          <p> https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg</p>
-        </div>
-        <div class="col">
-          <img src="img/rasaugmented.png">
-        </div>
-      </div>
+        <li>
+          <div class="row">
+            <div class="col-7">Ortofoto augmentada<br>
+              <span>https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rasaugmented.png">
+            </div>
+          </div>
         </li>
-        <li><div class="row">
-          <div class="col">Topogràfic web gris
-          <p> https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png</p>
-        </div>
-        <div class="col">
-          <img src="img/rasgris.png">
-        </div>
-      </div>
+        <li>
+          <div class="row">
+            <div class="col-7">Topogràfic web gris<br>
+              <span>https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rasgris.png">
+            </div>
+          </div>
         </li>
-        <li><div class="row">
-          <div class="col">Híbrid - Base híbrida ortoforto i topogràfic
-          <p> https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png</p>
-        </div>
-        <div class="col">
-          <img src="img/rashibrid.png">
-        </div>
-      </div>
+        <li>
+          <div class="row">
+            <div class="col-7">Híbrid - Base híbrida ortoforto i topogràfic<br>
+              <span>https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rashibrid.png">
+            </div>
+          </div>
         </li>
-        <li><div class="row">
-          <div class="col">Topogràfic web fosc
-          <p> https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png</p>
-        </div>
-        <div class="col">
-          <img src="img/rasfosc.png">
-        </div>
-      </div>
+        <li>
+          <div class="row">
+            <div class="col-7">Topogràfic web fosc<br>
+              <span>https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rasfosc.png">
+            </div>
+          </div>
         </li>
-        <li><div class="row">
-          <div class="col">Toponímia - Capa transparent de toponímia
-          <p> https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png</p>
-        </div>
-        <div class="col">
-          <img src="img/rastopo.png">
-        </div>
-      </div>
+        <li>
+          <div class="row">
+            <div class="col-7">Toponímia - Capa transparent de toponímia<br>
+              <span>https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png</span>
+              <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/rastopo.png">
+            </div>
+          </div>
         </li>
       </ul>
       <div>
@@ -277,8 +343,12 @@
         <i class="fas fa-chart-area"></i>
       </h5>
       <ul>
-        <li>Terreny 5m
-          <p> https://tilemaps.icgc.cat/terrenys/demextes/</p>
+        <li>Terreny 5m<br>
+          <span>https://tilemaps.icgc.cat/terrenys/demextes/</span>
+          <span class="fas fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+          data-copy="https://tilemaps.icgc.cat/terrenys/demextes/"
+            title="Copiar enllaç">
+          </span>
         </li>
       </ul>
       <div>
@@ -304,6 +374,46 @@
     </footer>
 
   </div>
+
+  <script>
+    //Function from https://codepen.io/nathanlong/pen/ZpAmjv
+
+    function copyToClipboard(text, el) {
+      var copyTest = document.queryCommandSupported('copy');
+      var elOriginalText = el.attr('data-original-title');
+
+      if (copyTest === true) {
+        var copyTextArea = document.createElement("textarea");
+        copyTextArea.value = text;
+        document.body.appendChild(copyTextArea);
+        copyTextArea.select();
+        try {
+          var successful = document.execCommand('copy');
+          var msg = successful ? 'Copiat!' : 'Ups, no copiat!';
+          el.attr('data-original-title', msg).tooltip('show');
+        } catch (err) {
+          console.log('Oops, unable to copy');
+        }
+        document.body.removeChild(copyTextArea);
+        el.attr('data-original-title', elOriginalText);
+      } else {
+        // Fallback if browser doesn't support .execCommand('copy')
+        window.prompt("Copiar al porta retalls: Ctrl+C o Command+C, Enter", text);
+      }
+    }
+
+    $(document).ready(function () {
+
+      $('.js-tooltip').tooltip();
+
+      $('.js-copy').click(function () {
+        var text = $(this).attr('data-copy');
+        var el = $(this);
+        copyToClipboard(text, el);
+      });
+    });
+  </script>
+
 
 </body>
 
