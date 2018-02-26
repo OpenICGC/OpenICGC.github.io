@@ -134,7 +134,7 @@
               var layerId = layer.target.id;
               map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/' + layerId + '.json');
             }       
-            function canviaPerpectiva() {
+            function canviaPerspectiva() {
               var pitch = parseInt(map.getPitch());
               pitch == 60 ? pitch = 0 : pitch = pitch + 30;
               map.easeTo({
@@ -144,7 +144,7 @@
             for (var i = 0; i &#x3C; inputs.length; i++) {
               inputs[i].onclick = switchLayer;
             }       
-            button.onclick = canviaPerpectiva;
+            button.onclick = canviaPerspectiva;
           &#x3C;/script&#x3E;
           &#x3C;/body&#x3E;       
           &#x3C;/html&#x3E;
