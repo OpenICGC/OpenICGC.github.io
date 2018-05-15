@@ -1,0 +1,62 @@
+{
+    "backgrounds": [{
+            "name": "Clar",
+            "styleid": 0,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/clar.json",
+            "icon": "https://openicgc.github.io/img/clar.png"
+        },
+        {
+            "name": "Orto",
+            "styleid": 1,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/orto.json",
+            "icon": "https://openicgc.github.io/img/orto.png"
+        },
+        {
+            "name": "Terreny",
+            "styleid": 2,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/terrain.json",
+            "icon": "https://openicgc.github.io/img/terrain.png"
+        },
+
+        {
+            "name": "Fosc",
+            "styleid": 3,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/fosc.json",
+            "icon": "https://openicgc.github.io/img/fosc.png"
+        },
+        
+        {
+            "name": "Blavós",
+            "styleid": 4,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/blavos.json",
+            "icon": "https://openicgc.github.io/img/blavos.png"
+        },    
+        {
+            "name": "Gris",
+            "styleid": 5,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/gris.json",
+            "icon": "https://openicgc.github.io/img/gris.png"
+        },    
+        {
+            "name": "ICGC5M",
+            "styleid": 6,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/icgc5m.json",
+            "icon": "https://openicgc.github.io/img/5m.png"
+        },
+            {
+            "name": "ICGC25M",
+            "styleid": 7,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json",
+            "icon": "https://openicgc.github.io/img/25m.png"
+        },
+        {
+            "name": "Polit",
+            "styleid": 8,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/polit.json",
+            "icon": "https://openicgc.github.io/img/polit.png"
+        }
+
+    ]
+
+
+}
