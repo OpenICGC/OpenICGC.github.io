@@ -54,6 +54,12 @@
             "styleid": 8,
             "style": "https://tilemaps.icgc.cat/tileserver/styles/polit.json",
             "icon": "https://openicgc.github.io/img/polit.png"
+        },
+        {
+            "name": "Raster",
+            "styleid": 9,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/raster.json",
+            "icon": "https://openicgc.github.io/img/raster.png"
         }
 
     ]
