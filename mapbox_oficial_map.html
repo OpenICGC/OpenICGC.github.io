@@ -69,6 +69,10 @@
         <label for='osm-bright'>osm-bright</label>
         <input id='positron' type='radio' name='rtoggle' value='positron'>
         <label for='positron'>positron</label>
+        <input id='fulldark' type='radio' name='rtoggle' value='fulldark'>
+        <label for='fulldark'>fulldark</label>
+
+        
     </div>
     <div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl">
         <button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"></button>
@@ -82,7 +86,7 @@
         map = new mapboxgl.Map({
             container: 'map',
             style: 'https://geoserveis.icgc.cat/styles/icgc/style.json',
-           //style: 'https://tilemaps.icgc.cat/tileserver/styles/fulldark.json',
+         
             center: [2.16859, 41.3954],
             zoom: 13,
             maxZoom: 18,
@@ -111,7 +115,13 @@
 
         function switchLayer(layer) {
             var layerId = layer.target.id;
+
+            if (layerId.indexOf('fulldark')!=-1){
+            map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/fulldark.json');
+            }else{
             map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '/style.json');
+
+            }
 
 
         }
