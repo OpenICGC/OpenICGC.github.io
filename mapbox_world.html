@@ -194,7 +194,7 @@
                             mapboxgl.accessToken = '';
                             map = new mapboxgl.Map({
                                 container: 'map',
-                                style: 'https://geoserveis.icgc.cat/styles/icgc/style.json',
+                                style: 'https://geoserveis.icgc.cat/stylesvector/icgc.json',
                     
                                 center: [2.16859, 41.3954],
                                 zoom: 13,
@@ -225,16 +225,10 @@
                             function switchLayer(layer) {
                                 var layerId = layer.target.id;
                     
-                                if (layerId.indexOf('fulldark') != -1) {
-                                    map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/fulldark.json');
-                                } else if (layerId.indexOf('night') != -1) {
-                                    map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/night.json');
-                                } else if (layerId.indexOf('hibrid') != -1) {
-                                    map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/hibrid.json');
-                                } else {
-                                    map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '/style.json');
+                               
+                                    map.setStyle('https://geoserveis.icgc.cat/stylesvector/' + layerId + '.json');
                     
-                                }
+                                
                     
                     
                             }
