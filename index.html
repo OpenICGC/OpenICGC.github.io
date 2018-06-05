@@ -1,15 +1,24 @@
 <html>
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-2"></script>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-9"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-46332195-2');
+  gtag('config', 'UA-46332195-9');
 </script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
+  <!-- End Google Tag Manager -->
+  
 
   <title>OpenICGC Resources</title>
   <meta charset="utf-8" />
@@ -78,6 +87,11 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
   <div class="container">
     <nav class="navbar navbar-light bg-light">
       <h4>
@@ -179,7 +193,7 @@
     </div>
     <!-- init official styles-->
     <div class="alert alert-default">
-      <h5>Estils Oficials per Vector Tiles
+      <h5>Estils mundials per Vector Tiles
         <i class="fas fa-globe"></i>
         </i>
       </h5>
@@ -188,7 +202,7 @@
         <li>
           <div class="row">
             <div class="col">
-              ICGC<br>
+              ICGC (Oficial)<br>
               <span>https://geoserveis.icgc.cat/styles/icgc/style.json</span>
               <span class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
               data-copy="https://geoserveis.icgc.cat/styles/icgc/style.json"
@@ -228,6 +242,37 @@
             </div>
           </div>
         </li>
+
+        <li>
+          <div class="row">
+            <div class="col">Full dark<br>
+              <span>https://tilemaps.icgc.cat/tileserver/styles/fulldark.json</span>
+              <span class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/fulldark.json"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/fulldark.png">
+            </div>
+          </div>
+        </li>
+
+
+        <li>
+          <div class="row">
+            <div class="col">Night<br>
+              <span>https://tilemaps.icgc.cat/tileserver/styles/night.json</span>
+              <span class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" 
+              data-copy="https://tilemaps.icgc.cat/tileserver/styles/night.json"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="img/night.png">
+            </div>
+          </div>
+        </li>
        
       </ul>
       <div>
@@ -237,8 +282,8 @@
       </div>
       <div class="cropt">
         <small>
-        <span><a href="icgc-oficial-styles-min.json" target="_blank" >LLista styles min</a></span> |  
-        <span><a href="icgc-oficial-styles-all.json" target="_blank" >Llista styles all</a></span>    
+        <span><a href="icgc-styles-world-min.json" target="_blank" >LLista styles min</a></span> |  
+        <span><a href="icgc-styles-world-all.json" target="_blank" >Llista styles all</a></span>    
         </small>
         <small>  Integrable amb:</small>
         <span class="badge badge-primary">Mapbox GL</span>

@@ -71,8 +71,12 @@
         <label for='positron'>positron</label>
         <input id='fulldark' type='radio' name='rtoggle' value='fulldark'>
         <label for='fulldark'>fulldark</label>
+        <input id='night' type='radio' name='rtoggle' value='night'>
+        <label for='night'>night</label>
+        <input id='hibrid' type='radio' name='rtoggle' value='hibrid'>
+        <label for='hibrid'>hibrid</label>
 
-        
+
     </div>
     <div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl">
         <button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"></button>
@@ -86,7 +90,7 @@
         map = new mapboxgl.Map({
             container: 'map',
             style: 'https://geoserveis.icgc.cat/styles/icgc/style.json',
-         
+
             center: [2.16859, 41.3954],
             zoom: 13,
             maxZoom: 18,
@@ -116,10 +120,14 @@
         function switchLayer(layer) {
             var layerId = layer.target.id;
 
-            if (layerId.indexOf('fulldark')!=-1){
-            map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/fulldark.json');
-            }else{
-            map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '/style.json');
+            if (layerId.indexOf('fulldark') != -1) {
+                map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/fulldark.json');
+            } else if (layerId.indexOf('night') != -1) {
+                map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/night.json');
+            } else if (layerId.indexOf('hibrid') != -1) {
+                map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/hibrid.json');
+            } else {
+                map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '/style.json');
 
             }
 
