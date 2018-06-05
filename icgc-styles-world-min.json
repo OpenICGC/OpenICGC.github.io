@@ -28,6 +28,12 @@
             "styleid": 4,
             "style": "https://tilemaps.icgc.cat/tileserver/styles/fulldark.json",
             "icon": "https://openicgc.github.io/img/fulldark.png"
+        },
+        {
+            "name": "Hibrid",
+            "styleid": 4,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/hibrid.json",
+            "icon": "https://openicgc.github.io/img/hibrid.png"
         }
         
 
