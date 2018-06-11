@@ -5,36 +5,32 @@
             "style": "https://geoserveis.icgc.cat/stylesvector/icgc.json",
             "icon": "https://openicgc.github.io/img/icgc.png"
         },
-        {
-            "name": "Osm-Bright",
-            "styleid": 1,
-            "style": "https://geoserveis.icgc.cat/stylesvector/osm-bright.json",
-            "icon": "https://openicgc.github.io/img/osm-bright.png"
-        },
+        
         {
             "name": "Positron",
-            "styleid": 2,
+            "styleid": 1,
             "style": "https://geoserveis.icgc.cat/stylesvector/positron.json",
             "icon": "https://openicgc.github.io/img/positron.png"
         },
-        {
-            "name": "Night",
-            "styleid": 3,
-            "style": "https://geoserveis.icgc.cat/stylesvector/night.json",
-            "icon": "https://openicgc.github.io/img/night.png"
-        },
+       
         {
             "name": "Full-Dark",
-            "styleid": 4,
+            "styleid": 2,
             "style": "https://geoserveis.icgc.cat/stylesvector/fulldark.json",
             "icon": "https://openicgc.github.io/img/fulldark.png"
         },
         {
             "name": "Hibrid",
-            "styleid": 4,
+            "styleid": 3,
             "style": "https://geoserveis.icgc.cat/stylesvector/hibrid.json",
             "icon": "https://openicgc.github.io/img/hibrid.png"
-        }
+        },
+        {
+            "name": "Terreny",
+            "styleid": 4,
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/terrain.json",
+            "icon": "https://openicgc.github.io/img/terrain.png"
+        },
         
 
 
