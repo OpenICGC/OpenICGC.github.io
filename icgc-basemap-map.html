@@ -109,7 +109,7 @@
         mapboxgl.accessToken = '';
         map = new mapboxgl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/stylesvector/icgc.json',
+            style: 'https://geoserveis.icgc.cat/backgroundmaps/icgc.json',
 
             center: [2.16859, 41.3954],
             zoom: 13,
@@ -141,7 +141,7 @@
             var layerId = layer.target.id;
 
             
-                map.setStyle('https://geoserveis.icgc.cat/stylesvector/' + layerId + '.json');
+                map.setStyle('https://geoserveis.icgc.cat/backgroundmaps/' + layerId + '.json');
 
             
 
