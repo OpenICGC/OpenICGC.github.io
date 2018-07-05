@@ -16,7 +16,7 @@
         {
             "name": "Fosc",
             "styleid": 2,
-            "style": "https://geoserveis.icgc.cat/contextmaps/fulldark.json",
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/water.json",
             "icon": "https://openicgc.github.io/img/fulldark.png"
         },
         {
