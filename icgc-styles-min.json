@@ -21,7 +21,7 @@
         {
             "name": "Fosc",
             "styleid": 3,
-            "style": "https://tilemaps.icgc.cat/tileserver/styles/fosc.json",
+            "style": "https://tilemaps.icgc.cat/tileserver/styles/water.json",
             "icon": "https://openicgc.github.io/img/fosc.png"
         }
         
