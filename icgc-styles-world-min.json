@@ -2,26 +2,25 @@
     "backgrounds": [ 
          {
         "name": "Clar",
-        "styleid": 1,
+        "styleid": 0,
         "style": "https://geoserveis.icgc.cat/contextmaps/positron.json",
         "icon": "https://openicgc.github.io/img/positron.png"
     },
     {
         "name": "Orto",
-        "styleid": 2,
+        "styleid": 1,
         "style": "https://geoserveis.icgc.cat/contextmaps/hibrid.json",
         "icon": "https://openicgc.github.io/img/orto.png"
     },
     {
         "name": "Fosc",
-        "styleid": 3,
+        "styleid": 2,
         "style": "http://tilemaps.icgc.cat/tileserver/styles/water.json",
         "icon": "https://openicgc.github.io/img/fulldark.png"
     },
-   
     {
         "name": "Terreny",
-        "styleid": 4,
+        "styleid": 3,
         "style": "https://tilemaps.icgc.cat/tileserver/styles/terrain.json",
         "icon": "https://openicgc.github.io/img/terrain.png"
     }
