@@ -128,11 +128,16 @@
 
       function switchLayer(layer) {
         var layerId = layer.target.id;
+        try{
         if (layerId == 'icgc') {
           map.terrainProvider = terrain5M;
         } else {
           map.terrainProvider = terrain30M;
 
+        }
+        }catch(err){
+
+          console.log(err);
         }
       }
 
