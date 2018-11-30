@@ -258,11 +258,7 @@
 
         function switchLayer(layer) {
             var layerId = layer.target.id;
-
-
             map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
-
-
 
         }
 
@@ -278,7 +274,6 @@
             if (!map.getLayer('sagradaFamilia')) {
                 map.addLayer(new ThreeICGCMODEL());
             }
-
 
         }
 
