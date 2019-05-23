@@ -62,7 +62,9 @@
     <div class="titol">
     <strong>Exemple serveis rasters ICGC </strong>
    
-    <br><div><p><a href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/icgc-raster-map.html">Veure codi font <i class="fab fa-github"></i></a></p></div>
+    <br><div><p><a href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/icgc-raster-map.html">Veure codi font <i class="fab fa-github"></i></a>
+      <a href="icgc-raster-map.html">pantalla completa <i class="fas fa-expand"></i></a>
+    </p></div>
   </div>
 </div>
 <iframe src="icgc-raster-map.html" frameborder=0 width="100%" height="500"></iframe>
@@ -103,7 +105,7 @@
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     }).addTo(map);
 
-    var topoICGCDark = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png', {
+    var topoICGCDark = L.tileLayer('http://maptile1.farm/map/costa201904/tms/1.0.0/tram15/EPSG3857{z}/{x}/{y}.png', {
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
