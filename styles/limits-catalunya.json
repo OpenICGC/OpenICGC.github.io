@@ -1,0 +1,120 @@
+{
+    "version": 8,
+    "name": "limitscat",
+    "metadata": {},
+    "center": [
+      1.537786,
+      41.837539
+    ],
+    "zoom": 12,
+    "bearing": 0,
+    "pitch": 0,
+    "sources": {
+      "limitscat": {
+        "type": "vector",
+        "url": "https://tilemaps.icgc.cat/tileserver/limits-catalunya-tilejson.json"
+      }
+    },
+    "sprite": "https://geoserveis.icgc.cat/contextmaps/sprites/sprite@1",
+    "glyphs": "https://geoserveis.icgc.cat/contextmaps/glyphs/{fontstack}/{range}.pbf",
+    "layers": [
+      {
+        "id": "background",
+        "type": "background",
+        "paint": {
+          "background-color": "rgba(220, 215, 210, 1)"
+        }
+      },
+      {
+        "id": "ambits_funcionals_planificacio",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "ambits_funcionals_planificacio",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(175, 18, 18, 1)"
+        }
+      },
+      {
+        "id": "arees_basiques_salut_2018",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "arees_basiques_salut_2018",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(117, 49, 32, 1)"
+        }
+      },
+      {
+        "id": "arees_basiques_serveis_socials",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "arees_basiques_serveis_socials",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(117, 49, 32, 1)"
+        }
+      },
+      {
+        "id": "comarques_2019",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "comarques_2019",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(32, 117, 38, 1)"
+        }
+      },
+      {
+        "id": "municipis_2019",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "municipis_2019",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(24, 30, 201, 1)"
+        }
+      },
+      {
+        "id": "partits_judicials",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "partits_judicials",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(179, 18, 99, 1)"
+        }
+      },
+      {
+        "id": "regions_sanitaries_2018",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "regions_sanitaries_2018",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(212, 53, 14, 1)"
+        }
+      },
+      {
+        "id": "seccions_censals_2016",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "seccions_censals_2016",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(25, 203, 9, 1)"
+        }
+      },
+      {
+        "id": "sectors_sanitaris_2018",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "sectors_sanitaris_2018",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(8, 72, 105, 1)"
+        }
+      }
+    ],
+    "id": "limitscat"
+  }

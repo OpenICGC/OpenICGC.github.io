@@ -1,0 +1,136 @@
+{
+    "tiles": [
+        "https://tilemaps.icgc.cat/tileserver/tileserver.php/limits-cat/{z}/{x}/{y}.pbf"
+    ],
+    "name": "limitscat",
+    "format": "pbf",
+    "basename": "limits-cat.mbtiles",
+    "id": "limitscat",
+    "center": [
+        1.707,
+        42.3291,
+        11
+    ],
+    "description": "Límits de Catalunya",
+    "maxzoom": 16,
+    "minzoom": 6,
+    "vector_layers": [
+        {
+            "id": "ambits_funcionals_planificacio",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "CODI": "String",
+                "NOM": "String"
+            }
+        },
+        {
+            "id": "arees_basiques_salut_2018",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "CODIABS": "String",
+                "CODIAGA": "String",
+                "CODIRS": "String",
+                "CODISS": "String",
+                "NOMABS": "String",
+                "NOMAGA": "String",
+                "NOMRS": "String",
+                "NOMSS": "String",
+                "ÀREA": "Number"
+            }
+        },
+        {
+            "id": "arees_basiques_serveis_socials",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "abss": "String",
+                "codi": "String"
+            }
+        },
+        {
+            "id": "comarques_2019",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "AREACOMAR": "Number",
+                "CODICOMAR": "String",
+                "DATAALTA": "String",
+                "NOMCOMAR": "String"
+            }
+        },
+        {
+            "id": "municipis_2019",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "AREAOFI": "String",
+                "AREAPOL": "Number",
+                "CODICOMAR": "String",
+                "CODIMUNI": "String",
+                "CODIPROV": "String",
+                "DATAALTA": "String",
+                "NOMMUNI": "String",
+                "VALIDDE": "String"
+            }
+        },
+        {
+            "id": "partits_judicials",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "CODI": "String",
+                "NOM": "String"
+            }
+        },
+        {
+            "id": "regions_sanitaries_2018",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "CODIRS": "String",
+                "NOMRS": "String",
+                "ÀREA": "Number"
+            }
+        },
+        {
+            "id": "seccions_censals_2016",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "DISTRICTE": "String",
+                "MUNDISSEC": "String",
+                "MUNICIPI": "String",
+                "SECCIO": "String"
+            }
+        },
+        {
+            "id": "sectors_sanitaris_2018",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "CODISS": "String",
+                "NOMSS": "String",
+                "ÀREA": "Number"
+            }
+        }
+    ],
+
+"bounds": [
+    0,
+    36.59788913307022,
+    5.625,
+    45.089035564831036
+],
+"tilejson": "2.0.0"
+}
