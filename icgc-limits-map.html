@@ -124,6 +124,25 @@
             </label>
             <input id='slider7' type='range' min='0' max='100' step='1' value='0' />
         </div>
+
+
+        <div class="slider">
+            <label>Regions policials 2019:
+                <span id='slider-value8'>0%</span>
+            </label>
+            <input id='slider8' type='range' min='0' max='100' step='1' value='0' />
+        </div>
+
+
+        <div class="slider">
+            <label>Àrees bàsiques policials 2019:
+                <span id='slider-value9'>0%</span>
+            </label>
+            <input id='slider9' type='range' min='0' max='100' step='1' value='0' />
+        </div>
+
+
+
         <div class="slider">
             <label>Regions snitàries 2018:
                 <span id='slider-value1'>0%</span>
@@ -201,8 +220,8 @@
             map.setPaintProperty("arees_basiques_serveis_socials", "line-opacity", 0);
             map.setPaintProperty("partits_judicials", "line-opacity", 0);
             map.setPaintProperty("seccions_censals_2016", "line-opacity", 0);
-
-
+            map.setPaintProperty("regions_policials_2019", "line-opacity", 0);
+            map.setPaintProperty("arees_basiques_policials_2019", "line-opacity", 0);
 
         });
 
@@ -236,6 +255,12 @@
         var slider7 = document.getElementById('slider7');
         var sliderValue7 = document.getElementById('slider-value7');
 
+
+        var slider8 = document.getElementById('slider8');
+        var sliderValue8 = document.getElementById('slider-value8');
+
+        var slider9 = document.getElementById('slider9');
+        var sliderValue9 = document.getElementById('slider-value9');
 
         function canviaPerspectiva() {
             var pitch = parseInt(map.getPitch());
@@ -286,6 +311,18 @@
         slider7.addEventListener('input', function (e) {
             map.setPaintProperty('seccions_censals_2016', 'line-opacity', parseInt(e.target.value, 10) / 100);
             sliderValue7.textContent = e.target.value + '%';
+        });
+
+        slider8.addEventListener('input', function (e) {
+            map.setPaintProperty('regions_policials_2019', 'line-opacity', parseInt(e.target.value, 10) / 100);
+            sliderValue8.textContent = e.target.value + '%';
+        });
+
+
+
+        slider9.addEventListener('input', function (e) {
+            map.setPaintProperty('arees_basiques_policials_2019', 'line-opacity', parseInt(e.target.value, 10) / 100);
+            sliderValue9.textContent = e.target.value + '%';
         });
     </script>
 </body>

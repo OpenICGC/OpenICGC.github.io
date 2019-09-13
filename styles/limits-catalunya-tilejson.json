@@ -26,6 +26,25 @@
             }
         },
         {
+            "id": "arees_basiques_policials_2019",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "CODIABP": "String",
+                "abp": "String",
+                "codirp": "String",
+                "desplegament": "String",
+                "id_municipi_cat": "String",
+                "id_regió_divisió_territorial": "String",
+                "id_unitat_territorial": "String",
+                "ine5": "String",
+                "municipi_cat": "String",
+                "regió_divisió_territorial": "String",
+                "unitat": "String"
+            }
+        },
+        {
             "id": "arees_basiques_salut_2018",
             "description": "",
             "minzoom": 3,
@@ -91,6 +110,17 @@
             }
         },
         {
+            "id": "regions_policials_2019",
+            "description": "",
+            "minzoom": 3,
+            "maxzoom": 16,
+            "fields": {
+                "CODIRP": "String",
+                "id_regió_divisió_territorial": "String",
+                "regió_divisió_territorial": "String"
+            }
+        },
+        {
             "id": "regions_sanitaries_2018",
             "description": "",
             "minzoom": 3,
@@ -125,12 +155,11 @@
             }
         }
     ],
-
-"bounds": [
-    0,
-    36.59788913307022,
-    5.625,
-    45.089035564831036
-],
-"tilejson": "2.0.0"
+    "bounds": [
+        0,
+        36.59788913307022,
+        5.625,
+        45.089035564831036
+    ],
+    "tilejson": "2.0.0"
 }

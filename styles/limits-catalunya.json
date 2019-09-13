@@ -114,6 +114,24 @@
         "paint": {
           "line-color": "rgba(8, 72, 105, 1)"
         }
+      }, {
+        "id": "regions_policials_2019",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "regions_policials_2019",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(117, 49, 32, 1)"
+        }
+      },{
+        "id": "arees_basiques_policials_2019",
+        "type": "line",
+        "source": "limitscat",
+        "source-layer": "arees_basiques_policials_2019",
+        "layout": {},
+        "paint": {
+          "line-color": "rgba(8, 72, 105, 1)"
+        }
       }
     ],
     "id": "limitscat"
