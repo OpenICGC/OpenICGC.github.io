@@ -59,6 +59,12 @@
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
+    var geologicICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/geologia/MON3857NW/{z}/{x}/{y}.png', {
+      maxZoom: 14,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+
+
+
     var ortoICGC =
       L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg', {
         maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
@@ -88,6 +94,7 @@
       'Orto Aug.': ortoAugICGC,
       'Clàssic': topoICGC,
       'Web': topoICGCWEB,
+      'Geològic':geologicICGC,
       'Fosc': topoICGCDark,
       'Gris': topoICGCGris,
       'Híbrid': hibrida,
