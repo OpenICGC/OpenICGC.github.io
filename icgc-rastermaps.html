@@ -141,6 +141,10 @@
         maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
 
+    var relleuICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/relleu/CAT3857/{z}/{x}/{y}.png', {
+      maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
+
     var hibrida = L.layerGroup([ortoICGC_H, hibridICGC]);
     var mapaBase = {
       'Ortofoto': ortoICGC,
@@ -151,7 +155,8 @@
       'Fosc': topoICGCDark,
       'Gris': topoICGCGris,
       'Híbrid': hibrida,
-      'Toponímia':toponimICGC
+      'Toponímia':toponimICGC,
+      'relleuICGC':relleuICGC
           
     };
     
