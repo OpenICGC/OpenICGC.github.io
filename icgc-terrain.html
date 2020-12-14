@@ -13,7 +13,7 @@
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
@@ -128,15 +128,15 @@
       }
     &#x3C;/style&#x3E;
     &#x3C;script&#x3E;
-      var map;
+      const map;
 
       function initApp() {
-        var terrain30M = new Cesium.CesiumTerrainProvider({
+        const terrain30M = new Cesium.CesiumTerrainProvider({
           url: 'https://maps.tilehosting.com/data/terrain-quantized-mesh/?key=QLOqi8gs14T1s1yjnRMO'
 
         });
 
-        var terrain5M = new Cesium.CesiumTerrainProvider({
+        const terrain5M = new Cesium.CesiumTerrainProvider({
           url: 'https://tilemaps.icgc.cat/terrenys/demextes/'
         });
 
@@ -181,17 +181,17 @@
           }
         });
 
-        var layerList = document.getElementById('menu');
-        var inputs = layerList.getElementsByTagName('input');       
+        const layerList = document.getElementById('menu');
+        const inputs = layerList.getElementsByTagName('input');       
         function switchLayer(layer) {
-          var layerId = layer.target.id;
+          const layerId = layer.target.id;
           if (layerId == 'icgc') {
             map.terrainProvider = terrain5M;
           } else {
             map.terrainProvider = terrain30M;        
           }
         }       
-        for (var i = 0; i &#x3C; inputs.length; i++) {
+        for (let  i = 0; i &#x3C; inputs.length; i++) {
           inputs[i].onclick = switchLayer;
         }              
       }

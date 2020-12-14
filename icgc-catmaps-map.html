@@ -13,7 +13,7 @@
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
@@ -23,7 +23,7 @@
   <title>Vector-Tiles ICGC</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' />
+  <link href='https://cdn.skypack.dev/maplibre-gl/dist/mapbox-gl.css' rel='stylesheet' />
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
@@ -116,25 +116,28 @@
     <input id='slider' type='range' min='0' max='100' step='0' value='0' />
   </div>
   <div id="map"></div>
-  <script>
-    var map;
+  <script type="module">
 
-    mapboxgl.accessToken = '';
-    map = new mapboxgl.Map({
+     import {Map, NavigationControl,GeolocateControl,AttributionControl} from 'https://cdn.skypack.dev/maplibre-gl';     
+    const map = new Map({
       container: 'map',
       style: 'https://tilemaps.icgc.cat/tileserver/styles/blavos.json',
       center: [2.16859, 41.3954],
       zoom: 13,
       maxZoom: 14.8,
       hash: true,
-      pitch: 45
-    });
+     pitch: 45,
+			attributionControl: false
+        });
 
+       
+        map.on('load', function () {
 
-    map.on('load', function () {
-
-      map.addControl(new mapboxgl.NavigationControl());
-      map.addControl(new mapboxgl.GeolocateControl({
+            map.addControl(new NavigationControl());
+			map.addControl(new AttributionControl({
+               compact: true
+			}));
+      map.addControl(new GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true,
           watchPosition: true
@@ -149,15 +152,15 @@
 
     });
 
-    var layerList = document.getElementById('menu');
-    var inputs = layerList.getElementsByTagName('input');
-    var button = document.getElementById('bt_pitch');
-    var slider = document.getElementById('slider');
-    var sliderValue = document.getElementById('slider-value');
+    const layerList = document.getElementById('menu');
+    const inputs = layerList.getElementsByTagName('input');
+    const button = document.getElementById('bt_pitch');
+    const slider = document.getElementById('slider');
+    const sliderValue = document.getElementById('slider-value');
 
 
     function switchLayer(layer) {
-      var layerId = layer.target.id;
+      const layerId = layer.target.id;
       map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/' + layerId + '.json');
 
       if (layerId == "terrain") {
@@ -171,14 +174,14 @@
     }
 
     function canviaPerspectiva() {
-      var pitch = parseInt(map.getPitch());
+      const pitch = parseInt(map.getPitch());
       pitch == 60 ? pitch = 0 : pitch = pitch + 30;
       map.easeTo({
         'pitch': pitch
       })
     };
 
-    for (var i = 0; i < inputs.length; i++) {
+    for (let  i = 0; i < inputs.length; i++) {
       inputs[i].onclick = switchLayer;
     }
 

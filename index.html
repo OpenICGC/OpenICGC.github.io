@@ -13,7 +13,7 @@
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
@@ -394,10 +394,10 @@
 
       </ul>
       <div>
-        <a class="btn btn-success" target="_blank" href="icgc-basemap.html">Veure exemple Mapbox GL
+        <a class="btn btn-success" target="_blank" href="icgc-basemap.html">Veure exemple MapLibre GL
           <i class="fas fa-eye"></i>
         </a>
-        <a class="btn btn-success" target="_blank" href="icgc-model3d.html">Veure exemple Mapbox GL i model 3D
+        <a class="btn btn-success" target="_blank" href="icgc-model3d.html">Veure exemple MapLibre GL i model 3D
           <i class="fas fa-eye"></i>
         </a>
       </div>
@@ -407,7 +407,7 @@
           <span><a id="vincle_15" href="icgc-styles-world-all.json" target="_blank">Llista styles all</a></span>
         </small>
         <small> Integrable amb:</small>
-        <span class="badge badge-primary">Mapbox GL</span>
+        <span class="badge badge-primary">MapLibre GL</span>
         <span class="badge badge-primary">Maputnik</span>
       </div>
     </div>
@@ -566,7 +566,7 @@
         </li>
       </ul>
       <div>
-        <a class="btn btn-success" target="_blank" href="icgc-catmaps.html">Veure exemple Mapbox GL
+        <a class="btn btn-success" target="_blank" href="icgc-catmaps.html">Veure exemple MapLibre GL
           <i class="fas fa-eye"></i>
         </a>
       </div>
@@ -576,7 +576,7 @@
           <span><a id="vincle_27" href="icgc-styles-all.json" target="_blank">Resources styles all</a></span>
         </small>
         <small> Integrable amb:</small>
-        <span class="badge badge-primary">Mapbox GL</span>
+        <span class="badge badge-primary">MapLibre GL</span>
         <span class="badge badge-primary">Maputnik</span>
       </div>
     </div>
@@ -847,7 +847,7 @@
         <small>Integrable amb:</small>
         <span class="badge badge-primary">Leaflet</span>
         <span class="badge badge-primary">OpenLayers</span>
-        <span class="badge badge-primary">MapBox</span>
+        <span class="badge badge-primary">MapLibre</span>
         <span class="badge badge-primary">Carto</span>
         <span class="badge badge-primary">Cesium</span>
       </div>
@@ -867,7 +867,7 @@
         <li>
             <div class="row">
               <div class="col"><b>
-                ICGC Terreny-RGB dem 2m (MapboxGL JS)</b><br>
+                ICGC Terreny-RGB dem 2m (MapLibreGL JS)</b><br>
                 <span>https://tilemaps.icgc.cat/tileserver/tileserver.php/terreny_icgc_2m_rgb/{z}/{x}/{y}.png</span>
                 <span id="vincle_31" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
                   data-placement="bottom" data-copy="https://tilemaps.icgc.cat/tileserver/tileserver.php/terreny_icgc_2m_rgb/{z}/{x}/{y}.png"
@@ -879,7 +879,7 @@
           <li>
             <div class="row">
               <div class="col"><b>
-                ICGC Terreny-RGB dem 5m (MapboxGL JS)</b><br>
+                ICGC Terreny-RGB dem 5m (MapLibreGL JS)</b><br>
                 <span>https://tilemaps.icgc.cat/tileserver/tileserver.php/mapboxTerrain/{z}/{x}/{y}.png</span>
                 <span id="vincle_31" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
                   data-placement="bottom" data-copy="https://tilemaps.icgc.cat/tileserver/tileserver.php/mapboxTerrain/{z}/{x}/{y}.png"
@@ -1050,17 +1050,17 @@
     //Function from https://codepen.io/nathanlong/pen/ZpAmjv
 
     function copyToClipboard(text, el) {
-      var copyTest = document.queryCommandSupported('copy');
-      var elOriginalText = el.attr('data-original-title');
+      const copyTest = document.queryCommandSupported('copy');
+      const elOriginalText = el.attr('data-original-title');
 
       if (copyTest === true) {
-        var copyTextArea = document.createElement("textarea");
+        const copyTextArea = document.createElement("textarea");
         copyTextArea.value = text;
         document.body.appendChild(copyTextArea);
         copyTextArea.select();
         try {
-          var successful = document.execCommand('copy');
-          var msg = successful ? 'Copiat!' : 'Ups, no copiat!';
+          const successful = document.execCommand('copy');
+          const msg = successful ? 'Copiat!' : 'Ups, no copiat!';
           el.attr('data-original-title', msg).tooltip('show');
         } catch (err) {
           console.log('Oops, unable to copy');
@@ -1078,8 +1078,8 @@
       $('.js-tooltip').tooltip();
 
       $('.js-copy').click(function () {
-        var text = $(this).attr('data-copy');
-        var el = $(this);
+        const text = $(this).attr('data-copy');
+        const el = $(this);
         copyToClipboard(text, el);
       });
     });

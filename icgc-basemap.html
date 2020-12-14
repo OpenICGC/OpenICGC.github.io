@@ -12,7 +12,7 @@
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
@@ -79,8 +79,8 @@
             &#x3C;meta charset='utf-8' /&#x3E;
             &#x3C;title&#x3E;Vector-Tiles ICGC&#x3C;/title&#x3E;
             &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /&#x3E;
-            &#x3C;script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js'&#x3E;&#x3C;/script&#x3E;
-            &#x3C;link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' /&#x3E;
+         
+            &#x3C;link href='https://cdn.skypack.dev/maplibre-gl/dist/mapbox-gl.css' rel='stylesheet' /&#x3E;
             &#x3C;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /&#x3E;
             &#x3C;style&#x3E;
                 
@@ -158,26 +158,28 @@
                         &#x3C;/div&#x3E;
                     
                         &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-                        &#x3C;script&#x3E;
-                            var map;
-                    
-                            mapboxgl.accessToken = '';
-                            map = new mapboxgl.Map({
+                        &#x3C;script  type="module"&#x3E;
+                         
+                           import {Map, NavigationControl,GeolocateControl,AttributionControl} from 'https://cdn.skypack.dev/maplibre-gl';    
+                           const map = new Map({
                                 container: 'map',
-                                style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',
-                    
+                                style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',                
                                 center: [2.16859, 41.3954],
                                 zoom: 13,
                                 maxZoom: 14,
                                 hash: true,
-                                pitch: 45
+                                pitch: 45,
+								attributionControl: false
                             });
                     
                     
                             map.on('load', function () {
                     
-                                map.addControl(new mapboxgl.NavigationControl());
-                                map.addControl(new mapboxgl.GeolocateControl({
+                                map.addControl(new NavigationControl());
+								map.addControl(new AttributionControl({
+									compact: true
+									}));
+                                map.addControl(new GeolocateControl({
                                     positionOptions: {
                                         enableHighAccuracy: true,
                                         watchPosition: true
@@ -187,31 +189,28 @@
                             });
                     
                     
-                            var layerList = document.getElementById('menu');
-                            var inputs = layerList.getElementsByTagName('input');
-                            var button = document.getElementById('bt_pitch');
+                            const layerList = document.getElementById('menu');
+                            const inputs = layerList.getElementsByTagName('input');
+                            const button = document.getElementById('bt_pitch');
                     
                     
                             function switchLayer(layer) {
-                                var layerId = layer.target.id;
-                    
+                                const layerId = layer.target.id;
                                
                                     map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
-                    
-                                
-                    
+                                      
                     
                             }
                     
                             function canviaPerspectiva() {
-                                var pitch = parseInt(map.getPitch());
+                                const pitch = parseInt(map.getPitch());
                                 pitch == 60 ? pitch = 0 : pitch = pitch + 30;
                                 map.easeTo({
                                     'pitch': pitch
                                 })
                             };
                     
-                            for (var i = 0; i &#x3C; inputs.length; i++) {
+                            for (let  i = 0; i &#x3C; inputs.length; i++) {
                                 inputs[i].onclick = switchLayer;
                             }
                     

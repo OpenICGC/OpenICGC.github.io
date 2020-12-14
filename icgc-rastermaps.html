@@ -12,7 +12,7 @@
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
@@ -92,61 +92,61 @@
   &#x3C;/style&#x3E;
   &#x3C;script&#x3E;
   function init() {
-    var map = L.map('map', {
+    const map = L.map('map', {
       center: [41.6863, 2.4382],
       zoom: 10,
       attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
-    var topoICGC = L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg', {
+    const topoICGC = L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg', {
       maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
-    var topoICGCWEB = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png', {
+    const topoICGCWEB = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png', {
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     }).addTo(map);
 
-    var topoICGCDark = L.tileLayer('http://maptile1.farm/map/costa201904/tms/1.0.0/tram15/EPSG3857{z}/{x}/{y}.png', {
+    const topoICGCDark = L.tileLayer('http://maptile1.farm/map/costa201904/tms/1.0.0/tram15/EPSG3857{z}/{x}/{y}.png', {
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
-    var topoICGCGris = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png', {
+    const topoICGCGris = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png', {
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
-    var ortoICGC =
+    const ortoICGC =
       L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg', {
         maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
 
-      var geologicICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/geologia/MON3857NW/{z}/{x}/{y}.png', {
+      const geologicICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/geologia/MON3857NW/{z}/{x}/{y}.png', {
         maxZoom: 14,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
   
 
-    var ortoICGC_H =
+    const ortoICGC_H =
       L.tileLayer('https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg', {
         maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
 
-      var ortoAugICGC =
+      const ortoAugICGC =
       L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg', {
         maxZoom: 19,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
 
-    var hibridICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png', {
+    const hibridICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png', {
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
-    var toponimICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png', {
+    const toponimICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png', {
         maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
 
-    var relleuICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/relleu/CAT3857/{z}/{x}/{y}.png', {
+    const relleuICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/relleu/CAT3857/{z}/{x}/{y}.png', {
       maxZoom: 18,  attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
 
-    var hibrida = L.layerGroup([ortoICGC_H, hibridICGC]);
-    var mapaBase = {
+    const hibrida = L.layerGroup([ortoICGC_H, hibridICGC]);
+    const mapaBase = {
       'Ortofoto': ortoICGC,
       'Orto Aug.': ortoAugICGC,
       'Clàssic': topoICGC,

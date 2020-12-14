@@ -16,7 +16,7 @@
             w[l] = w[l] || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
+            }); const f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MGS4TSP');</script>
@@ -189,10 +189,10 @@
 
     <div id="map"></div>
     <script>
-        var map;
+        const map;
 
-        mapboxgl.accessToken = '';
-        map = new mapboxgl.Map({
+        import {Map, NavigationControl,GeolocateControl} from 'https://cdn.skypack.dev/maplibre-gl';    
+        map = new Map({
             container: 'map',
             style: 'https://tilemaps.icgc.cat/tileserver/styles/limits-catalunya.json',
             center: [2.16859, 41.3954],
@@ -203,7 +203,7 @@
         });
 
         map.addControl(new MapboxInspect());
-        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new NavigationControl());
 
         map.on('load', function () {
 
@@ -233,37 +233,37 @@
 
 
 
-        var button = document.getElementById('bt_pitch');
-        var slider = document.getElementById('slider');
-        var sliderValue = document.getElementById('slider-value');
+        const button = document.getElementById('bt_pitch');
+        const slider = document.getElementById('slider');
+        const sliderValue = document.getElementById('slider-value');
 
-        var slider0 = document.getElementById('slider0');
-        var sliderValue0 = document.getElementById('slider-value0');
+        const slider0 = document.getElementById('slider0');
+        const sliderValue0 = document.getElementById('slider-value0');
 
-        var slider1 = document.getElementById('slider1');
-        var sliderValue1 = document.getElementById('slider-value1');
-        var slider2 = document.getElementById('slider2');
-        var sliderValue2 = document.getElementById('slider-value2');
-        var slider3 = document.getElementById('slider3');
-        var sliderValue3 = document.getElementById('slider-value3');
-        var slider4 = document.getElementById('slider4');
-        var sliderValue4 = document.getElementById('slider-value4');
-        var slider5 = document.getElementById('slider5');
-        var sliderValue5 = document.getElementById('slider-value5');
-        var slider6 = document.getElementById('slider6');
-        var sliderValue6 = document.getElementById('slider-value6');
-        var slider7 = document.getElementById('slider7');
-        var sliderValue7 = document.getElementById('slider-value7');
+        const slider1 = document.getElementById('slider1');
+        const sliderValue1 = document.getElementById('slider-value1');
+        const slider2 = document.getElementById('slider2');
+        const sliderValue2 = document.getElementById('slider-value2');
+        const slider3 = document.getElementById('slider3');
+        const sliderValue3 = document.getElementById('slider-value3');
+        const slider4 = document.getElementById('slider4');
+        const sliderValue4 = document.getElementById('slider-value4');
+        const slider5 = document.getElementById('slider5');
+        const sliderValue5 = document.getElementById('slider-value5');
+        const slider6 = document.getElementById('slider6');
+        const sliderValue6 = document.getElementById('slider-value6');
+        const slider7 = document.getElementById('slider7');
+        const sliderValue7 = document.getElementById('slider-value7');
 
 
-        var slider8 = document.getElementById('slider8');
-        var sliderValue8 = document.getElementById('slider-value8');
+        const slider8 = document.getElementById('slider8');
+        const sliderValue8 = document.getElementById('slider-value8');
 
-        var slider9 = document.getElementById('slider9');
-        var sliderValue9 = document.getElementById('slider-value9');
+        const slider9 = document.getElementById('slider9');
+        const sliderValue9 = document.getElementById('slider-value9');
 
         function canviaPerspectiva() {
-            var pitch = parseInt(map.getPitch());
+            const pitch = parseInt(map.getPitch());
             pitch == 60 ? pitch = 0 : pitch = pitch + 30;
             map.easeTo({
                 'pitch': pitch
