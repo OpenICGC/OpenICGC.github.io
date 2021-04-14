@@ -14,6 +14,8 @@
       margin: 0;
       padding: 0;
     }
+    .logoW{    width: 15%;}
+    #mapLogo{position:absolute;bottom:5px;left:47%;z-index:1000;opacity:.8}
   </style>
   <script src="https://js.arcgis.com/3.35/"></script>
   <script>
@@ -28,10 +30,7 @@
         zoom: 7
       });
 
-      //The URL referenced in the constructor may point to a style url JSON (as in this sample)
-      //or directly to a vector tile service
-     // var vtlayer = new VectorTileLayer("https://www.arcgis.com/sharing/rest/content/items/4cf7e1fb9f254dcda9c8fbadb15cf0f8/resources/styles/root.json");
-     
+  
      var vtlayer = new VectorTileLayer("https://geoserveis.icgc.cat/contextmaps/icgc.json");
      
      map.addLayer(vtlayer);
@@ -39,6 +38,8 @@
   </script>
 </head>
 <body>
+  <div id="mapLogo"><a title="Institut Catogràfic i Geològic de Catalunya" href="https://www.icgc.cat" target="_blank">
+    <img src="https://betaserver.icgc.cat/hipsometric/css/Logo_icgc_blanc.png" class="ui image logoW"></a></div>
   <div id="map"></div>
 </body>
 </html>
