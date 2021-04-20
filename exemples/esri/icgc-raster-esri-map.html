@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>ICGC - ESRI -Catmaps</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.35/esri/css/esri.css">
+    <style>
+        html,
+        body,
+        #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="https://js.arcgis.com/3.35/"></script>
+    <script>
+        require([
+            "esri/map",
+            "esri/layers/WebTiledLayer",
+            "dojo/domReady!"
+        ], function (Map, WebTiledLayer) {
+            var map = new Map("map", {
+                basemap: "topo",
+                center: [2.8508, 41.8567], // longitude, latitude
+                zoom: 8
+            });
+            var weblayer = new WebTiledLayer("https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/${level}/${col}/${row}.png", {
+                "copyright": '<a href="https://icgc.cat">Institut Cartogràfic i Geològic de Catalunya </a>',
+                "id": "icgc"
+            });
+            map.addLayer(weblayer);
+        });
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>

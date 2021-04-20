@@ -1,0 +1,144 @@
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Exemple MapLibre i Vector-Tiles ICGC</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%
+    }
+    #menu {
+      position: absolute;
+      z-index: 1000;
+      background: #fff;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+      top: 5px;
+      left: 5px;
+      border-radius: 7px;
+      -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+    }
+    #div_pitch {
+      position: absolute;
+      right: 10px;
+      top: 142px;
+      width: 30px;
+      z-index: 100;
+    }
+    .sliderClass {
+      position: absolute;
+      left: 10px;
+      top: 79px;
+      width: 130px;
+      z-index: 100;
+      display: none;
+      background-color: white;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div id='menu'>
+  
+    <input id='icgc25m' type='radio' name='rtoggle' value='icgc25m' checked='checked'>
+    <label for='icgc25m'>icgc25m</label>
+    <input id='blavos' type='radio' name='rtoggle' value='blavos' >
+    <label for='blavos'>blavos</label>
+    <input id='clar' type='radio' name='rtoggle' value='clar'>
+    <label for='clar'>clar</label>
+    <input id='fosc' type='radio' name='rtoggle' value='fosc'>
+    <label for='fosc'>fosc</label>
+    <input id='gris' type='radio' name='rtoggle' value='gris'>
+    <label for='gris'>gris</label>
+    <input id='icgc5m' type='radio' name='rtoggle' value='icgc5m'>
+    <label for='icgc5m'>icgc5m</label>
+    <input id='polit' type='radio' name='rtoggle' value='polit'>
+    <label for='polit'>polit</label>
+    <input id='orto' type='radio' name='rtoggle' value='orto'>
+    <label for='orto'>orto</label>
+    <input id='terrain' type='radio' name='rtoggle' value='terrain'>
+    <label for='terrain'>terreny</label>
+    <input id='raster' type='radio' name='rtoggle' value='raster'>
+    <label for='raster'>raster</label>
+  </div>
+  <div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl">
+    <button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"></button>
+  </div>
+  <div id="slider" class="sliderClass">
+    <label>Orto opacity:
+      <span id='slider-value'>0%</span>
+    </label>
+    <input id='slider' type='range' min='0' max='100' step='0' value='0' />
+  </div>
+  <div id="map"></div>
+  <script type="module">
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json',
+     center: [1.1464, 41.706],
+      zoom: 7.4,
+      maxZoom: 14.8,
+      hash: true,
+     pitch: 0,
+			attributionControl: false
+        });
+        map.on('load', function () {
+            map.addControl(new  maplibregl.NavigationControl());
+			map.addControl(new  maplibregl.AttributionControl({
+               compact: true
+			}));
+      map.addControl(new  maplibregl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+          watchPosition: true
+        }
+      }));
+    });
+    const layerList = document.getElementById('menu');
+    const inputs = layerList.getElementsByTagName('input');
+    const button = document.getElementById('bt_pitch');
+    const slider = document.getElementById('slider');
+    const sliderValue = document.getElementById('slider-value');
+    function switchLayer(layer) {
+      const layerId = layer.target.id;
+      map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/' + layerId + '.json');
+      if (layerId == "terrain") {
+        document.getElementById("slider").style.display = "block";
+      } else {
+        document.getElementById("slider").style.display = "none";
+      }
+    }
+    function canviaPerspectiva() {
+      const pitch = parseInt(map.getPitch());
+      pitch == 60 ? pitch = 0 : pitch = pitch + 30;
+      map.easeTo({
+        'pitch': pitch
+      })
+    };
+    for (let  i = 0; i < inputs.length; i++) {
+      inputs[i].onclick = switchLayer;
+    }
+    button.onclick = canviaPerspectiva;
+    slider.addEventListener('input', function (e) {
+      map.setPaintProperty('orto', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+      sliderValue.textContent = e.target.value + '%';
+    });
+  </script>
+</body>
+</html>

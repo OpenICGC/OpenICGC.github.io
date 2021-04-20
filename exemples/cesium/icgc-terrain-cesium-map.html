@@ -1,24 +1,5 @@
 <html lang="ca">
-
 <head>
-   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-46332195-9');
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
-  <!-- End Google Tag Manager -->
-  
   <title>Terreny 5M</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +20,6 @@
       padding: 0;
       font-family: sans-serif;
     }
-
     #menu {
       position: absolute;
       z-index: 1000;
@@ -54,11 +34,9 @@
       box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
       font-size: 80%;
     }
-
     html {
       height: 100%;
     }
-
     body {
       padding: 0;
       margin: 0;
@@ -67,19 +45,13 @@
     }
   </style>
   <script>
-
     function initApp() {
       const terrain30M = new Cesium.CesiumTerrainProvider({
         url: 'https://api.maptiler.com/tiles/terrain-quantized-mesh/?key=QLOqi8gs14T1s1yjnRMO'
-
       });
-
-  
-
       const terrain5M = new Cesium.CesiumTerrainProvider({
         url: 'https://tilemaps.icgc.cat/terrenys/demextes/'
       });
-
       map = new Cesium.Viewer('map', {
         imageryProvider: new Cesium.createOpenStreetMapImageryProvider({
           url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
@@ -101,9 +73,7 @@
         geocoder: false,
         sceneMode: Cesium.SceneMode.SCENE3D,
         terrainProvider: terrain5M
-
       });
-
       map.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(1.70632, 42.20390, 16000),
         duration: 0,
@@ -121,48 +91,33 @@
           }, 1000);
         }
       });
-
       const layerList = document.getElementById('menu');
       const inputs = layerList.getElementsByTagName('input');
-
       function switchLayer(layer) {
         const layerId = layer.target.id;
-        try{
-        if (layerId == 'icgc') {
-          map.terrainProvider = terrain5M;
-        } else {
-          map.terrainProvider = terrain30M;
-
-        }
-        }catch(err){
-
+        try {
+          if (layerId == 'icgc') {
+            map.terrainProvider = terrain5M;
+          } else {
+            map.terrainProvider = terrain30M;
+          }
+        } catch (err) {
           console.log(err);
         }
       }
-
-      for (let  i = 0; i < inputs.length; i++) {
+      for (let i = 0; i < inputs.length; i++) {
         inputs[i].onclick = switchLayer;
       }
-
-
-
     }
   </script>
 </head>
-
 <body onLoad="initApp()">
-   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
   <div id='menu'>
     <input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'>
     <label for='icgc'>Terreny ICGC 5M</label>
     <input id='nasa' type='radio' name='rtoggle' value='nasa'>
     <label for='nasa'>Terreny NASA 30M</label>
-
   </div>
   <div id="map"></div>
 </body>
-
 </html>

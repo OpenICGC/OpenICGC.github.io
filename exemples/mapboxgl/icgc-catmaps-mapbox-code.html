@@ -1,0 +1,225 @@
+<html lang="ca">
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46332195-9');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
+  <!-- End Google Tag Manager -->
+  
+
+  <title>Vector ICGC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ICGC" />
+  <meta name="description" content="Exemple Leaflet">
+  <meta name="robots" content="index,follow">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    .soft{
+    background-color: #f7f7f7
+    }
+    .titol{
+      padding: 15px
+    }
+    .container{
+      border:1px solid #f7f7f7
+    }
+
+    li.L0, li.L1, li.L2, li.L3,
+    li.L5, li.L6, li.L7, li.L8 {
+      list-style-type: decimal !important;
+    }
+  </style>
+
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="container">
+  <div class="pro">
+    <div class="titol">
+    <strong>Exemple estils vector ICGC àmbit Catalunya </strong>
+    <br><div><p><a href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master//exemples/mapboxgl/icgc-catmaps-mapbox-map.html">Veure codi font <i class="fab fa-github"></i></a>
+      <a href="/exemples/mapboxgl/icgc-catmaps-mapbox-map.html">pantalla completa <i class="fas fa-expand"></i></a>
+    </p></div>
+  </div>
+</div>
+<iframe src="/exemples/mapboxgl/icgc-catmaps-mapbox-map.html" frameborder=0 width="100%" height="500"></iframe>
+<hr>
+  <div class="soft">
+    <pre><code class="prettyprint linenums">&#x3C;html&#x3E;
+&#x3C;html&#x3E;
+&#x3C;head&#x3E;
+  &#x3C;meta charset='utf-8' /&#x3E;
+  &#x3C;title&#x3E;Exemple mapbox i Vector-Tiles ICGC&#x3C;/title&#x3E;
+  &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /&#x3E;
+  &#x3C;script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.js"&#x3E;&#x3C;/script&#x3E;
+  &#x3C;link href="https://api.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css" rel="stylesheet" /&#x3E;
+  &#x3C;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /&#x3E;
+  &#x3C;style&#x3E;
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%
+    }
+    #menu {
+      position: absolute;
+      z-index: 1000;
+      background: #fff;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+      top: 5px;
+      left: 5px;
+      border-radius: 7px;
+      -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+    }
+    #div_pitch {
+      position: absolute;
+      right: 10px;
+      top: 142px;
+      width: 30px;
+      z-index: 100;
+    }
+    .sliderClass {
+      position: absolute;
+      left: 10px;
+      top: 79px;
+      width: 130px;
+      z-index: 100;
+      display: none;
+      background-color: white;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      opacity: 0.9;
+    }
+  &#x3C;/style&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  &#x3C;div id='menu'&#x3E;
+  
+    &#x3C;input id='icgc25m' type='radio' name='rtoggle' value='icgc25m' checked='checked'&#x3E;
+    &#x3C;label for='icgc25m'&#x3E;icgc25m&#x3C;/label&#x3E;
+    &#x3C;input id='blavos' type='radio' name='rtoggle' value='blavos' &#x3E;
+    &#x3C;label for='blavos'&#x3E;blavos&#x3C;/label&#x3E;
+    &#x3C;input id='clar' type='radio' name='rtoggle' value='clar'&#x3E;
+    &#x3C;label for='clar'&#x3E;clar&#x3C;/label&#x3E;
+    &#x3C;input id='fosc' type='radio' name='rtoggle' value='fosc'&#x3E;
+    &#x3C;label for='fosc'&#x3E;fosc&#x3C;/label&#x3E;
+    &#x3C;input id='gris' type='radio' name='rtoggle' value='gris'&#x3E;
+    &#x3C;label for='gris'&#x3E;gris&#x3C;/label&#x3E;
+    &#x3C;input id='icgc5m' type='radio' name='rtoggle' value='icgc5m'&#x3E;
+    &#x3C;label for='icgc5m'&#x3E;icgc5m&#x3C;/label&#x3E;
+    &#x3C;input id='polit' type='radio' name='rtoggle' value='polit'&#x3E;
+    &#x3C;label for='polit'&#x3E;polit&#x3C;/label&#x3E;
+    &#x3C;input id='orto' type='radio' name='rtoggle' value='orto'&#x3E;
+    &#x3C;label for='orto'&#x3E;orto&#x3C;/label&#x3E;
+    &#x3C;input id='terrain' type='radio' name='rtoggle' value='terrain'&#x3E;
+    &#x3C;label for='terrain'&#x3E;terreny&#x3C;/label&#x3E;
+    &#x3C;input id='raster' type='radio' name='rtoggle' value='raster'&#x3E;
+    &#x3C;label for='raster'&#x3E;raster&#x3C;/label&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl"&#x3E;
+    &#x3C;button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"&#x3E;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div id="slider" class="sliderClass"&#x3E;
+    &#x3C;label&#x3E;Orto opacity:
+      &#x3C;span id='slider-value'&#x3E;0%&#x3C;/span&#x3E;
+    &#x3C;/label&#x3E;
+    &#x3C;input id='slider' type='range' min='0' max='100' step='0' value='0' /&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
+  &#x3C;script type="module"&#x3E;
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json',
+     center: [1.1464, 41.706],
+      zoom: 7.4,
+      maxZoom: 14.8,
+      hash: true,
+     pitch: 0,
+			attributionControl: false
+        });
+        map.on('load', function () {
+            map.addControl(new  mapboxgl.NavigationControl());
+			map.addControl(new  mapboxgl.AttributionControl({
+               compact: true
+			}));
+      map.addControl(new  mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+          watchPosition: true
+        }
+      }));
+    });
+    const layerList = document.getElementById('menu');
+    const inputs = layerList.getElementsByTagName('input');
+    const button = document.getElementById('bt_pitch');
+    const slider = document.getElementById('slider');
+    const sliderValue = document.getElementById('slider-value');
+    function switchLayer(layer) {
+      const layerId = layer.target.id;
+      map.setStyle('https://tilemaps.icgc.cat/tileserver/styles/' + layerId + '.json');
+      if (layerId == "terrain") {
+        document.getElementById("slider").style.display = "block";
+      } else {
+        document.getElementById("slider").style.display = "none";
+      }
+    }
+    function canviaPerspectiva() {
+      const pitch = parseInt(map.getPitch());
+      pitch == 60 ? pitch = 0 : pitch = pitch + 30;
+      map.easeTo({
+        'pitch': pitch
+      })
+    };
+    for (let  i = 0; i &#x3C; inputs.length; i++) {
+      inputs[i].onclick = switchLayer;
+    }
+    button.onclick = canviaPerspectiva;
+    slider.addEventListener('input', function (e) {
+      map.setPaintProperty('orto', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+      sliderValue.textContent = e.target.value + '%';
+    });
+  &#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+    </code></pre>
+  </div>
+</div>
+
+</body>
+
+</html>

@@ -1,35 +1,16 @@
 <html>
 <head>
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-46332195-9');
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
-  <!-- End Google Tag Manager -->
-  
     <meta charset='utf-8' />
-    <title>Vector-Tiles ICGC</title>
+    <title>Exemple MapLibre i ContextMaps ICGC</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-
-    <link href='https://cdn.skypack.dev/maplibre-gl/dist/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
             margin: 0;
             padding: 0;
         }
-
         #map {
             position: absolute;
             top: 0;
@@ -37,7 +18,6 @@
             width: 100%;
             height: 100%
         }
-
         #menu {
             position: absolute;
             z-index: 1000;
@@ -51,7 +31,6 @@
             -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
             box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
         }
-
         #div_pitch {
             position: absolute;
             right: 10px;
@@ -59,7 +38,6 @@
             width: 30px;
             z-index: 100;
         }
-
         .sliderClass {
             position: absolute;
             left: 10px;
@@ -72,17 +50,10 @@
             border-radius: 4px;
             font-size: 0.85em;
             opacity: 0.9;
-
         }
     </style>
-
 </head>
-
 <body>
-     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id='menu'>
         <input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'>
         <label for='icgc'>icgc</label>
@@ -96,59 +67,41 @@
         <label for='night'>night</label>
         <input id='hibrid' type='radio' name='rtoggle' value='hibrid'>
         <label for='hibrid'>hibrid</label>
-
     </div>
     <div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl">
         <button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"></button>
     </div>
-
     <div id="map"></div>
     <script type="module">
-       import {Map, NavigationControl,GeolocateControl,AttributionControl} from 'https://cdn.skypack.dev/maplibre-gl';     
-       const map = new Map({
+       const map = new maplibregl.Map({
             container: 'map',
             style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',
-            center: [2.16859, 41.3954],
-            zoom: 13,
+           center: [1.1464, 41.706],
+            zoom: 7.4,
             maxZoom: 14,
             hash: true,
-            pitch: 45,
+            pitch: 0,
 			attributionControl: false
         });
-
-       
         map.on('load', function () {
-
-            map.addControl(new NavigationControl());
-			map.addControl(new AttributionControl({
+            map.addControl(new maplibregl.NavigationControl());
+			map.addControl(new maplibregl.AttributionControl({
                compact: true
 			}));
-            map.addControl(new GeolocateControl({
+            map.addControl(new maplibregl.GeolocateControl({
                 positionOptions: {
                     enableHighAccuracy: true,
                     watchPosition: true
                 }
             }));
-
         });
-
-
         const layerList = document.getElementById('menu');
         const inputs = layerList.getElementsByTagName('input');
         const button = document.getElementById('bt_pitch');
-
-
         function switchLayer(layer) {
             const layerId = layer.target.id;
-
-            
                 map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
-
-            
-
-
         }
-
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());
             pitch == 60 ? pitch = 0 : pitch = pitch + 30;
@@ -156,13 +109,10 @@
                 'pitch': pitch
             })
         };
-
         for (let  i = 0; i < inputs.length; i++) {
             inputs[i].onclick = switchLayer;
         }
-
         button.onclick = canviaPerspectiva;
     </script>
 </body>
-
 </html>

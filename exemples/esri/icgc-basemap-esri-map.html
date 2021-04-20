@@ -14,8 +14,7 @@
       margin: 0;
       padding: 0;
     }
-    .logoW{    width: 15%;}
-    #mapLogo{position:absolute;bottom:5px;left:47%;z-index:1000;opacity:.8}
+   
   </style>
   <script src="https://js.arcgis.com/3.35/"></script>
   <script>
@@ -24,22 +23,16 @@
       "esri/layers/VectorTileLayer",
       "dojo/domReady!"
     ], function(Map, VectorTileLayer) {
-
       var map = new Map("map", {
         center: [2.8508, 41.8567], // longitude, latitude
         zoom: 7
       });
-
-  
      var vtlayer = new VectorTileLayer("https://geoserveis.icgc.cat/contextmaps/icgc.json");
-     
      map.addLayer(vtlayer);
     });
   </script>
 </head>
 <body>
-  <div id="mapLogo"><a title="Institut Catogràfic i Geològic de Catalunya" href="https://www.icgc.cat" target="_blank">
-    <img src="https://betaserver.icgc.cat/hipsometric/css/Logo_icgc_blanc.png" class="ui image logoW"></a></div>
   <div id="map"></div>
 </body>
 </html>

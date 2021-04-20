@@ -2,8 +2,8 @@
 <head>
   <title>Deckgl RGB PointCloud + Mapbox</title>
   <script src="https://unpkg.com/deck.gl@^7.0.0/dist.min.js"></script>
-  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css">
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css">
   <style>
     body {
       background-color: #000000;
@@ -16,28 +16,25 @@
     }
   </style>
 </head>
-
 <body>
 <div id="map"></div>
 </body>
 <script type="text/javascript">
   const { MapboxLayer, PointCloudLayer } = deck;
-//REPLACE WITH YOUR MAPBOX ACCESS TOKEN
   accessToken = 'no cal';
-  const map = new Map({
+  const map = new mapboxgl.Map({
     container: 'map',
 //REPLACE THIS WITH THE MAPBOX STYLE URL OF YOUR CHOICE   
     style: 'https://geoserveis.icgc.cat/contextmaps/positron.json',
     center: [0.902638,41.251877],
     zoom: 13.40,
     bearing: 0,
-    pitch: 0
+    pitch: 45
   });
   map.on('style.load', () => {
     map.addLayer(new MapboxLayer({
       id: 'deckgl-PointCloudLayer',
       type: PointCloudLayer,
-//REPLACE THIS WITH THE URL OF THE FILE
       data: 'https://betaserver.icgc.cat/lidar/lidar_sample.json',
       getPosition: d => [d[0], d[1], d[2]],
       getColor: d => [d[3], d[4], d[5]],
