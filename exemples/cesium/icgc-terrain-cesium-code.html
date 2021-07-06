@@ -94,8 +94,8 @@
   &#x3C;meta name="author" content="geostarters" /&#x3E;
   &#x3C;meta name="description" content="Terreny 5M ICGC"&#x3E;
   &#x3C;meta name="robots" content="index,follow"&#x3E;
-  &#x3C;script src="https://cesiumjs.org/releases/1.54/Build/Cesium/Cesium.js"&#x3E;&#x3C;/script&#x3E;
-  &#x3C;link href="https://cesiumjs.org/releases/1.54/Build/Cesium/Widgets/widgets.css" rel="stylesheet"&#x3E;
+  &#x3C;script src="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.83.0/Cesium.js"&#x3E;&#x3C;/script&#x3E;
+  &#x3C;link href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.83.0/Widgets/widgets.min.css" rel="stylesheet"&#x3E;
   &#x3C;style&#x3E;
     #map {
       position: absolute;
@@ -141,7 +141,7 @@
         url: 'https://tilemaps.icgc.cat/terrenys/demextes/'
       });
       map = new Cesium.Viewer('map', {
-        imageryProvider: new Cesium.createOpenStreetMapImageryProvider({
+        imageryProvider: new Cesium.OpenStreetMapImageryProvider({
           url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
           fileExtension: 'jpeg',
           maximumLevel: 19,
