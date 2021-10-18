@@ -152,18 +152,18 @@
 &#x3C;/head&#x3E;
 &#x3C;body&#x3E;
     &#x3C;div id='menu'&#x3E;
-        &#x3C;input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'&#x3E;
-        &#x3C;label for='icgc'&#x3E;icgc&#x3C;/label&#x3E;
-        &#x3C;input id='osm-bright' type='radio' name='rtoggle' value='osm-bright'&#x3E;
-        &#x3C;label for='osm-bright'&#x3E;osm-bright&#x3C;/label&#x3E;
-        &#x3C;input id='positron' type='radio' name='rtoggle' value='positron'&#x3E;
-        &#x3C;label for='positron'&#x3E;positron&#x3C;/label&#x3E;
-        &#x3C;input id='fulldark' type='radio' name='rtoggle' value='fulldark'&#x3E;
-        &#x3C;label for='fulldark'&#x3E;fulldark&#x3C;/label&#x3E;
-        &#x3C;input id='night' type='radio' name='rtoggle' value='night'&#x3E;
-        &#x3C;label for='night'&#x3E;night&#x3C;/label&#x3E;
-        &#x3C;input id='hibrid' type='radio' name='rtoggle' value='hibrid'&#x3E;
-        &#x3C;label for='hibrid'&#x3E;hibrid&#x3C;/label&#x3E;
+    &#x3C;input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard' checked='checked'&#x3E;
+    &#x3C;label for='icgc_mapa_estandard'&#x3E;Mapa estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris'&#x3E;
+    &#x3C;label for='icgc_mapa_base_gris'&#x3E;Mapa base gris&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_delimitacio_estandard' type='radio' name='rtoggle' value='icgc_delimitacio_estandard'&#x3E;
+    &#x3C;label for='icgc_delimitacio_estandard'&#x3E;Delimitació estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_xarxa_viaria_estandard' type='radio' name='rtoggle' value='icgc_xarxa_viaria_estandard'&#x3E;
+    &#x3C;label for='icgc_xarxa_viaria_estandard'&#x3E;Xarxa viària estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_arees_poblament' type='radio' name='rtoggle' value='icgc_arees_poblament'&#x3E;
+    &#x3C;label for='icgc_arees_poblament'&#x3E;Àrees poblament&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida'&#x3E;
+    &#x3C;label for='icgc_orto_hibrida'&#x3E;Orto híbrida&#x3C;/label&#x3E;
     &#x3C;/div&#x3E;
     &#x3C;div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl"&#x3E;
         &#x3C;button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"&#x3E;&#x3C;/button&#x3E;
@@ -172,7 +172,7 @@
     &#x3C;script type="module"&#x3E;
        const map = new mapboxgl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',
+            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
            center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 14,

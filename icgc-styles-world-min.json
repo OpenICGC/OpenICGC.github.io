@@ -3,20 +3,20 @@
          {
         "name": "Clar",
         "styleid": 0,
-        "style": "https://geoserveis.icgc.cat/contextmaps/positron.json",
-        "icon": "https://openicgc.github.io/img/positron.png"
+        "style": "https://geoserveis.icgc.cat/contextmaps/icgc_delimitacio_estandard.json",
+        "icon": "https://openicgc.github.io/img/icgc_delimitacio_estandard.png"
     },
     {
         "name": "Orto",
         "styleid": 1,
-        "style": "https://geoserveis.icgc.cat/contextmaps/hibrid.json",
+        "style": "https://geoserveis.icgc.cat/contextmaps/icgc_orto_hibrida.json",
         "icon": "https://openicgc.github.io/img/orto.png"
     },
     {
         "name": "Fosc",
         "styleid": 2,
         "style": "http://tilemaps.icgc.cat/tileserver/styles/water.json",
-        "icon": "https://openicgc.github.io/img/fulldark.png"
+        "icon": "https://openicgc.github.io/img/icgc_xarxa_viaria_estandard.png"
     },
     {
         "name": "Terreny",

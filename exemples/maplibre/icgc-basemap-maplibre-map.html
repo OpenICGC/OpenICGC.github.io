@@ -3,8 +3,8 @@
     <meta charset='utf-8' />
     <title>Exemple MapLibre i ContextMaps ICGC</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@1.15.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@1.15.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
@@ -55,18 +55,18 @@
 </head>
 <body>
     <div id='menu'>
-        <input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'>
-        <label for='icgc'>icgc</label>
-        <input id='osm-bright' type='radio' name='rtoggle' value='osm-bright'>
-        <label for='osm-bright'>osm-bright</label>
-        <input id='positron' type='radio' name='rtoggle' value='positron'>
-        <label for='positron'>positron</label>
-        <input id='fulldark' type='radio' name='rtoggle' value='fulldark'>
-        <label for='fulldark'>fulldark</label>
-        <input id='night' type='radio' name='rtoggle' value='night'>
-        <label for='night'>night</label>
-        <input id='hibrid' type='radio' name='rtoggle' value='hibrid'>
-        <label for='hibrid'>hibrid</label>
+        <input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard' checked='checked'>
+        <label for='icgc_mapa_estandard'>Mapa estàndard</label><br>
+        <input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris'>
+        <label for='icgc_mapa_base_gris'>Mapa base gris</label><br>
+        <input id='icgc_delimitacio_estandard' type='radio' name='rtoggle' value='icgc_delimitacio_estandard'>
+        <label for='icgc_delimitacio_estandard'>Delimitació estàndard</label><br>
+        <input id='icgc_xarxa_viaria_estandard' type='radio' name='rtoggle' value='icgc_xarxa_viaria_estandard'>
+        <label for='icgc_xarxa_viaria_estandard'>Xarxa viària estàndard</label><br>
+        <input id='icgc_arees_poblament' type='radio' name='rtoggle' value='icgc_arees_poblament'>
+        <label for='icgc_arees_poblament'>Àrees poblament</label><br>
+        <input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida'>
+        <label for='icgc_orto_hibrida'>Orto híbrida</label>
     </div>
     <div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl">
         <button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"></button>
@@ -75,7 +75,7 @@
     <script type="module">
        const map = new maplibregl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',
+            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
            center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 14,

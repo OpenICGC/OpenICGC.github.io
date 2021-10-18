@@ -109,18 +109,10 @@
         &#x3C;/head&#x3E;
         &#x3C;body&#x3E;
             &#x3C;div id='menu'&#x3E;
-                &#x3C;input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'&#x3E;
-                &#x3C;label for='icgc'&#x3E;icgc&#x3C;/label&#x3E;
-                &#x3C;input id='osm-bright' type='radio' name='rtoggle' value='osm-bright'&#x3E;
-                &#x3C;label for='osm-bright'&#x3E;osm-bright&#x3C;/label&#x3E;
-                &#x3C;input id='positron' type='radio' name='rtoggle' value='positron'&#x3E;
-                &#x3C;label for='positron'&#x3E;positron&#x3C;/label&#x3E;
-                &#x3C;input id='fulldark' type='radio' name='rtoggle' value='fulldark'&#x3E;
-                &#x3C;label for='fulldark'&#x3E;fulldark&#x3C;/label&#x3E;
-                &#x3C;input id='night' type='radio' name='rtoggle' value='night'&#x3E;
-                &#x3C;label for='night'&#x3E;night&#x3C;/label&#x3E;
-                &#x3C;input id='hibrid' type='radio' name='rtoggle' value='hibrid'&#x3E;
-                &#x3C;label for='hibrid'&#x3E;hibrid&#x3C;/label&#x3E;
+            &#x3C;input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard' checked='checked'&#x3E;
+            &#x3C;label for='icgc_mapa_estandard'&#x3E;Mapa estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
+            &#x3C;input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida'&#x3E;
+            &#x3C;label for='icgc_orto_hibrida'&#x3E;Orto híbrida&#x3C;/label&#x3E;
             &#x3C;/div&#x3E;
             &#x3C;div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl"&#x3E;
                 &#x3C;button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"&#x3E;&#x3C;/button&#x3E;
@@ -135,7 +127,7 @@
                let  isRotating = false;
                 const map = new Map({
                     container: 'map',
-                    style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',
+                    style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
                     center: [2.174689, 41.403806],
                     zoom: 15.93,
                     maxZoom: 18,

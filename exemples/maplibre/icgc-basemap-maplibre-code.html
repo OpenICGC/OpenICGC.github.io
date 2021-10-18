@@ -1,4 +1,5 @@
 <html lang="ca">
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-9"></script>
@@ -41,24 +42,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
     integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <style>
     body {
       margin: 0;
     }
+
     .soft {
       background-color: #f7f7f7
     }
+
     .titol {
       padding: 15px
     }
+
     .container {
       border: 1px solid #f7f7f7
     }
+
     li.L0,
     li.L1,
     li.L2,
@@ -71,6 +76,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP" height="0" width="0"
@@ -83,10 +89,12 @@
         <br>
         <div>
           <p>
-            <a  target ="_blank" 
- href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/exemples/maplibre/icgc-basemap-maplibre-map.html">Veure codi font
+            <a target="_blank"
+              href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/exemples/maplibre/icgc-basemap-maplibre-map.html">Veure
+              codi font
               <i class="fab fa-github"></i></a>
-            <a href="/exemples/maplibre/icgc-basemap-maplibre-map.html">pantalla completa <i class="fas fa-expand"></i></a>
+            <a href="/exemples/maplibre/icgc-basemap-maplibre-map.html">pantalla completa <i
+                class="fas fa-expand"></i></a>
           </p>
         </div>
       </div>
@@ -100,8 +108,8 @@
     &#x3C;meta charset='utf-8'/&#x3E;
     &#x3C;title&#x3E;Exemple MapLibre i ContextMaps ICGC&#x3C;/title&#x3E;
     &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/&#x3E;
-    &#x3C;script src="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.js"&#x3E;&#x3C;/script&#x3E;
-    &#x3C;link href="https://unpkg.com/maplibre-gl@1.14.0-rc.1/dist/maplibre-gl.css" rel="stylesheet"/&#x3E;
+    &#x3C;script src="https://unpkg.com/maplibre-gl@1.15.0/dist/maplibre-gl.js"&#x3E;&#x3C;/script&#x3E;
+    &#x3C;link href="https://unpkg.com/maplibre-gl@1.15.0/dist/maplibre-gl.css" rel="stylesheet"/&#x3E;
     &#x3C;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/&#x3E;
     &#x3C;style&#x3E;
         body {
@@ -152,18 +160,18 @@
 &#x3C;/head&#x3E;
 &#x3C;body&#x3E;
     &#x3C;div id='menu'&#x3E;
-        &#x3C;input id='icgc' type='radio' name='rtoggle' value='icgc' checked='checked'&#x3E;
-        &#x3C;label for='icgc'&#x3E;icgc&#x3C;/label&#x3E;
-        &#x3C;input id='osm-bright' type='radio' name='rtoggle' value='osm-bright'&#x3E;
-        &#x3C;label for='osm-bright'&#x3E;osm-bright&#x3C;/label&#x3E;
-        &#x3C;input id='positron' type='radio' name='rtoggle' value='positron'&#x3E;
-        &#x3C;label for='positron'&#x3E;positron&#x3C;/label&#x3E;
-        &#x3C;input id='fulldark' type='radio' name='rtoggle' value='fulldark'&#x3E;
-        &#x3C;label for='fulldark'&#x3E;fulldark&#x3C;/label&#x3E;
-        &#x3C;input id='night' type='radio' name='rtoggle' value='night'&#x3E;
-        &#x3C;label for='night'&#x3E;night&#x3C;/label&#x3E;
-        &#x3C;input id='hibrid' type='radio' name='rtoggle' value='hibrid'&#x3E;
-        &#x3C;label for='hibrid'&#x3E;hibrid&#x3C;/label&#x3E;
+    &#x3C;input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard' checked='checked'&#x3E;
+    &#x3C;label for='icgc_mapa_estandard'&#x3E;Mapa estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris'&#x3E;
+    &#x3C;label for='icgc_mapa_base_gris'&#x3E;Mapa base gris&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_delimitacio_estandard' type='radio' name='rtoggle' value='icgc_delimitacio_estandard'&#x3E;
+    &#x3C;label for='icgc_delimitacio_estandard'&#x3E;Delimitació estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_xarxa_viaria_estandard' type='radio' name='rtoggle' value='icgc_xarxa_viaria_estandard'&#x3E;
+    &#x3C;label for='icgc_xarxa_viaria_estandard'&#x3E;Xarxa viària estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_arees_poblament' type='radio' name='rtoggle' value='icgc_arees_poblament'&#x3E;
+    &#x3C;label for='icgc_arees_poblament'&#x3E;Àrees poblament&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida'&#x3E;
+    &#x3C;label for='icgc_orto_hibrida'&#x3E;Orto híbrida&#x3C;/label&#x3E;
     &#x3C;/div&#x3E;
     &#x3C;div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl"&#x3E;
         &#x3C;button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"&#x3E;&#x3C;/button&#x3E;
@@ -172,7 +180,7 @@
     &#x3C;script type="module"&#x3E;
        const map = new maplibregl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc.json',
+            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
            center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 14,
@@ -217,4 +225,5 @@
     </div>
   </div>
 </body>
+
 </html>
