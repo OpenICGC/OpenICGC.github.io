@@ -6,10 +6,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-46332195-9');
 </script>
-
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});const f=d.getElementsByTagName(s)[0],
@@ -17,8 +15,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MGS4TSP');</script>
   <!-- End Google Tag Manager -->
-  
-
   <title>Exemple Leaflet Raster ICGC</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +41,6 @@
     .container{
       border:1px solid #f7f7f7
     }
-
     li.L0, li.L1, li.L2, li.L3,
     li.L5, li.L6, li.L7, li.L8 {
       list-style-type: decimal !important;
@@ -61,7 +56,6 @@
   <div class="pro">
     <div class="titol">
     <strong>Exemple serveis rasters ICGC </strong>
-   
     <br><div><p><a  target ="_blank" 
  href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/exemples/leaflet/icgc-raster-leaflet-map.html">Veure codi font <i class="fab fa-github"></i></a>
       <a href="/exemples/leaflet/icgc-raster-leaflet-map.html">pantalla completa <i class="fas fa-expand"></i></a>
@@ -90,7 +84,6 @@
     body {
       margin: 0;
     }
-
     #map {
       height: 500px;
       width: 100%;
@@ -104,10 +97,14 @@
       zoom: 10,
       attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
-    const topoMonICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png', {
+    const topoMonICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     }).addTo(map);
+    const topoGrisMonICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc_mapa_base_gris/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+    });
     const topoWebMonICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/osm_suau/CAT3857_15/{z}/{x}/{y}.png', {
       maxZoom: 14,
       attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
@@ -174,6 +171,7 @@
     const ortoMon = L.layerGroup([ortoEsri, ortoICGC_H]);
     const mapaBase = {
       'Món topo ContextMaps ICGC': topoMonICGC,
+      'Món topo gris ContextMaps ICGC':topoGrisMonICGC,
       'Món top Web ICGC': topoWebMonICGC,
       'Món orto ICGC + ESRI': ortoMon,
       'Cat. Ortofoto': ortoICGC,
@@ -194,11 +192,9 @@
   }
   &#x3C;/script&#x3E;
 &#x3C;/head&#x3E;
-
 &#x3C;body onLoad="init()"&#x3E;
   &#x3C;div id="map"&#x3E; &#x3C;/div&#x3E;
 &#x3C;/body&#x3E;
-
 &#x3C;/html&#x3E;
     </code></pre>
   </div>
