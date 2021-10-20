@@ -1,6 +1,5 @@
 <html>
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -8,7 +7,6 @@
     gtag('js', new Date());
     gtag('config', 'UA-46332195-9');
   </script>
-  <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
@@ -17,11 +15,27 @@
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-MGS4TSP');</script>
-  <!-- End Google Tag Manager -->
-  <title>OpenICGC Resources</title>
+  <title>Recursos ICGC en obert</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <meta name='viewport' content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="author" content="Institut Cartogràfic i Geològic de Catalunya" />
+  <link id="manifest" rel="manifest" href="manifest.webmanifest">
+  <link rel='icon' type='image/png' href='https://openicgc.github.io/favicon.png'>
+  <meta property="fb:app_id" content="620717167980164" />
+  <meta property="og:title" content="Recursos ICGC en obert" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://openicgc.github.io/capture.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:url" content="Recursos ICGC en obert" />
+  <meta property="og:description" content="Recursos ICGC en obert" />
+  <meta name="description" content="Recursos ICGC en obert" />
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="Catalunya, visor">
+  <meta name="geo.region" content="ES-CT" />
+  <meta name="geo.placename" content="Barcelona" />
+  <meta name="geo.position" content="41.363892,2.186279" />
+  <meta name="language" content="ca" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
     integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -111,6 +125,17 @@
       font-size: 0.88em;
     }
   </style>
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "url": "https://openicgc.github.io/",
+        "name": "Recursos ICGC en obert",
+        "image": "https://openicgc.github.io/capture.png",
+        "author": "Institut Cartogràfic i Geològic de Catalunya",
+        "description": "Recull d'estils, tessel·les, codi  i exemples basats en dades ICGC"
+    }
+</script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -623,7 +648,6 @@
           <div class="row">
             <div class="col"><b>
                 ContextMaps (ICGC + OpenMapTiles)</b><br>
-              
               <div>
                 <span>https://geoserveis.icgc.cat/contextmaps/contextmaps.json (<b>TileJSON endpoint</b>)</span>
                 <span id="vincle_30" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
@@ -631,7 +655,6 @@
                   title="Copiar enllaç">
                 </span>
               </div>
-              
               <div>
                 <span>https://geoserveis.icgc.cat/vector-tiles/contextmaps/{z}/{x}/{y}.pbf</span>
                 <span id="vincle_28" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
@@ -1517,6 +1540,12 @@
         copyToClipboard(text, el);
       });
     });
+  </script>
+  <script>
+    if (!navigator.serviceWorker.controller) {
+      navigator.serviceWorker.register("serviceworker.js").then(function (reg) {
+      });
+    }
   </script>
 </body>
 </html>
