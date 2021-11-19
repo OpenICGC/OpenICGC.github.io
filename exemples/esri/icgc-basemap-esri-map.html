@@ -2,33 +2,39 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
   <title>ICGC - ESRI -Contextmaps</title>
-  <link rel="stylesheet" href="https://js.arcgis.com/3.35/esri/css/esri.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css">
   <style>
-    html, 
-    body, 
+    html,
+    body,
     #map {
       height: 100%;
       width: 100%;
       margin: 0;
       padding: 0;
     }
-   
   </style>
-  <script src="https://js.arcgis.com/3.35/"></script>
+  <script src="https://js.arcgis.com/4.21/"></script>
   <script>
     require([
-      "esri/map",
+      "esri/config",
+      "esri/Map",
       "esri/layers/VectorTileLayer",
-      "dojo/domReady!"
-    ], function(Map, VectorTileLayer) {
-      var map = new Map("map", {
-        center: [2.8508, 41.8567], // longitude, latitude
-        zoom: 7
+      "esri/views/MapView"
+    ], function (esriConfig, Map, VectorTileLayer, MapView) {
+      var vtlayer = new VectorTileLayer({
+        url: "https://betaserver.icgc.cat/vectortiles/styles/icgc_mapa_estandard.json"
       });
-     var vtlayer = new VectorTileLayer("https://geoserveis.icgc.cat/contextmaps/icgc.json");
-     map.addLayer(vtlayer);
+      var map = new Map({
+        layers: [vtlayer]
+      });
+      const view = new MapView({
+        container: "map",
+        center: [2.8508, 41.8567],
+        zoom: 7,
+        map: map
+      });
     });
   </script>
 </head>

@@ -72,36 +72,43 @@
 <hr>
   <div class="soft">
     <pre><code class="prettyprint linenums">
+      &#x3C;!DOCTYPE html&#x3E;
       &#x3C;html&#x3E;
       &#x3C;head&#x3E;
         &#x3C;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&#x3E;
-        &#x3C;meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/&#x3E;
+        &#x3C;meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" /&#x3E;
         &#x3C;title&#x3E;ICGC - ESRI -Contextmaps&#x3C;/title&#x3E;
-        &#x3C;link rel="stylesheet" href="https://js.arcgis.com/3.35/esri/css/esri.css"&#x3E;
+        &#x3C;link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css"&#x3E;
         &#x3C;style&#x3E;
-          html, 
-          body, 
+          html,
+          body,
           #map {
             height: 100%;
             width: 100%;
             margin: 0;
             padding: 0;
           }
-       
         &#x3C;/style&#x3E;
-        &#x3C;script src="https://js.arcgis.com/3.35/"&#x3E;&#x3C;/script&#x3E;
+        &#x3C;script src="https://js.arcgis.com/4.21/"&#x3E;&#x3C;/script&#x3E;
         &#x3C;script&#x3E;
           require([
-            "esri/map",
+            "esri/config",
+            "esri/Map",
             "esri/layers/VectorTileLayer",
-            "dojo/domReady!"
-          ], function(Map, VectorTileLayer) {
-            var map = new Map("map", {
-              center: [2.8508, 41.8567], // longitude, latitude
-              zoom: 7
+            "esri/views/MapView"
+          ], function (esriConfig, Map, VectorTileLayer, MapView) {
+            var vtlayer = new VectorTileLayer({
+              url: "https://betaserver.icgc.cat/vectortiles/styles/icgc_mapa_estandard.json"
             });
-           var vtlayer = new VectorTileLayer("https://geoserveis.icgc.cat/contextmaps/icgc.json");
-           map.addLayer(vtlayer);
+            var map = new Map({
+              layers: [vtlayer]
+            });
+            const view = new MapView({
+              container: "map",
+              center: [2.8508, 41.8567],
+              zoom: 7,
+              map: map
+            });
           });
         &#x3C;/script&#x3E;
       &#x3C;/head&#x3E;
