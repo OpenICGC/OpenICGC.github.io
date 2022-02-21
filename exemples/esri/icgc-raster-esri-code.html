@@ -100,11 +100,12 @@
                         center: [2.8508, 41.8567], // longitude, latitude
                         zoom: 8
                     });
-                    var weblayer = new WebTiledLayer("https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/${level}/${col}/${row}.png", {
-                        "copyright": '&#x3C;a href="https://icgc.cat"&#x3E;Institut Cartogràfic i Geològic de Catalunya &#x3C;/a&#x3E;',
-                        "id": "icgc"
-                    });
-                    map.addLayer(weblayer);
+                    var weblayer = new WebTiledLayer("https://geoserveis.icgc.cat/styles/icgc/${level}/${col}/${row}.png", {
+                      "copyright": '<a href="https://icgc.cat">Institut Cartogràfic i Geològic de Catalunya </a>',
+                      "id": "icgc"
+                  });
+                  map.addLayer(weblayer);
+      
                 });
             &#x3C;/script&#x3E;
         &#x3C;/head&#x3E;
