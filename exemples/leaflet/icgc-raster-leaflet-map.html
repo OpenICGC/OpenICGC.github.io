@@ -41,6 +41,13 @@
         attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
       });
 
+
+      const topoGrisSimMonICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc_delimitacio_limits_administratius/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
+      });
+
+
       const topoWebMonICGC = L.tileLayer('https://tilemaps.icgc.cat/mapfactory/wmts/osm_suau/CAT3857_15/{z}/{x}/{y}.png', {
         maxZoom: 14,
         attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
@@ -108,6 +115,7 @@
       const mapaBase = {
         'Món topo ContextMaps ICGC': topoMonICGC,
         'Món topo gris ContextMaps ICGC':topoGrisMonICGC,
+        'Món topo gris simplificat ContextMaps ICGC':topoGrisSimMonICGC,
         'Món top Web ICGC': topoWebMonICGC,
         'Món orto ICGC + ESRI': ortoMon,
         'Cat. Ortofoto': ortoICGC,

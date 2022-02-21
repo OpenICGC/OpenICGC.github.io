@@ -1,0 +1,150 @@
+<html lang="ca">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46332195-9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-46332195-9');
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      const f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MGS4TSP');
+  </script>
+  <!-- End Google Tag Manager -->
+  <title>Exemple mapbox i ContextMaps ICGC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ICGC" />
+  <meta name="description" content="Exemple Leaflet">
+  <meta name="robots" content="index,follow">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+    integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    .soft {
+      background-color: #f7f7f7
+    }
+    .titol {
+      padding: 15px
+    }
+    .container {
+      border: 1px solid #f7f7f7
+    }
+    li.L0,
+    li.L1,
+    li.L2,
+    li.L3,
+    li.L5,
+    li.L6,
+    li.L7,
+    li.L8 {
+      list-style-type: decimal !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="container">
+    <div class="pro">
+      <div class="titol">
+        <strong>Exemple raster ICGC àmbit mundial </strong>
+        <br>
+        <div>
+          <p>
+            <a  target ="_blank" 
+ href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/exemples/google/icgc-basemap-google-map.html">Veure codi font
+              <i class="fab fa-github"></i></a>
+            <a href="/exemples/google/icgc-basemap-google-map.html">pantalla completa <i class="fas fa-expand"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <iframe src="/exemples/google/icgc-basemap-google-map.html" frameborder=0 width="100%" height="820"></iframe>
+    <hr>
+    <div class="soft">
+      <pre><code class="prettyprint linenums">
+        &#x3C;!DOCTYPE html&#x3E;
+        &#x3C;html&#x3E;
+        &#x3C;head&#x3E;
+            &#x3C;title&#x3E;Exemple GoogleMaps ICGC&#x3C;/title&#x3E;
+            &#x3C;style type="text/css"&#x3E;
+                #map {
+                    height: 800px;
+                    width: 100%;
+                }
+            &#x3C;/style&#x3E;
+            &#x3C;script&#x3E;
+                function initMap() {
+                    const centre = {
+                        lat: 42,
+                        lng: 2.5
+                    };
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 8,
+                        center: centre,
+                    });
+        
+                     //https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png
+        
+                     var mapaICGC = new google.maps.ImageMapType({
+                        alt: "Mapa ICGC",
+                        getTileUrl: function (tile, zoom) {
+                            var url = "https://geoserveis.icgc.cat/styles/icgc/" + zoom + "/" +
+                                tile.x + "/" + tile.y + ".png";
+                            return url;
+                        },
+                        isPng: true,
+                        maxZoom: 20,
+                        minZoom: 1,
+                        name: "ICGC",
+                        tileSize: new google.maps.Size(256, 256)
+                    });
+                    map.overlayMapTypes.push(mapaICGC)
+                   
+                }
+            &#x3C;/script&#x3E;
+        &#x3C;/head&#x3E;
+        &#x3C;body&#x3E;
+            &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
+            &#x3C;script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLaHrio04yJNbt6I2dHAEGnjHsFTWMT4A&callback=initMap&libraries=&v=weekly"
+                async&#x3E;&#x3C;/script&#x3E;
+        &#x3C;/body&#x3E;
+        &#x3C;/html&#x3E;
+    </code></pre>
+    </div>
+  </div>
+</body>
+</html>
