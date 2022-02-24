@@ -78,8 +78,8 @@
   &#x3C;meta charset='utf-8' /&#x3E;
   &#x3C;title&#x3E;Exemple MapLibre i Vector-Tiles ICGC&#x3C;/title&#x3E;
   &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /&#x3E;
-  &#x3C;script src="https://unpkg.com/maplibre-gl@1.15.0/dist/maplibre-gl.js"&#x3E;&#x3C;/script&#x3E;
-  &#x3C;link href="https://unpkg.com/maplibre-gl@1.15.0/dist/maplibre-gl.css" rel="stylesheet" /&#x3E;
+  &#x3C;script src="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js"&#x3E;&#x3C;/script&#x3E;
+  &#x3C;link href="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css" rel="stylesheet" /&#x3E;
   &#x3C;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /&#x3E;
   &#x3C;style&#x3E;
     body {
@@ -162,7 +162,7 @@
     &#x3C;input id='slider' type='range' min='0' max='100' step='0' value='0' /&#x3E;
   &#x3C;/div&#x3E;
   &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-  &#x3C;script type="module"&#x3E;
+  &#x3C;script&#x3E;
     const map = new maplibregl.Map({
       container: 'map',
       style: 'https://tilemaps.icgc.cat/tileserver/styles/icgc25m.json',
