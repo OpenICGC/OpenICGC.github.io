@@ -3,9 +3,22 @@
 <head>
     <title>Exemple GoogleMaps ICGC</title>
     <style type="text/css">
+         html{
+            overflow:hidden;
+            margin:0
+        }
+        body{
+            overflow:hidden;
+            margin:0
+        }
         #map {
-            height: 800px;
+            height: 100%;
             width: 100%;
+            position:absolute;
+            top:0px;
+        }
+        .gmnoprint{
+            display: none;
         }
     </style>
     <script>

@@ -100,10 +100,23 @@
         &#x3C;head&#x3E;
             &#x3C;title&#x3E;Exemple GoogleMaps ICGC&#x3C;/title&#x3E;
             &#x3C;style type="text/css"&#x3E;
-                #map {
-                    height: 800px;
-                    width: 100%;
-                }
+            html{
+              overflow:hidden;
+              margin:0
+          }
+          body{
+              overflow:hidden;
+              margin:0
+          }
+          #map {
+              height: 100%;
+              width: 100%;
+              position:absolute;
+              top:0px;
+          }
+          .gmnoprint{
+              display: none;
+          }
             &#x3C;/style&#x3E;
             &#x3C;script&#x3E;
             let map;
