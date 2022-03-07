@@ -11,11 +11,15 @@
             overflow:hidden;
             margin:0
         }
+        .gm-style{
+            background-color: white;
+        }
         #map {
             height: 100%;
             width: 100%;
             position:absolute;
             top:0px;
+            background-color: white;
         }
         .gm-style-cc{
             display: none;
@@ -31,7 +35,7 @@
             const mapaICGC = new google.maps.ImageMapType({
                 alt: "Mapa ICGC",
                 getTileUrl: function (tile, zoom) {
-                    var url = "https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/" + zoom + "/" +
+                    var url = "https://geoserveis.icgc.cat/styles/icgc/" + zoom + "/" +
                         tile.x + "/" + tile.y + ".png";
                     return url;
                 },
