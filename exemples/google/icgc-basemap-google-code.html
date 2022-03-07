@@ -28,7 +28,7 @@
     })(window, document, 'script', 'dataLayer', 'GTM-MGS4TSP');
   </script>
   <!-- End Google Tag Manager -->
-  <title>Exemple mapbox i ContextMaps ICGC</title>
+  <title>Exemple GoogleMaps ICGC</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="ICGC" />
@@ -128,7 +128,7 @@
             const mapaICGC = new google.maps.ImageMapType({
                 alt: "Mapa ICGC",
                 getTileUrl: function (tile, zoom) {
-                    var url = "https://geoserveis.icgc.cat/styles/icgc/" + zoom + "/" +
+                    var url = "https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/" + zoom + "/" +
                         tile.x + "/" + tile.y + ".png";
                     return url;
                 },
