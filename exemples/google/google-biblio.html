@@ -49,7 +49,7 @@
                     biblioActual = biblios[i].split("|");
                     UTMXYToLatLon(biblioActual[1], biblioActual[2], 31, false, latlon);
                    
-                    CrearMarca(latlon[0], latlon[1], 'imatges/cultura.gif', '<div><table><tr><td><b><a class="FW_sLinkNegreta" href="biblio.do?reqCode=view&on=mapa&codiBiblio='+biblioActual[0]+'">'+biblioActual[3]+'</a></b><br/><b>'+biblioActual[6]+'</b> - '+biblioActual[7]+' ('+biblioActual[8]+')<br />'+biblioActual[5]+'<br /><span class="cos"><a class="FW_sLink" href="mailto:'+biblioActual[9]+'">'+biblioActual[9]+'</a></span></td></tr></table></div>', biblioActual[3], biblioActual[4]);
+                 //   CrearMarca(latlon[0], latlon[1], 'imatges/cultura.gif', '<div><table><tr><td><b><a class="FW_sLinkNegreta" href="biblio.do?reqCode=view&on=mapa&codiBiblio='+biblioActual[0]+'">'+biblioActual[3]+'</a></b><br/><b>'+biblioActual[6]+'</b> - '+biblioActual[7]+' ('+biblioActual[8]+')<br />'+biblioActual[5]+'<br /><span class="cos"><a class="FW_sLink" href="mailto:'+biblioActual[9]+'">'+biblioActual[9]+'</a></span></td></tr></table></div>', biblioActual[3], biblioActual[4]);
                 }
             }
             

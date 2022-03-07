@@ -27,12 +27,12 @@
                 center: [2.8508, 41.8567], // longitude, latitude
                 zoom: 8
             });
+            
             var weblayer = new WebTiledLayer("https://geoserveis.icgc.cat/styles/icgc/${level}/${col}/${row}.png", {
-                "copyright": '<a href="https://icgc.cat">Institut Cartogràfic i Geològic de Catalunya </a>',
-                "id": "icgc"
-            });
-            map.addLayer(weblayer);
-
+                      "copyright": 'Institut Cartogràfic i Geològic de Catalunya ',
+                      "id": "icgc"
+                  });
+                  map.addLayer(weblayer);
 
         });
     </script>
