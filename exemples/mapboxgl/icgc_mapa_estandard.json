@@ -13,7 +13,8 @@
         "https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.png"
       ],
       "tileSize": 256,
-      "attribution":"Catalunya: <a href=\"https://icgc.cat\" target=\"_blank\" >Institut Cartogràfic i Geològic de Catalunya</a>",
+      "attribution": "<b>Ortofoto Catalunya</b>:<a href=\"Institut Cartogràfic i Geològic de Catalunya\">Institut Cartogràfic i Geològic de Catalunya</a> |",
+      
       "maxzoom": 20
     },
     "ortoEsri": {
@@ -22,7 +23,7 @@
         "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
       ],
       "tileSize": 256,
-      "attribution":"Resta del món: ESRI",
+      "attribution":"<b>Ortofoto resta del món</b>:Esri, DigitalGlobe, USDA, USGS, GeoEye, Getmapping, AeroGRID, IGN, IGP, UPR-EGP, and the GIS community",
       "maxzoom": 18
     },
     "terrainMapZen": {
@@ -32,7 +33,6 @@
       ],
       "tileSize": 256,
       "encoding": "terrarium",
-      "attribution":"MapZen",
       "maxzoom": 16
     },
     "terrainICGC": {
@@ -48,7 +48,7 @@
     "openmaptiles": {
       "type": "vector",
       "tiles": ["https://geoserveis.icgc.cat/vector-tiles/contextmaps/{z}/{x}/{y}.pbf"],
-      "attribution":"Catalunya: <a href=\"https://icgc.cat\" target=\"_blank\" >Institut Cartogràfic i Geològic de Catalunya</a> | Resta del món:OSM Contributors. OpenMapTiles",
+      "attribution": "<b>Mapa Catalunya</b>:<a href=\"Institut Cartogràfic i Geològic de Catalunya\">Institut Cartogràfic i Geològic de Catalunya</a>|<b>Mapa resta del món</b>:© OpenMapTiles © OpenStreetMap contributors",
       "maxzoom": 16
     },
     "contour": {
@@ -58,7 +58,6 @@
       "format": "pbf",
       "basename": "contour_6_16.mbtiles",
       "id": "contour_3857_v1",
-      "attribution": "ICGC",
       "center": [2.3288, 41.4822, 7],
       "description": "Catalunya",
       "maxzoom": 10,
@@ -74,7 +73,6 @@
       "format": "pbf",
       "basename": "contextmaps_admpt.mbtiles",
       "id": "contextmaps_admpt",
-      "attribution": "ICGC",
       "center": [1.8707, 41.6661, 16],
       "description": "contextmaps_admpt",
       "maxzoom": 12,
@@ -101,7 +99,6 @@
       "format": "pbf",
       "basename": "transportation_A-2_B-30_3857.mbtiles",
       "id": "transportation_A-2_B-30",
-      "attribution": "ICGC",
       "description": "transportation_A-2_B-30",
       "maxzoom": 15,
       "minzoom": 6
