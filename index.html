@@ -15,6 +15,7 @@
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-MGS4TSP');</script>
+   
   <title>Recursos ICGC en obert</title>
   <meta charset="utf-8" />
   <meta name='viewport' content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -174,7 +175,7 @@
     <br>
     <!-- init official styles-->
     <div class="alert alert-default">
-      <h5>Estils ContexMaps d'àmbit mundial per Vector Tiles
+      <h5>ContexMaps Vector Tiles
         <i class="fas fa-globe"></i>
         </i>
       </h5>
@@ -719,20 +720,22 @@
       </ul>
     </div>
     <hr>
+
     <div class="alert alert-default ">
-      <h5 class="alert-heading">Bases Raster Tiles
+      <h5 class="alert-heading">ContextsMaps Raster
         <i class="fas fa-map"></i>
       </h5>
       <ul class="raster">
-        <li class="hed">ContextMaps (tot el món)
+        <li class="hed">Piràmides caché
         </li>
-        <!--
+       
         <li>
           <div class="row">
-            <div class="col"><b>Mapa ICGC</b><br>
-              <span>https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png</span>
+            <div class="col"><b>Mapa estandard WMTS</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/{z}/{x}/{y}.png</span>
               <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
-                data-placement="bottom" data-copy="https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png"
+                data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/{z}/{x}/{y}.png"
                 title="Copiar enllaç">
               </span>
             </div>
@@ -741,8 +744,24 @@
             </div>
           </div>
         </li>
-        -->
         <li>
+          <div class="row">
+            <div class="col"><b>Mapa estàndard WMS</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wms?</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wms"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png">
+            </div>
+          </div>
+        </li>
+        <li>
+          <li class="hed">Raster dinàmic
+          </li>
           <div class="row">
             <div class="col"><b>Mapa estandard</b><br>
               <span>https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/{z}/{x}/{y}.png</span>
@@ -772,6 +791,33 @@
             </div>
           </div>
         </li>
+      </ul>
+
+
+<hr>
+    <div class="alert alert-default ">
+      <h5 class="alert-heading">Altres Raster Tiles
+        <i class="fas fa-map"></i>
+      </h5>
+      <ul class="raster">
+       
+        <!--
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa ICGC</b><br>
+              <span>https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                data-placement="bottom" data-copy="https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png">
+            </div>
+          </div>
+        </li>
+        -->
+       
         <li class="hed">Instamaps (tot el món)
         </li>
         <li>
@@ -836,21 +882,7 @@
             </div>
           </div>
         </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Ortofoto augmentada</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg</span>
-              <span id="vincle_35" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
-                data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg"
-                title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasaugmented.png">
-            </div>
-          </div>
-        </li>
+       
         <li>
           <div class="row">
             <div class="col"><b>Geològic</b><br>
@@ -896,21 +928,7 @@
             </div>
           </div>
         </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Topogràfic web fosc</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_38" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
-                data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png"
-                title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasfosc.png">
-            </div>
-          </div>
-        </li>
+       
         <li>
           <div class="row">
             <div class="col"><b>Toponímia - Capa transparent de toponímia</b><br>
@@ -926,36 +944,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Administrativa simplificada</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/limits/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_39" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
-                data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/limits/CAT3857/{z}/{x}/{y}.png"
-                title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/limits.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Relleu</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/relleu/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_39" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
-                data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/relleu/CAT3857/{z}/{x}/{y}.png"
-                title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/relleu.png">
-            </div>
-          </div>
-        </li>
+       
+        
         <li>
           <div class="row">
             <div class="col-7"><b>Normal Maps - Tècnica 3D que permet donar una il·luminació i relleu a una superfície.
@@ -1575,5 +1565,19 @@
       });
     }
   </script>
+  <script>
+    (function() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
+      script.onload = function() {
+        // When loading `web-vitals` using a classic script, all the public
+        // methods can be found on the `webVitals` global namespace.
+        webVitals.getCLS(console.log);
+        webVitals.getFID(console.log);
+        webVitals.getLCP(console.log);
+      }
+      document.head.appendChild(script);
+    }())
+    </script>
 </body>
 </html>
