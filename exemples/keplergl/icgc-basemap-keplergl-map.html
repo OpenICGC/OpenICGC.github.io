@@ -36,8 +36,10 @@
         <script src="https://unpkg.com/react-redux@7.1.3/dist/react-redux.min.js" crossorigin></script>
         <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" crossorigin></script>
 
-        <!-- Load Kepler.gl -->
+        <!-- Load Kepler.gl 
         <script src="https://unpkg.com/kepler.gl@2.5.5/umd/keplergl.min.js" crossorigin></script>
+-->
+        <script src="https://tilemaps.icgc.cat/tileserver/keplergl/keplergl.2.5.1.ICGC.min.js"></script>
 
         <style type="text/css">
           body {margin: 0; padding: 0; overflow: hidden;}
@@ -143,7 +145,7 @@
                   id: "map",
                   width: windowDimension.width,
                   height: windowDimension.height,
-                  appName: "ContextMaps and Kepler.GL",
+                  appName: "ContextMaps & Kepler.GL",
             appWebsite: "https://icgc.cat/",
             version: "v1.0.0"
 
@@ -175,7 +177,9 @@
            */
           (function customize(keplerGl, store) {
             const datasets = [];
-            const config = {"version":"v1","config":{"visState":{"filters":[],"layers":[],"interactionConfig":{"tooltip":{"fieldsToShow":{},"compareMode":false,"compareType":"absolute","enabled":true},"brush":{"size":0.5,"enabled":false},"geocoder":{"enabled":false},"coordinate":{"enabled":false}},"layerBlending":"normal","splitMaps":[],"animationConfig":{"currentTime":null,"speed":1}},"mapState":{"bearing":0,"dragRotate":false,"latitude":41.75925664504067,"longitude":0.7991020905454174,"pitch":0,"zoom":7.3388021082079185,"isSplit":false},"mapStyle":{"styleType":"gbhyw3","topLayerGroups":{},"visibleLayerGroups":{"label":true,"road":true,"building":true,"water":true,"land":true},"threeDBuildingColor":[230.92517894351974,227.2005792831404,223.47597962276103],"mapStyles":{"gbhyw3":{"accessToken":null,"custom":true,"icon":"https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png","id":"gbhyw3","label":"ICGC","url":"https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json"}}}}};
+            const config = {"version":"v1","config":{"visState":{"filters":[],"layers":[],
+            "interactionConfig":{"tooltip":{"fieldsToShow":{},"compareMode":false,"compareType":"absolute","enabled":true},"brush":{"size":0.5,"enabled":false},"geocoder":{"enabled":false},"coordinate":{"enabled":false}},"layerBlending":"normal","splitMaps":[],"animationConfig":{"currentTime":null,"speed":1}},"mapState":{"bearing":0,"dragRotate":false,"latitude":41.75925664504067,"longitude":0.7991020905454174,"pitch":0,"zoom":7.3388021082079185,"isSplit":false},"mapStyle":{"styleType":"gbhyw3","topLayerGroups":{},"visibleLayerGroups":{"label":true,"road":true,"building":true,"water":true,"land":true},"threeDBuildingColor":[230.92517894351974,227.2005792831404,223.47597962276103],
+            "mapStyles":{"gbhyw3":{"accessToken":null,"custom":true,"icon":"https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png","id":"gbhyw3","label":"ICGC","url":"https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json"}}}}};
 
             const loadedData = keplerGl.KeplerGlSchema.load(
               datasets,

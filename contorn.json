@@ -1,0 +1,43 @@
+{
+    "tiles": [
+        "https://geoserveis.icgc.cat/servei/catalunya/contextmaps-contorn/vt/{z}/{x}/{y}.pbf"
+    ],
+    "name": "Contorn",
+    "format": "pbf",
+    "basename": "contorn.mbtiles",
+    "id": "contorn",
+    "attribution": "<b>ContextMaps</b>:<a href=\"https://www.icgc.cat/Aplicacions/Visors/ContextMaps\">Institut Cartogràfic i Geològic de Catalunya</a>|<b>Mapa resta del món</b>:© OpenMapTiles © OpenStreetMap contributors",
+    "center": [
+        1.537786,
+        41.837539,
+        4
+    ],
+    "description": "Contextmaps ICGC. Contorn (hipsometria)",
+    "maxzoom": 16,
+    "minzoom": 0,
+    "pixel_scale": "256",
+    "vector_layers": {
+        "vector_layers": [
+            {
+                "id": "contour",
+                "description": "contour",
+                "minzoom": 6,
+                "maxzoom": 16,
+                "fields": {
+                    "icgc_id": "Number",
+                    "cat": "Number"
+                }
+            }
+        ]
+    },
+    "version": "3.6.1",
+    "maskLevel": "8",
+    "bounds": [
+        -180,
+        -85.0511,
+        180,
+        85.0511
+    ],
+    "planettime": "1499040000000",
+    "tilejson": "2.0.0"
+}

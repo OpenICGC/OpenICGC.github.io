@@ -1,0 +1,68 @@
+{
+    "tiles": [
+        "https://geoserveis.icgc.cat/servei/catalunya/contextmaps-divisions-administratives/vt/{z}/{x}/{y}.pbf"
+    ],
+    "name": "Divisions-administratives",
+    "format": "pbf",
+    "basename": "divisions_administratives.mbtiles",
+    "id": "divisions_administratives",
+    "attribution": "<b>ContextMaps</b>:<a href=\"https://www.icgc.cat/Aplicacions/Visors/ContextMaps\">Institut Cartogràfic i Geològic de Catalunya</a>|<b>Mapa resta del món</b>:© OpenMapTiles © OpenStreetMap contributors",
+    "center": [
+        1.537786,
+        41.837539,
+        4
+    ],
+    "description": "Contextmaps ICGC. Divisions administratives",
+    "maxzoom": 16,
+    "minzoom": 0,
+    "pixel_scale": "256",
+    "vector_layers": [
+        {
+            "id": "boundary",
+            "description": "boundary",
+            "minzoom": 0,
+            "maxzoom": 16,
+            "fields": {
+                "icgc_id": "Number",
+                "name": "String",
+                "class": "String",
+                "rank": "Number",
+                "admin_level": "Number",
+                "maritime": "Number",
+                "mtc25": "String",
+                "escala": "String"
+            }
+        },
+        {
+            "id": "place",
+            "description": "place",
+            "minzoom": 0,
+            "maxzoom": 16,
+            "fields": {
+                "icgc_id": "Number",
+                "name": "String",
+                "name:latin": "String",
+                "muni": "String",
+                "nommuni": "String",
+                "class": "String",
+                "tipuscap": "String",
+                "capvegue": "String",
+                "capprov": "String",
+                "codimuni": "String",
+                "codicomar": "String",
+                "codiprov": "String",
+                "dataalta": "String"
+            }
+        }
+    ],
+    "version": "3.6.1",
+    "maskLevel": "8",
+    "bounds": [
+        -180,
+        -85.0511,
+        180,
+        85.0511
+    ],
+    "planettime": "1499040000000",
+    "tilejson": "2.0.0"
+}
