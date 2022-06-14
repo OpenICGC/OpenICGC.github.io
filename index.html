@@ -203,7 +203,7 @@
     <br>
     <!-- init official styles-->
     <div class="alert alert-default">
-      <h5>Estils ContexMaps d'àmbit mundial per Vector Tiles
+      <h5>ContexMaps Vector Tiles
         <i class="fas fa-globe"></i>
         </i>
       </h5>
@@ -579,7 +579,8 @@
         <li>
           <div class="row">
             <div class="col"><b>
-                ContextMaps (ICGC + OpenMapTiles)</b><br>
+                Base ContextMaps</b><br>
+             
               <div>
                 <span>https://geoserveis.icgc.cat/contextmaps/contextmaps.json (<b>TileJSON endpoint</b>)</span>
                 <span id="vincle_30" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
@@ -597,25 +598,47 @@
         <li>
           <div class="row">
             <div class="col"><b>
-                ICGC MTC25M</b><br>
+                Contorn ContextMaps</b><br>
+              <div>
+                <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps-contorn/vt/{z}/{x}/{y}.pbf</span>
+                <span id="vincle_28" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                  data-placement="bottom"
+                  data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps-contorn/vt/{z}/{x}/{y}.pbf"
+                  title="Copiar enllaç">
+                </span>
+              </div>
               <div>
                 <span>https://tilemaps.icgc.cat/tileserver/bt25m_tilejson.json (<b>TileJSON endpoint</b>)</span>
                 <span id="vincle_30" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
                   data-copy="https://tilemaps.icgc.cat/tileserver/bt25m_tilejson.json" title="Copiar enllaç">
                 </span>
               </div>
+              </div>
+        </li>
+       
+        <li>
+          <div class="row">
+            <div class="col"><b>
+                Divisions administratives ContextMaps</b><br>
               <div>
                 <span>https://tilemaps.icgc.cat/tileserver/tileserver.php/bt25m_vector_7a14/{z}/{x}/{y}.pbf</span>
                 <span id="vincle_29" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
                   data-copy="https://tilemaps.icgc.cat/tileserver/tileserver.php/bt25m_vector_7a14/{z}/{x}/{y}.pbf" title="Copiar enllaç">
                 </span>
               </div>
-            </div>
+              <div>
+                <span>https://openicgc.github.io/divisions_administratives.json (<b>TileJSON endpoint</b>)</span>
+                <span id="vincle_30" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                  data-placement="bottom" data-copy="https://openicgc.github.io/cdivisions_administratives.json"
+                  title="Copiar enllaç">
+                </span>
+              </div>
+              </div>
         </li>
         <li>
           <div class="row">
             <div class="col"><b>
-                ICGC BT5M</b><br>
+                Temàtiques ContextMaps</b><br>
               <div>
                 <span>https://tilemaps.icgc.cat/tileserver/bt5m_tilejson.json (<b>TileJSON endpoint</b>)</span>
                 <span id="vincle_30" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
@@ -628,25 +651,28 @@
                   data-copy="https://tilemaps.icgc.cat/tileserver/tileserver.php/bt5m_vector/{z}/{x}/{y}.pbf" title="Copiar enllaç">
                 </span>
               </div>
-            </div>
+              </div>
         </li>
+        
       </ul>
     </div>
     <hr>
+
     <div class="alert alert-default ">
-      <h5 class="alert-heading">Bases Raster Tiles
+      <h5 class="alert-heading">ContextsMaps Raster
         <i class="fas fa-map"></i>
       </h5>
       <ul class="raster">
-        <li class="hed">ContextMaps (tot el món)
+        <li class="hed">Piràmides caché
         </li>
-        <!--
+       
         <li>
           <div class="row">
-            <div class="col"><b>Mapa ICGC</b><br>
-              <span>https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png</span>
+            <div class="col"><b>Mapa estandard WMTS</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/{z}/{x}/{y}.png</span>
               <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
-                data-placement="bottom" data-copy="https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png"
+                data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/{z}/{x}/{y}.png"
                 title="Copiar enllaç">
               </span>
             </div>
@@ -655,8 +681,24 @@
             </div>
           </div>
         </li>
-        -->
         <li>
+          <div class="row">
+            <div class="col"><b>Mapa estàndard WMS</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wms?</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wms"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png">
+            </div>
+          </div>
+        </li>
+        <li>
+          <li class="hed">Raster dinàmic
+          </li>
           <div class="row">
             <div class="col"><b>Mapa estandard</b><br>
               <span>https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/{z}/{x}/{y}.png</span>
@@ -682,6 +724,70 @@
             </div>
           </div>
         </li>
+
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa híbrida</b><br>
+              <span>https://geoserveis.icgc.cat/styles/icgc_orto_hibrida/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/styles/icgc_orto_hibrida/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_orto_hibrida.png">
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div>
+        <h6 class="success">Exemples integració amb:</h6>
+        <ul class="ul">
+          <li> <a target="_blank" href="/exemples/leaflet/icgc-raster-leaflet-code.html">Leaflet <i
+                class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/esri/icgc-raster-esri-code.html">ArcGIS API Js <i
+                class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/google/icgc-basemap-google-code.html">Google Maps <i
+                class="fas fa-code"></i> </a></li>
+        </ul>
+      </div>
+      <div class="cropt">
+        <small>Integrable amb:</small>
+        <span class="badge badge-primary">Leaflet</span>
+        <span class="badge badge-primary">OpenLayers</span>
+        <span class="badge badge-primary">MapLibre GL Js</span>
+        <span class="badge badge-primary">MapBox GL Js</span>
+        <span class="badge badge-primary">ArcGis API Js</span>
+        <span class="badge badge-primary">Cesium Js</span>
+        <span class="badge badge-primary">Google Maps</span>
+      </div>
+    </div>
+<hr>
+    <div class="alert alert-default ">
+      <h5 class="alert-heading">Altres Raster Tiles
+        <i class="fas fa-map"></i>
+      </h5>
+      <ul class="raster">
+       
+        <!--
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa ICGC</b><br>
+              <span>https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                data-placement="bottom" data-copy="https://geoserveis.icgc.cat/styles/icgc/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png">
+            </div>
+          </div>
+        </li>
+        -->
+       
         <li class="hed">Instamaps (tot el món)
         </li>
         <li>
@@ -1426,6 +1532,20 @@
       navigator.serviceWorker.register("serviceworker.js").then(function (reg) {});
     }
   </script>
+  <script>
+    (function() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/web-vitals/dist/web-vitals.iife.js';
+      script.onload = function() {
+        // When loading `web-vitals` using a classic script, all the public
+        // methods can be found on the `webVitals` global namespace.
+        webVitals.getCLS(console.log);
+        webVitals.getFID(console.log);
+        webVitals.getLCP(console.log);
+      }
+      document.head.appendChild(script);
+    }())
+    </script>
 </body>
 
 </html>
