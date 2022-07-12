@@ -100,8 +100,8 @@
             &#x3C;meta charset='utf-8' /&#x3E;
             &#x3C;title&#x3E;Compara terrenys&#x3C;/title&#x3E;
             &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /&#x3E;
-            &#x3C;script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'&#x3E;&#x3C;/script&#x3E;
-            &#x3C;link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' /&#x3E;
+            &#x3C;script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'&#x3E;&#x3C;/script&#x3E;
+            &#x3C;link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' /&#x3E;
             &#x3C;style&#x3E;
                 body {
                     margin: 0;
@@ -135,8 +135,7 @@
             &#x3C;/div&#x3E;
             &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
             &#x3C;script&#x3E;
-                mapboxgl.accessToken =
-                    'pk.eyJ1IjoiZ2Vvc3RhcnRlcnMiLCJhIjoiMGNxekwxayJ9.sE1YC8Zxwzjh4CQeZiZN_g';
+                mapboxgl.accessToken ='XXXXXXXXXXXXXXXXXX'; // cap token de Mapbox.com
                 const map = new mapboxgl.Map({
                     container: 'map',
                     style: 'https://geoserveis.icgc.cat/contextmaps/icgc_orto_hibrida.json',
