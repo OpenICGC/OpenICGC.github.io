@@ -23,12 +23,12 @@
             "dojo/domReady!"
         ], function (Map, WebTiledLayer) {
             var map = new Map("map", {
-                basemap: "topo",
+               
                 center: [2.8508, 41.8567], // longitude, latitude
                 zoom: 8
             });
             
-            var weblayer = new WebTiledLayer("https://geoserveis.icgc.cat/styles/icgc/${level}/${col}/${row}.png", {
+            var weblayer = new WebTiledLayer("https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/${level}/${col}/${row}.png", {
                       "copyright": 'Institut Cartogràfic i Geològic de Catalunya ',
                       "id": "icgc"
                   });

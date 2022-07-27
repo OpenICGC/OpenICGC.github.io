@@ -35,7 +35,7 @@
             const mapaICGC = new google.maps.ImageMapType({
                 alt: "Mapa ICGC",
                 getTileUrl: function (tile, zoom) {
-                    var url = "https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/" + zoom + "/" +
+                    var url = "https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/" + zoom + "/" +
                         tile.x + "/" + tile.y + ".png";
                     return url;
                 },
