@@ -105,24 +105,24 @@
         maxZoom: 19,
         attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
-    const topoGrisMonICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc_mapa_base_gris/{z}/{x}/{y}.png', {
+    const topoGrisMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris/MON3857NW/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
-    const topoGrisSimMonICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc_mapa_base_gris_simplificat/{z}/{x}/{y}.png', {
+    const topoGrisSimMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris-simplificat/MON3857NW/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
-    const ortoHibridaICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc_orto_hibrida/{z}/{x}/{y}.png', {
+    const ortoHibridaICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-orto-estandard/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3'
     });
     const mapaBase = {
         'Mapa estandard ICGC cache': topoMonICGCCache,
         'Mapa estandard ICGC': topoMonICGC,
-        'Mapa estandard gris ICGC': topoGrisMonICGC,
-        'Mapa estandard gris simplificat ICGC': topoGrisSimMonICGC,
-        'Orto hídrida': ortoHibridaICGC
+        'Mapa estandard gris ICGC cache': topoGrisMonICGC,
+        'Mapa estandard gris simplificat ICGC cache': topoGrisSimMonICGC,
+        'Orto cache': ortoHibridaICGC
     };
     controlCapas = L.control.layers(mapaBase, null, {
         collapsed: false
