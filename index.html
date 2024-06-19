@@ -11,7 +11,14 @@
     gtag('js', new Date());
     gtag('config', 'G-GR9JCZYNFH');
   </script>
- 
+  
+  
+  <div style="display: flex; justify-content: center; align-items: center; height: 25vh;">
+    <a href="https://www.icgc.cat/ca" target="_blank">
+    <img id="logos" src="https://tilemaps.icgc.cat/cdn/logos/icgc_gencat_logos_color.png" alt="Logos" height="100px"  >
+    </a>
+  </div>
+  
   <title>Recursos ICGC en obert</title>
   <meta charset="utf-8" />
   <meta name='viewport' content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -51,17 +58,19 @@
     }
 
     .alert-default {
-      background-color: #F5F5F5;
+      background-color: #ffffff;
       font-size: 0.95em;
-      border-radius: 0px
+      border-radius: 10px;
+      border-color: rgb(194, 194, 194);
+      
     }
 
     span {
-      color: #BF0000;
+      color: #f58921;
     }
 
     a {
-      color: #a80202 !important;
+      color: #f58921 ;
 
     }
 
@@ -72,9 +81,16 @@
       line-height: 40px;
       background-color: #f5f5f5;
     }
-
+    
+    h5{
+      color: #000;
+    }
     h6 {
       font-weight: bolder;
+    }
+    
+    h7{
+      color: #000;
     }
 
     .ul {
@@ -95,7 +111,7 @@
 
     .navbar {
       background-color: #404040 !important;
-      border-radius: 0px;
+      border-radius: 10px;
       color: white !important;
     }
 
@@ -124,10 +140,12 @@
       color: black;
       list-style: none;
       padding: 8px;
-      background-color: #c4c2c2;
+      background-color: #ffc300;
       font-size: 1.1em;
       font-weight: bold;
       margin-top: 5px;
+      border-radius: 5px;
+      
     }
 
     @media screen and (max-width: 500px) {
@@ -147,6 +165,241 @@
     .raster {
       font-size: 0.98em;
     }
+    
+    nav {
+    position: relative;
+    background-color: #404040;
+    padding: 10px;
+    border-radius: 10px;
+    
+      }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul li button {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    nav ul li button:focus {
+      outline: none;
+    }
+
+    nav ul li .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #404040;
+      padding: 10px;
+      border: 1px solid #fff;
+      display: none;
+    }
+
+    nav ul li .dropdown-menu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li .dropdown-menu li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+    }
+
+    nav ul li .dropdown-menu li a:hover {
+      background-color: white;
+      color: #444;
+    }
+
+    
+    .dropdown-button {
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropdown-button:hover {
+      background-color: #3e8e41;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 250px;
+      display: none;
+      z-index: 1;
+    }
+
+    .dropdown-menu li {
+      margin-bottom: 10px;
+    }
+
+    .dropdown-menu li a {
+      color: #00698f;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      padding: 5px;
+      display: block;
+      width: 100%;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f0f0f0;
+    }
+
+    #scroll-up-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fdfdfd;
+      padding: 5px 10px;
+      border-color: #ffc300;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #accessibility-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      background-color: #ffc300;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    #accessibility-btn img {
+      width: 3rem;
+      height: 3rem;
+      
+    }
+
+    .accessibility-menu {
+    position: absolute;
+    top: 1rem; /* Adjust top position based on your button height */
+    left: 72%; /* Position the menu just outside the button */
+    width: 150px; /* Adjust width as needed */
+    background-color: #404040;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: right 0.2s ease; /* Smooth transition */
+    cursor: pointer;
+    }
+
+    .accessibility-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+    .accessibility-menu li {
+        margin-bottom: 10px;
+        
+    }
+    .accessibility-menu li button:hover {
+      background-color: #f0f0f0;
+      color: #404040;
+    }
+    /* Make the buttons look like links */
+    .accessibility-menu button {
+      background-color: #404040;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Ensure the content is not hidden when menu is closed */
+    [aria-hidden="true"] {
+        display: none;
+    }
+
+    /* High-contrast mode */
+    .high-contrast {
+        background-color: #000;
+        color: rgb(253, 253, 253);
+        
+    }
+
+    .high-contrast .alert-default{
+        background-color: #000;
+        color: rgb(253, 253, 253);
+    }
+    .high-contrast .hed{
+        background-color:  #e5e500;
+        color: rgb(0, 0, 0);
+    }
+
+    .high-contrast h5{
+        background-color: #000;
+        color: rgb(253, 253, 253);
+    }
+    .high-contrast p{
+        background-color: #000;
+        color: rgb(253, 253, 253);
+    }
+    .high-contrast h7{
+        background-color: #000;
+        color: rgb(253, 253, 253);
+    }
+
+    .high-contrast .header {
+        background-color: #222; /* Darker header background */
+    }
+
+    .high-contrast .logos {
+        color: #fff; /* White logo text */
+    }
+    .high-contrast span {
+        
+      color: #e5e500 ;
+    }
+    .high-contrast span:hover {
+        
+      background-color: white; 
+      color: #9e9e09;
+      }
+    
+
+    .high-contrast .fa-code {
+        color: #e5e500 ;
+    }
+    .high-contrast .fa-edit {
+        color: #e5e500 ;
+    }
+    .high-contrast .fa-desktop {
+        color: #e5e500 ;
+    }
+
   </style>
   <script type="application/ld+json">
     {
@@ -169,74 +422,189 @@
   <div class="container">
     <nav class="navbar navbar-light bg-light">
       <h4>
-        Recursos ICGC en obert
+        <b>Benvinguts i benvingudes als recursos ICGC en obert</b>
         <br>
+        
         <small>
-          Recull eines, estils i tessel·les, <a id="vincle_3" href="https://github.com/OpenICGC" target="_blank">
+          <br>
+          Aquí trobareu el recull d'eines, estils i tessel·les, <a id="vincle_3" href="https://github.com/OpenICGC" target="_blank">
             <span>codi</span>
             <span class="fab fa-github" data-toggle="tooltip" data-placement="bottom" title="https://github.com/OpenICGC"></span>
           </a>
-          i exemples basats en dades ICGC
+          i exemples basats en dades ICGC.
+          <br>
+          <br>
+          Tots els repositoris de l'ICGC s'estan desenvolupant i mantenint per donar suport a les iniciatives de geoinformació i cartografia a Catalunya per part de l'Institut Cartogràfic i Geològic de Catalunya (ICGC).
+          <br>
+          Podeu visitar <a href="https://www.icgc.cat/ca" target="_blank"> <span> la nostra pàgina web</span></a> per obtenir més informació sobre els detalls de les nostres activitats. 
         </small>
       </h4>
-      <span>
-        <a id="vincle_1" href="https://www.icgc.cat/" target="_blank">
-          <img width=100 src="https://betaserver.icgc.cat/logos/ICGC_white_norma.svg">
-        </a>
-      </span>
+      
     </nav>
     <br>
-    <!-- init official styles--><div class="alert alert-default">
-      <h5>Eines:
+    <nav>
+      <ul>
+          <li class="dropdown">
+          <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+            <b>Taula de continguts</b>
+          </button>
+          <ul class="dropdown-menu" style="display: none;">
+            <li><a href="#Repositoris">Repositoris</a></li>
+            <li><a href="#ContexMaps Vector Tiles">ContexMaps Vector Tiles</a></li>
+            <li><a href="#Piràmides Vector Tiles (EndPoints)">Piràmides Vector Tiles (EndPoints)</a></li>
+            <li><a href="#ContextsMaps Raster">ContextsMaps Raster</a></li>
+            <li><a href="#Terrenys">Terrenys</a></li>
+            <li><a href="#Desenvolupaments">Desenvolupaments</a></li>
+            <li><a href="#Contacte">Contacte</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <!-- init official styles--><div id="Repositoris" class="alert alert-default">
+      <h5><b>Repositoris:</b>
+        <a href="https://github.com/OpenICGC" target="_blank">
         <i class="fab fa-github"></i>
         </i>
+        </a>
       </h5>
       <ul>
         <li>
           <div class="row">
-            <div class="col"><b>Libreria MapICGC-gl-js</b><br>
-              <span>https://openicgc.github.io/mapicgc-doc/</span>
+            <div class="col"><b>MapICGC GL JS</b><br>
+              <h7>
+                La biblioteca MapICGC GL JS, creada com a envoltori de MapLibreGL, ofereix noves funcions específiques en un entorn ICGC. 
+                <br>Simplifica el desenvolupament integrant característiques com tessel·les vectorials i imatges satel·litals, i incorpora de manera inmediata estils, terrenys i dades ICGC. 
+                <br>Proporciona funcions documentades per a la creació d'un visor complet i totalment personalitzable.
+              </h7>
+              <br>
               <a id="vincle_42" href="https://openicgc.github.io/mapicgc-doc/" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>Documentació MapICGC GL JS</span>
+              </a>
+              <br>
+              <a id="vincle_49" href="https://github.com/OpenICGC/mapicgc-gl-js" target="_blank">
+                <span>Llibreria MapICGC GL JS</span>
+              </a>
+              <br>
+              <a id="vincle_50" href="https://github.com/OpenICGC/extended-mapicgc-gl-js-viewer" target="_blank">
+                <span>Visor MapICGC GL JS</span>
+              </a>
+              <br>
+              <br>
+              <h7><b>Plantilles MapICGC GL JS</b></h7>
+              <br>
+              <a id="vincle_56" href="https://github.com/OpenICGC/basic-mapicgc-gl-js-viewer-js" target="_blank">
+                <span>Vanilla JS</span>
+              </a>
+              <br>
+              <a id="vincle_57" href="https://github.com/OpenICGC/basic-mapicgc-gl-js-viewer-react" target="_blank">
+                <span>React</span>
+              </a>
+              <br>
+              <a id="vincle_58" href="https://github.com/OpenICGC/basic-mapicgc-gl-js-viewer-svelte" target="_blank">
+                <span>Svelte</span>
               </a>
             </div>
-            <div class="col">
-             
-            </div>
+            <div>
+              <img id="logos" src="https://raw.githubusercontent.com/OpenICGC/mapicgc-doc/master/docs/assets/cartography2.png" alt="Logos" height="120px" >
+             </div>
           </div>
         </li>
         <li>
           <div class="row">
-            <div class="col"><b>
-                API Territorial</b><br>
-              <span>https://openicgc.github.io/api-territorial-docs/</span>
+            <div class="col">
+              <b>API Territorial</b>
+              <br>
+                <h7>
+                  Interfície de Programació d'Aplicacions (Application Programming Interface) que consisteix en una eina que integra diverses fonts de dades geogràfiques 
+                  per proporcionar-te informació precisa i detallada del territori a partir d'unes coordenades geogràfiques o UTM.
+                </h7>    
+              <br>              
               <a id="vincle_43" href="https://openicgc.github.io/api-territorial-docs/" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>Documentació API Territorial</span>
+              </a>
+              <br>              
+              <a id="vincle_51" href="https://github.com/OpenICGC/extended-apiterritorial-gl-js-viewer" target="_blank">
+                <span>Visor API Territorial</span>
               </a>
             </div>
-            <div class="col">
-             
+            <div>
+             <img src="https://raw.githubusercontent.com/OpenICGC/api-territorial-docs/main/docs/assets/apiTe.png" alt="Logos" height="120px" style="position: relative; right:30;" >
             </div>
           </div>
         </li>
-        
+        <li>
+          <div class="row">
+            <div class="col">
+              <b>Geocoder</b>
+                <br>
+                <h7>
+                  El Geocodificador ICGC permet obtenir les coordenades d'un lloc ubicat a Catalunya a partir de la seva adreça postal o del seu nom (topònim). 
+                  També permet l'operació contrària, la geocodificació inversa, que consisteix a obtenir l'adreça postal o el nom del topònim més proper a una posició expressada en coordenades.
+                </h7>
+                <br>              
+              <a id="vincle_53" href="https://openicgc.github.io/geocodificador-doc/" target="_blank">
+                <span>Documentació Geocoder</span>
+              </a>
+              <br>              
+              <a id="vincle_54" href="https://openicgc.github.io/geocodificador-doc/visor/" target="_blank">
+                <span>Visor Geocoder</span>
+              </a>
+            </div>
+            <div>
+              
+             </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col">
+              <b>Apps ICGC</b>
+                <br>
+              <a id="vincle_52" href="https://github.com/OpenICGC/catalunya-offline-v3" target="_blank">
+                <span>Catalunya Offline</span>
+                <br>
+              </a>
+              <h7>
+                Aplicació mòbil que permet explorar el territori català, 
+                marcar punts d'interès i enregistrar les vostres rutes i excursions utilitzant el GPS, fins i tot en el cas que no hi hagi cobertura de dades al vostre dispositiu mòbil.
+              </h7>
+              <br>
+              
+              <a id="vincle_55" href="https://github.com/OpenICGC/Geo-SIV" target="_blank">
+                <span>Geo-SIV</span>
+              </a>
+              <br>
+              <h7>
+                Programari per l'avaluació preliminar de Sistemes d'Intercanvi geotèrmic en circuit Vertical tancat per instal·lacions de climatització i 
+                ACS fins a 70 kW en el territori de Catalunya
+              </h7>
+            </div>
+          </div>
+          
+        </li>
         <li>
           <div class="row">
             <div class="col"><b>
-                OpenICGC - QgisPlugin</b><br>
-              <span>https://github.com/OpenICGC/QgisPlugin</span>
+                Plugins ICGC</b><br>
               <a id="vincle_46" href="https://github.com/OpenICGC/QgisPlugin" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>Qgis Plugin</span>
               </a>
+              <br>
+              <h7>
+                Plugin d'accés a dades obertes publicades per l'ICGC. 
+                Proporciona cerques de geocodificació de noms de llocs, carrers, carreteres, coordenades en diferents sistemes de referència.
+              </h7>
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="alert alert-default">
-      <h5>ContexMaps Vector Tiles
+    <div id="ContexMaps Vector Tiles" class="alert alert-default">
+      <h5><b>ContexMaps Vector Tiles</b>
         <i class="fas fa-globe"></i>
         </i>
+        
       </h5>
       <!--init-->
       <ul><li class="hed">Mapes generals</li><li>
@@ -289,6 +657,7 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_base_gris_simplificat.png> </div> 
           </div> 
+          <br>
           </li><li class="hed">Mapes administratius</li><li>
         <div class="row">
           <div class="col"><b>Delimitació: mapa estàndard</b><br>
@@ -319,6 +688,7 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_delimitacio_limits_administratius.png> </div> 
           </div> 
+          <br>
           </li><li class="hed">Mapes de xarxa viària</li><li>
         <div class="row">
           <div class="col"><b>Xarxa viària: estàndard</b><br>
@@ -339,6 +709,7 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_xarxa_viaria_gris.png> </div> 
           </div> 
+          <br>
           </li><li class="hed">Mapes d'infraestructures viàries i edificacions</li><li>
         <div class="row">
           <div class="col"><b>Infraestructures viàries i edificacions en 3D: blanc</b><br>
@@ -379,7 +750,8 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_infraestructures_edificacions_3D_vialitat_fosc.png> </div> 
           </div> 
-          </li><li class="hed">Mapes d’àrees urbanes</li><li>
+          <br>
+          </li><li class="hed">Mapes d'àrees urbanes</li><li>
         <div class="row">
           <div class="col"><b>Mapa d'àrees de poblament</b><br>
             <span>https://geoserveis.icgc.cat/contextmaps/icgc_arees_poblament.json</span>
@@ -409,6 +781,7 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_edificacions_gris.png> </div> 
           </div> 
+          <br>
           </li><li class="hed">Mapes de relleu</li><li>
         <div class="row">
           <div class="col"><b>Ombra</b><br>
@@ -459,6 +832,7 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_ombra_hipsometria_corbes.png> </div> 
           </div> 
+          <br>
           </li><li class="hed">Mapes d'espais protegits</li><li>
         <div class="row">
           <div class="col"><b>Mapa d'espais protegits: gris</b><br>
@@ -489,6 +863,7 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_espais_protegits_xarxes_hidrografia_vials.png> </div> 
           </div> 
+          <br>
           </li><li class="hed">Mapes de lleure</li><li>
         <div class="row">
           <div class="col"><b>Mapa de lleure: estàndard</b><br>
@@ -508,7 +883,8 @@
             </span>
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png> </div> 
-          </div> 
+          </div>
+          <br> 
           </li><li class="hed">Mapes d'hidrografia</li><li>
         <div class="row">
           <div class="col"><b>Hidrografia: mapa estàndard</b><br>
@@ -539,7 +915,8 @@
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_hidrografia_limits_administratius_corbes.png> </div> 
           </div> 
-          </li><li class="hed">Mapes d’imatge</li><li>
+          <br>
+          </li><li class="hed">Mapes d'imatge</li><li>
         <div class="row">
           <div class="col"><b>Ortofotomapa estàndard</b><br>
             <span>https://geoserveis.icgc.cat/contextmaps/icgc_orto_estandard.json</span>
@@ -578,7 +955,8 @@
             </span>
           </div>
           <div class="col"><img src=https://visors.icgc.cat/contextmaps/imatges_estil/icgc_orto_hibrida.png> </div> 
-          </div> 
+          </div>
+          <br> 
           </li><li class="hed">Mapes geològics</li><li>
         <div class="row">
           <div class="col"><b>Mapa d'informació geològica</b><br>
@@ -604,37 +982,37 @@
       <div>
         <h6 class="success">Visor:</h6>
         <ul class="ul">
-          <li> <a target="_blank" href="https://visors.icgc.cat/contextmaps/#7.26/41.77/1.083">ContextMaps <i class="fas fa-desktop"></i>
+          <li> <a target="_blank" href="https://visors.icgc.cat/contextmaps/#7.26/41.77/1.083"><span>ContextMaps</span> <i class="fas fa-desktop"></i>
             </a></li>
         </ul>
       </div>
       <div>
         <h6 class="success">Exemples integració amb:</h6>
         <ul class="ul">
-          <li> <a target="_blank" href="/exemples/maplibre/icgc-basemap-maplibre-code.html">MapLibre GL JS <i class="fas fa-code"></i>
+          <li> <a target="_blank" href="/exemples/maplibre/icgc-basemap-maplibre-code.html"><span>MapLibre GL JS</span> <i class="fas fa-code"></i>
             </a></li>
-          <li> <a target="_blank" href="/exemples/mapboxgl/icgc-basemap-mapbox-code.html">MapBox GL JS <i class="fas fa-code"></i> </a>
+          <li> <a target="_blank" href="/exemples/mapboxgl/icgc-basemap-mapbox-code.html"><span>MapBox GL JS</span> <i class="fas fa-code"></i> </a>
           </li>
-          <li> <a target="_blank" href="/exemples/esri/icgc-basemap-esri-code.html">ArcGIS API Js <i class="fas fa-code"></i> </a></li>
-          <li> <a target="_blank" href="/exemples/keplergl/icgc-basemap-keplergl-map.html">KeplerGL </i> </a></li>
-          <li> <a target="_blank" href="/exemples/maplibre/icgc-model3d-maplibre-code.html">MapLibre GL i model 3D GLTF
+          <li> <a target="_blank" href="/exemples/esri/icgc-basemap-esri-code.html"><span>ArcGIS API Js</span><i class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/keplergl/icgc-basemap-keplergl-map.html"><span>KeplerGL</span> </i> </a></li>
+          <li> <a target="_blank" href="/exemples/maplibre/icgc-model3d-maplibre-code.html"><span>MapLibre GL i model 3D GLTF</span> 
               <i class="fas fa-code"></i> </a></li>
         </ul>
       </div>
       <div>
         <h6 class="success">Editors d'estils:</h6>
         <ul class="ul">
-          <li> <a target="_blank" href="https://eines.icgc.cat/contextmaps/#11.74/41.3931/2.1317">Editor ContextMaps
-              (beta) <i class="fas fa-edit"></i> </a></li>
+          <li> <a target="_blank" href="https://eines.icgc.cat/contextmaps/#11.74/41.3931/2.1317"><span>Editor ContextMaps
+            (beta)</span> <i class="fas fa-edit"></i> </a></li>
           <li> <a target="_blank"
-              href="https://maputnik.github.io/editor/?style=https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json">Maputnik
+              href="https://maputnik.github.io/editor/?style=https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json"><span>Maputnik</span> 
               <i class="fas fa-edit"></i> </a></li>
         </ul>
       </div>
       <div class="cropt">
         <small>
-          <span><a id="vincle_14" href="icgc-styles-world-min.json" target="_blank">LLista styles min</a></span> |
-          <span><a id="vincle_15" href="icgc-styles-world-all.json" target="_blank">Llista styles all</a></span>
+          <span><a id="vincle_14" href="icgc-styles-world-min.json" target="_blank"><span>LLista styles min</span></a></span> |
+          <span><a id="vincle_15" href="icgc-styles-world-all.json" target="_blank"><span>Llista styles all</span></a></span>
         </small>
         <small> Integrable amb:</small>
         <span class="badge badge-primary">MapLibre GL</span>
@@ -644,8 +1022,8 @@
       </div>
     </div>
     <!-- end init official styles -->
-    <div class="alert alert-default">
-      <h5>Piràmides Vector Tiles (EndPoints)
+    <div id="Piràmides Vector Tiles (EndPoints)" class="alert alert-default">
+      <h5><b>Piràmides Vector Tiles (EndPoints)</b>
         <i class="fas fa-database"></i>
         </i>
       </h5>
@@ -733,8 +1111,8 @@
     </div>
     <hr>
 
-    <div class="alert alert-default ">
-      <h5 class="alert-heading">ContextsMaps Raster
+    <div id="ContextsMaps Raster" class="alert alert-default ">
+      <h5 class="alert-heading"> <b>ContextsMaps Raster</b>
         <i class="fas fa-map"></i>
       </h5>
       <ul class="raster">
@@ -812,7 +1190,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <br>
         <li class="hed">Raster dinàmic
         </li>
         <div class="row">
@@ -859,9 +1237,9 @@
       <div>
         <h6 class="success">Exemples integració amb:</h6>
         <ul class="ul">
-          <li> <a target="_blank" href="/exemples/leaflet/icgc-raster-leaflet-code.html">Leaflet <i class="fas fa-code"></i> </a></li>
-          <li> <a target="_blank" href="/exemples/esri/icgc-raster-esri-code.html">ArcGIS API Js <i class="fas fa-code"></i> </a></li>
-          <li> <a target="_blank" href="/exemples/google/icgc-basemap-google-code.html">Google Maps <i class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/leaflet/icgc-raster-leaflet-code.html"><span>Leaflet</span> <i class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/esri/icgc-raster-esri-code.html"><span>ArcGIS API Js</span> <i class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/google/icgc-basemap-google-code.html"><span>Google Maps</span> <i class="fas fa-code"></i> </a></li>
         </ul>
       </div>
       <div class="cropt">
@@ -1081,8 +1459,8 @@
     </div>
     <hr>
   -->
-    <div class="alert alert-default">
-      <h5>Terrenys
+    <div id="Terrenys" class="alert alert-default">
+      <h5><b>Terrenys</b>
         <i class="fas fa-chart-area"></i>
       </h5>
       <ul>
@@ -1106,7 +1484,7 @@
           <div class="row">
             <div class="col"><b>
                 ICGC Terreny-RGB dem 5m (MapLibreGL JS)</b><br>
-              <span>"https://geoserveis.icgc.cat/servei/catalunya/contextmaps-terreny-5m-rgb/wmts/{z}/{x}/{y}.png</span>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps-terreny-5m-rgb/wmts/{z}/{x}/{y}.png</span>
               <span id="vincle_31" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
                 data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps-terreny-5m-rgb/wmts/{z}/{x}/{y}.png" title="Copiar enllaç">
               </span>
@@ -1116,8 +1494,8 @@
       <div>
         <h6 class="success">Exemples 3D integració amb:</h6>
         <ul class="ul">
-          <li> <a target="_blank" href="/exemples/cesium/icgc-terrain-cesium-code.html">Cesium Js <i class="fas fa-code"></i> </a></li>
-          <li> <a target="_blank" href="/exemples/mapboxgl/icgc-terrain-rgb-mapbox-code.html">Mapbox GL Js V2 <i class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/cesium/icgc-terrain-cesium-code.html"><span>Cesium Js</span> <i class="fas fa-code"></i> </a></li>
+          <li> <a target="_blank" href="/exemples/mapboxgl/icgc-terrain-rgb-mapbox-code.html"><span>Mapbox GL Js V2</span>  <i class="fas fa-code"></i> </a></li>
         </ul>
       </div>
       <div class="cropt">
@@ -1447,8 +1825,8 @@
       </ul>
     </div>
     -->
-    <div class="alert alert-default">
-      <h5>Desenvolupaments:
+    <div id="Desenvolupaments" class="alert alert-default">
+      <h5><b>Desenvolupaments:</b>
         <i class="fab fa-github"></i>
         </i>
       </h5>
@@ -1456,9 +1834,9 @@
         <li>
           <div class="row">
             <div class="col"><b> Crear Sprites from SVGs files</b><br>
-              <span>https://github.com/gencat/ICGC-createsprites</span>
+              
               <a id="vincle_42" href="https://github.com/gencat/ICGC-createsprites" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-createsprites</span>
               </a>
             </div>
             <div class="col">
@@ -1470,9 +1848,9 @@
           <div class="row">
             <div class="col"><b>
                 Generardor de Fonticons desde SVGs</b><br>
-              <span>https://github.com/gencat/ICGC-fonticon-generator</span>
+              
               <a id="vincle_43" href="https://github.com/gencat/ICGC-fonticon-generator" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-fonticon-generator</span>
               </a>
             </div>
             <div class="col">
@@ -1484,9 +1862,9 @@
           <div class="row">
             <div class="col"><b>
                 TileGluer</b><br>
-              <span>https://github.com/gencat/ICGC-tile-gluer</span>
+              
               <a id="vincle_44" href="https://github.com/gencat/ICGC-tile-gluer" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-tile-gluer</span>
               </a>
             </div>
             <div class="col">
@@ -1498,9 +1876,9 @@
           <div class="row">
             <div class="col"><b>
                 Tile calculator</b><br>
-              <span>https://github.com/gencat/ICGC-tile-calculator</span>
+              
               <a id="vincle_45" href="https://github.com/gencat/ICGC-tile-calculator" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-tile-calculator</span>
               </a>
             </div>
             <div class="col">
@@ -1512,9 +1890,9 @@
           <div class="row">
             <div class="col"><b>
                 ICGC tile-stitch</b><br>
-              <span>https://github.com/gencat/ICGC-tile-stitch</span>
+              
               <a id="vincle_48" href="https://github.com/gencat/ICGC-tile-stitch" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-tile-stitch</span>
               </a>
             </div>
           </div>
@@ -1523,9 +1901,9 @@
           <div class="row">
             <div class="col"><b>
                 GDAL Snippets</b><br>
-              <span>https://github.com/gencat/ICGC-gdal-snipets</span>
+              
               <a id="vincle_46" href="https://github.com/gencat/ICGC-gdal-snipets" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-gdal-snipets</span>
               </a>
             </div>
             <div class="col">
@@ -1537,9 +1915,9 @@
           <div class="row">
             <div class="col"><b>
                 ICGC-vt-postgis</b><br>
-              <span>https://github.com/gencat/ICGC-vt-postgis</span>
+              
               <a id="vincle_46" href="https://github.com/gencat/ICGC-vt-postgis" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-vt-postgis</span>
               </a>
             </div>
           </div>
@@ -1548,9 +1926,9 @@
           <div class="row">
             <div class="col"><b>
                 ICGC-vtServer</b><br>
-              <span>https://github.com/gencat/ICGC-vtServer</span>
+              
               <a id="vincle_46" href="https://github.com/gencat/ICGC-vtServer" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/gencat/ICGC-vtServer</span>
               </a>
             </div>
           </div>
@@ -1559,25 +1937,30 @@
           <div class="row">
             <div class="col"><b>
                 OpenICGC - QgisPlugin</b><br>
-              <span>https://github.com/OpenICGC/QgisPlugin</span>
+              
               <a id="vincle_46" href="https://github.com/OpenICGC/QgisPlugin" target="_blank">
-                <span class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="bottom" title="Enllaç extern"></span>
+                <span>https://github.com/OpenICGC/QgisPlugin</span>
               </a>
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="alert alert-default">
-      <h5>Contacte:
+    <div id="Contacte" class="alert alert-default">
+      <h5><b>Contacte:</b>
         <i class="fas fa-envelope"></i>
         </i>
       </h5>
       <ul>
         <li>
           <div class="row">
-            <div class="col-2">
-              <a href="mailto:openicgc@icgc.cat" target="_top">openicgc@icgc.cat</a>
+            <div class="col">
+              <h7>
+                Si teniu preguntes, suggeriments o comentaris, 
+                no dubteu a posar-vos en contacte amb nosaltres a través del correu <a href="mailto:openicgc@icgc.cat" target="_top"><span>openicgc@icgc.cat</span></a>,
+                les nostres pàgines de <a href="https://github.com/OpenICGC" target="_blank"><span>GitHub</span></a> o visitant el nostre lloc web oficial a <a href="https://www.icgc.cat/ca" target="_blank"><span>ICGC</span></a>.
+              </h7>
+              
             </div>
           </div>
         </li>
@@ -1595,6 +1978,94 @@
       </div>
     </footer>
   </div>
+
+  
+  <!--Buttons addicionals-->
+  
+  <button id="accessibility-btn" aria-label="Accessibility options" aria-expanded="false" aria-controls="accessibility-menu">
+    <img src="img/accessibility-icon.png" alt="Accessibility icon" href="accessibility-menu">
+    
+    
+  </button>
+
+  <div id="accessibility-menu" class="accessibility-menu" aria-hidden="true">
+    <ul>
+        <li><button id="increase-contrast-btn">Activar el contrast</button></li>
+    </ul>
+  </div>
+
+  <button id="scroll-up-btn"><img src="img/slide-up.png"> </button>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const accessibilityBtn = document.getElementById('accessibility-btn');
+    const accessibilityMenu = document.getElementById('accessibility-menu');
+    const increaseFontBtn = document.getElementById('increase-font-btn');
+    const increaseContrastBtn = document.getElementById('increase-contrast-btn');
+
+    // Toggle menu visibility on button click
+    accessibilityBtn.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        accessibilityMenu.setAttribute('aria-hidden', !expanded);
+        this.setAttribute('aria-expanded', !expanded);
+        
+    });
+
+    
+
+    // Function to increase contrast
+    increaseContrastBtn.addEventListener('click', function() {
+        // Example: Change background and text colors for better contrast
+        document.body.classList.toggle('high-contrast');
+    });
+});
+
+
+    // Get the button element
+    const scrollUpBtn = document.getElementById('scroll-up-btn');
+    // Set the initial visibility of the button
+    scrollUpBtn.style.display = 'none';
+    // Add an event listener to the window scroll event
+    window.addEventListener('scroll', () => {
+      // Check the current scroll position
+      if (window.pageYOffset > 300) {
+        // If the user has scrolled down more than 300 pixels, show the button
+        scrollUpBtn.style.display = 'block';
+      } else {
+        // Otherwise, hide the button
+        scrollUpBtn.style.display = 'none';
+      }
+    });
+
+    // Add an event listener to the button
+    scrollUpBtn.addEventListener('click', () => {
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script>
+    function toggleDropdown(button) {
+    const dropdownMenu = button.nextElementSibling;
+    if (dropdownMenu.style.display === 'none') {
+      dropdownMenu.style.display = 'block';
+    } else {
+      dropdownMenu.style.display = 'none';
+    }
+  }
+    document.addEventListener('click', function(event) {
+    const target = event.target;
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+
+    if (!target.closest('.dropdown') && !target.closest('.dropdown-menu')) {
+      dropdownMenus.forEach(function(menu) {
+        menu.style.display = 'none';
+      });
+    }
+  });
+
+  
+  </script>
+
   <script>
     //Function from https://codepen.io/nathanlong/pen/ZpAmjv
     function copyToClipboard(text, el) {
