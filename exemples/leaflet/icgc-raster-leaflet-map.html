@@ -29,31 +29,31 @@
                 zoom: 10,
                 attribution: ''
             });
-            const topoMonICGCCache = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-estandard/MON3857NW/{z}/{x}/{y}.png', {
+            const topoMonICGCCache = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
             }).addTo(map);
-            const topoMonICGC = L.tileLayer('https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/{z}/{x}/{y}.png', {
+            const topoMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
             });
-            const topoGrisMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris/MON3857NW/{z}/{x}/{y}.png', {
+            const topoGrisMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic-gris/MON3857NW/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
             });
-            const topoGrisSimMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris-simplificat/MON3857NW/{z}/{x}/{y}.png', {
+            const topoGrisSimMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/simplificat/MON3857NW/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
             });
-            const ortoHibridaICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-orto-estandard/{z}/{x}/{y}.png', {
+            const ortoHibridaICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
             });
             const mapaBase = {
-                'Mapa estandard ICGC cache': topoMonICGCCache,
-                'Orto cache': ortoHibridaICGC,
-                'Mapa estandard gris ICGC cache': topoGrisMonICGC,
-                'Mapa estandard gris simplificat ICGC cache': topoGrisSimMonICGC
+                'Mapa base estandard': topoMonICGCCache,
+                'Mapa base orto': ortoHibridaICGC,
+                'Mapa base topografic gris': topoGrisMonICGC,
+                'Mapa base simplificat': topoGrisSimMonICGC
                 
             };
             controlCapas = L.control.layers(mapaBase, null, {

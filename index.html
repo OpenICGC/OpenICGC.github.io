@@ -104,8 +104,16 @@
     .col img {
       margin-top: 15px;
       float: right;
+      width: 40%;
+    
+      border: 1px solid #858383;
+    }
+
+    .col img .img2 {
+      margin-top: 15px;
+      float: right;
       width: 250px;
-      height: 35px;
+      height: 135px;
       border: 1px solid #858383;
     }
 
@@ -1114,127 +1122,130 @@
     <hr>
 
     <div id="ContextsMaps Raster" class="alert alert-default ">
-      <h5 class="alert-heading"> <b>ContextsMaps Raster</b>
+      <h5 class="alert-heading"> <b>Mapa base raster</b>
         <i class="fas fa-map"></i>
       </h5>
       <ul class="raster">
-        <li class="hed">Piràmides caché
+        <li class="hed">WMTS
         </li>
 
         <li>
           <div class="row">
-            <div class="col"><b>Mapa estandard WMTS</b><br>
-              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-estandard/MON3857NW/{z}/{x}/{y}.png</span>
+            <div class="col"><b>Mapa Base Topogràfic</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png</span>
               <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-estandard/MON3857NW/{z}/{x}/{y}.png"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png"
                 title="Copiar enllaç">
               </span>
             </div>
             <div class="col">
-              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png">
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="row">
-            <div class="col"><b>Orto estandard WMTS</b><br>
-              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-orto-estandard/MON3857NW/{z}/{x}/{y}.png</span>
-              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-orto-estandard/MON3857NW/{z}/{x}/{y}.png"
-                title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_orto_estandard.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Mapa base gris WMTS</b><br>
-              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris/MON3857NW/{z}/{x}/{y}.png</span>
-              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris/MON3857NW/{z}/{x}/{y}.png"
-                title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_base_gris.png">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_topo.jpg">
             </div>
           </div>
         </li>
 
         <li>
           <div class="row">
-            <div class="col"><b>Mapa base gris simplificat WMTS</b><br>
-              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris-simplificat/MON3857NW/{z}/{x}/{y}.png</span>
+            <div class="col"><b>Mapa Base Topogràfic Gris </b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic-gris/MON3857NW/{z}/{x}/{y}.png</span>
               <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wmts/contextmaps-mapa-base-gris-simplificat/MON3857NW/{z}/{x}/{y}.png"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic-gris/MON3857NW/{z}/{x}/{y}.png"
                 title="Copiar enllaç">
               </span>
             </div>
             <div class="col">
-              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_base_gris.png">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_topo_gris.jpg">
             </div>
           </div>
         </li>
         <li>
           <div class="row">
-            <div class="col"><b>Mapa estàndard WMS</b><br>
-              <span>https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wms?</span>
+            <div class="col"><b>Mapa Base Estàndard</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/estandard/MON3857NW/{z}/{x}/{y}.png</span>
               <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps/wms" title="Copiar enllaç">
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/estandard/MON3857NW/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
               </span>
             </div>
             <div class="col">
-              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_estandard_0.jpg">
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Simplificat</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/simplificat/MON3857NW/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/simplificat/MON3857NW/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_simplificat.jpg">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base admistratiu</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/admistratiu/MON3857NW/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/admistratiu/MON3857NW/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_administratiu.jpg">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base orto</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto.jpg">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base orto gris</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-gris/MON3857NW/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-gris/MON3857NW/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto_gris.jpg">
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base orto híbrida</b><br>
+              <span>https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-hibrida/MON3857NW/{z}/{x}/{y}.png</span>
+              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
+                data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-hibrida/MON3857NW/{z}/{x}/{y}.png"
+                title="Copiar enllaç">
+              </span>
+            </div>
+            <div class="col">
+              <img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto_hibida.jpg">
             </div>
           </div>
         </li>
         <br>
-        <li class="hed">Raster dinàmic
-        </li>
-        <div class="row">
-          <div class="col"><b>Mapa estandard</b><br>
-            <span>https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/{z}/{x}/{y}.png</span>
-            <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-              data-copy="https://geoserveis.icgc.cat/styles/icgc_mapa_estandard/{z}/{x}/{y}.png" title="Copiar enllaç">
-            </span>
-          </div>
-          <div class="col">
-            <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png">
-          </div>
-        </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Mapa estàndard gris</b><br>
-              <span>https://geoserveis.icgc.cat/styles/icgc_mapa_base_gris/{z}/{x}/{y}.png</span>
-              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/styles/icgc_mapa_base_gris/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_base_gris.png">
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="row">
-            <div class="col"><b>Mapa híbrida</b><br>
-              <span>https://geoserveis.icgc.cat/styles/icgc_orto_hibrida/{z}/{x}/{y}.png</span>
-              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/styles/icgc_orto_hibrida/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_orto_hibrida.png">
-            </div>
-          </div>
-        </li>
-      </ul>
+       
 
       <div>
         <h6 class="success">Exemples integració amb:</h6>
@@ -1255,212 +1266,7 @@
         <span class="badge badge-primary">Google Maps</span>
       </div>
     </div>
-    <!--
-    <hr>
-    <div class="alert alert-default ">
-      <h5 class="alert-heading">Altres Raster Tiles
-        <i class="fas fa-map"></i>
-      </h5>
-      <ul class="raster">
-
-        
-
-        <li class="hed">Instamaps (tot el món)
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Topogràfic web (tot el món nivell 14)</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/osm_suau/CAT3857_15/{z}/{x}/{y}.png</span>
-              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/osm_suau/CAT3857_15/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasweb.png">
-            </div>
-          </div>
-        </li>
-        <li class="hed">Catalunya
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Ortofoto</b><br>
-              <span>https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_32" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasorto.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Topogràfic clàssic</b><br>
-              <span>https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_33" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasclassic.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Topogràfic web</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_34" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasweb.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Ortofoto augmentada</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg</span>
-              <span id="vincle_35" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/orto_augmentada/CAT3857/{z}/{x}/{y}.jpeg" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasaugmented.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Geològic</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/geologia/MON3857NW/{z}/{x}/{y}.png</span>
-              <span id="vincle_34" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy=https://tilemaps.icgc.cat/mapfactory/wmts/geologia/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/geologic.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Topogràfic web gris</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_36" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/gris_topo_suau/CAT3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasgris.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Híbrid - Base híbrida per combinar amb ortoforto </b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_37" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/hibrida_total/CAT3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rashibrid.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Topogràfic web fosc</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_38" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/nit_topo_suau/CAT3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rasfosc.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Toponímia - Capa transparent de toponímia</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_39" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/toponimia/CAT3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/rastopo.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Administrativa simplificada</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/limits/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_39" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/limits/CAT3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/limits.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col"><b>Relleu</b><br>
-              <span>https://tilemaps.icgc.cat/mapfactory/wmts/relleu/CAT3857/{z}/{x}/{y}.png</span>
-              <span id="vincle_39" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://tilemaps.icgc.cat/mapfactory/wmts/relleu/CAT3857/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/relleu.png">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
-            <div class="col-7"><b>Normal Maps - Tècnica 3D que permet donar una il·luminació i relleu a una superfície.
-                <a target="_blank" href="https://betaserver.icgc.cat/relleuiombra2m/#14/41.8336/1.7392">(Exemple)</a></b><br>
-              <span>https://betaserver.icgc.cat/tileserver3/tileserver.php?/norm2x2/{z}/{x}/{y}.png</span>
-              <span id="vincle_39" class="far fa-clipboard btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"
-                data-copy="https://betaserver.icgc.cat/tileserver3/tileserver.php?/norm2x2/{z}/{x}/{y}.png" title="Copiar enllaç">
-              </span>
-            </div>
-            <div class="col">
-              <img src="img/norma.png">
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div>
-        <h6 class="success">Exemples integració amb:</h6>
-        <ul class="ul">
-          <li> <a target="_blank" href="/exemples/leaflet/icgc-raster-leaflet-code.html">Leaflet <i class="fas fa-code"></i> </a></li>
-          <li> <a target="_blank" href="/exemples/esri/icgc-raster-esri-code.html">ArcGIS API Js <i class="fas fa-code"></i> </a></li>
-          <li> <a target="_blank" href="/exemples/google/icgc-basemap-google-code.html">Google Maps <i class="fas fa-code"></i> </a></li>
-        </ul>
-      </div>
-      <div class="cropt">
-        <small>Integrable amb:</small>
-        <span class="badge badge-primary">Leaflet</span>
-        <span class="badge badge-primary">OpenLayers</span>
-        <span class="badge badge-primary">MapLibre GL Js</span>
-        <span class="badge badge-primary">MapBox GL Js</span>
-        <span class="badge badge-primary">ArcGis API Js</span>
-        <span class="badge badge-primary">Cesium Js</span>
-        <span class="badge badge-primary">Google Maps</span>
-      </div>
-    </div>
-    <hr>
-  -->
+   
     <div id="Terrenys" class="alert alert-default">
       <h5><b>Terrenys</b>
         <i class="fas fa-chart-area"></i>
