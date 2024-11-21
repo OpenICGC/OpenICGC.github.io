@@ -1,69 +1,71 @@
 <html lang="ca">
 <head>
-    <title>Exemple Leaflet i piràmides ràster ICGC </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="ICGC" />
-    <meta name="description" content="Contextmaps rasters Catalunya">
-    <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICGC - Mapes Base</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
+        html,
         body {
+            height: 100%;
             margin: 0;
         }
         #map {
-            height: 500px;
             width: 100%;
-            background-color: #ffffff
+            height: 100%;
         }
     </style>
-    <script>
-        function init() {
-            const map = L.map('map', {
-                center: [41.6863, 2.4382],
-                zoom: 10,
-                attribution: ''
-            });
-            const topoMonICGCCache = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
-            }).addTo(map);
-            const topoMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
-            });
-            const topoGrisMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic-gris/MON3857NW/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
-            });
-            const topoGrisSimMonICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/simplificat/MON3857NW/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
-            });
-            const ortoHibridaICGC = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: 'Catalunya: Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3, Gencat i altres.<br> Resta del món: <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles  </a>; © OpenStreetMap contributors; © Mapzen, OpenStreetMap, and others; World Imagery ©ESRI.<a href="https://www.icgc.cat/Aplicacions/Visors/ContextMaps#credits" target="_blank">...Més detall</a>'
-            });
-            const mapaBase = {
-                'Mapa base estandard': topoMonICGCCache,
-                'Mapa base orto': ortoHibridaICGC,
-                'Mapa base topografic gris': topoGrisMonICGC,
-                'Mapa base simplificat': topoGrisSimMonICGC
-                
-            };
-            controlCapas = L.control.layers(mapaBase, null, {
-                collapsed: false
-            });
-            controlCapas.addTo(map)
-        }
-    </script>
 </head>
-<body onLoad="init()">
-    <div id="map"> </div>
+<body>
+    <div id="map"></div>
+    <script>
+        const topo = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20,
+            attribution: '&copy;'
+        });
+        const topogris = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic-gris/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
+        const simplificat = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/simplificat/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
+        const admin = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/administratiu/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
+        const estandard = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/estandard/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
+        const orto = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
+        const ortogris = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-gris/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
+        const hibrid = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-hibrida/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
+        const map = L.map('map', {
+            attributionControl: false,
+            attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3',
+            minZoom: 6,
+            center: [41.8, 1.7],
+            zoom: 8,
+            layers: [topo]
+        });
+        const baseLayers = {
+            'Topogràfic': topo,
+            'Topogràfic gris': topogris,
+            'Simplificat': simplificat,
+            'Administratiu': admin,
+            'Estàndard': estandard,
+            'Orto': orto,
+            'Orto gris': ortogris,
+            'Orto híbrida': hibrid
+        };
+        const layerControl = L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
+    </script>
 </body>
 </html>
