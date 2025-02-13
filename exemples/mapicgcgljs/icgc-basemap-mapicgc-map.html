@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta charset='utf-8 ' />
+    <title>Exemple estils vector ICGC i MapICGC GL JS</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://eines.icgc.cat/recursos/mapicgc-gl-js/mapicgc-gl.js"></script>
+    <link href="https://eines.icgc.cat/recursos/mapicgc-gl-js/mapicgc-gl.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        #menu {
+            position: absolute;
+            z-index: 1000;
+            background: #fff;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            top: 5px;
+            left: 5px;
+            border-radius: 7px;
+            -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+            box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+        }
+    </style>
+</head>
+
+<body>
+    <div id='menu'>
+        <input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard' checked='checked' />
+        <label for='icgc_mapa_estandard'>Mapa estàndard</label><br />
+        <input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris' />
+        <label for='icgc_mapa_base_gris'>Mapa base gris</label><br />
+        <input id='icgc_delimitacio_estandard' type='radio' name='rtoggle' value='icgc_delimitacio_estandard' />
+        <label for='icgc_delimitacio_estandard'>Delimitació estàndard</label><br />
+        <input id='icgc_xarxa_viaria_estandard' type='radio' name='rtoggle' value='icgc_xarxa_viaria_estandard' />
+        <label for='icgc_xarxa_viaria_estandard'>Xarxa viària estàndard</label><br />
+        <input id='icgc_arees_poblament' type='radio' name='rtoggle' value='icgc_arees_poblament' />
+        <label for='icgc_arees_poblament'>Àrees poblament</label><br />
+        <input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida' />
+        <label for='icgc_orto_hibrida'>Orto híbrida</label>
+    </div>
+
+    <div id="map"></div>
+    <script>
+
+        async function initMap() {
+            const data = await mapicgcgl.Config.getConfigICGC();
+            const map = new mapicgcgl.Map({
+                container: "map",
+                style: data.Styles.TOPO,
+                center: [2.1464, 41.306],
+                zoom: 7.4,
+                maxZoom: 19,
+                hash: true,
+                pitch: 0,
+            });
+            map.on("load", () => {
+                map.addFullscreenControl()
+                map.addNavigationControl()
+                map.addAttributionControl({ compact: true });
+                map.addGeolocateControl(
+                    {
+                        positionOptions: {
+                            enableHighAccuracy: true,
+                        },
+                        trackUserLocation: true,
+                    }
+                );
+
+
+            })
+            const layerList = document.getElementById('menu');
+            const inputs = layerList.getElementsByTagName('input');
+
+            function switchLayer(layer) {
+                const layerId = layer.target.id;
+                map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+            }
+
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].onclick = switchLayer;
+            }
+
+        }
+        initMap();
+
+
+    </script>
+</body>
+
+</html>
