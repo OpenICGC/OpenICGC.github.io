@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exemple serveis rasters ICGC i MapICGC GL JS</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://eines.icgc.cat/recursos/mapicgc-gl-js/mapicgc-gl.js"></script>
+    <link href="https://eines.icgc.cat/recursos/mapicgc-gl-js/mapicgc-gl.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #menu {
+            position: absolute;
+            z-index: 1000;
+            background: #fff;
+            padding: 10px;
+            font-family: "Open Sans", sans-serif;
+            top: 5px;
+            left: 5px;
+            border-radius: 7px;
+            -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+            box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <input id="topografic" type="radio" name="rtoggle" value=" topografic" checked="checked" />
+        <label for="topografic">Topogràfic</label><br />
+        <input id="topografic-gris" type="radio" name="rtoggle" value="topografic-gris" />
+        <label for="topografic-gris">Topogràfic gris</label><br />
+        <input id="simplificat" type="radio" name="rtoggle" value="simplificat" />
+        <label for="simplificat">Simplificat</label><br />
+        <input id="administratiu" type="radio" name="rtoggle" value="administratiu" />
+        <label for="administratiu">Administratiu</label><br />
+        <input id="estandard" type="radio" name="rtoggle" value="estandard" />
+        <label for="estandard">Estàndard</label><br />
+        <input id="orto" type="radio" name="rtoggle" value=" orto" />
+        <label for="orto">Orto</label><br />
+        <input id="orto-gris" type="radio" name="rtoggle" value=" orto-gris" />
+        <label for="orto-gris">Orto gris</label><br />
+        <input id="orto-hibrida" type="radio" name="rtoggle" value=" orto-hibrida" />
+        <label for="orto-hibrida">Orto híbrida</label><br />
+    </div>
+
+    <div id="map"></div>
+    <script>
+        async function initMap() {
+            const data = await mapicgcgl.Config.getConfigICGC();
+            const map = new mapicgcgl.Map({
+                container: "map",
+                style: data.Styles.TOPO,
+                center: [2.1464, 41.306],
+                zoom: 7.4,
+                maxZoom: 19,
+                hash: true,
+                pitch: 0,
+            });
+            map.on("load", () => {
+                map.addFullscreenControl()
+                map.addNavigationControl();
+                map.addAttributionControl({ compact: true });
+                map.addGeolocateControl({
+                    positionOptions: {
+                        enableHighAccuracy: true,
+                    },
+                    trackUserLocation: true,
+                });
+
+                switchLayer();
+            });
+            const layerList = document.getElementById("menu");
+            const inputs = layerList.getElementsByTagName("input");
+
+            function switchLayer(layer) {
+                let layerId;
+
+                if (layer === undefined) {
+                    layerId = "topografic";
+                } else {
+                    layerId = layer.target.id;
+                }
+
+                if (map.getLayer("wmts-layer")) {
+                    map.removeLayer("wmts-layer");
+                    map.removeSource("wmts-layer");
+                }
+
+                map.addSource("wmts-layer", {
+                    type: "raster",
+                    tiles: [
+                        `https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/${layerId}/MON3857NW/{z}/{x}/{y}.png`,
+                    ],
+                    tileSize: 256,
+                });
+
+                map.addLayer({
+                    id: "wmts-layer",
+                    type: "raster",
+                    source: "wmts-layer",
+                    paint: {},
+                });
+            }
+
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].onclick = switchLayer;
+            }
+
+        }
+        initMap();
+    </script>
+</body>
+
+</html>
