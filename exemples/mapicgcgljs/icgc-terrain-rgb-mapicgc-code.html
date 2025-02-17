@@ -159,7 +159,7 @@
                           trackUserLocation: true,
                       }
                   );
-                  map.addTerrainICGC(data.Terrains.ICGC5M, "bottom-right");
+                  map.addTerrainICGC(data.Terrains.ICGC5M);
                   map.setSky()
   
   
@@ -171,7 +171,7 @@
                  
                   const layerId = layer.target.id;
                   console.log('layer', layerId)
-                  map.addTerrainICGC(data.Terrains[layerId], "bottom-right");
+                  map.addTerrainICGC(data.Terrains[layerId]);
               }
   
               for (let i = 0; i < inputs.length; i++) {
