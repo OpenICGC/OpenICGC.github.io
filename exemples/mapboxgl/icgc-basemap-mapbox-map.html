@@ -83,7 +83,7 @@
                     'pk.eyJ1IjoiZ2Vvc3RhcnRlcnMiLCJhIjoiY2w1aHJvZzh5MDEydjNqcDVndGJ3azJicyJ9.MteLRa-TQ6YfSotrVWvtgQ';
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
+            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json',
             center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 18,
@@ -108,7 +108,7 @@
         const button = document.getElementById('bt_pitch');
         function switchLayer(layer) {
             const layerId = layer.target.id;
-            map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+            map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
         }
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());

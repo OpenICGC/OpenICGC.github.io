@@ -3,13 +3,13 @@
          {
         "name": "Clar",
         "styleid": 0,
-        "style": "https://geoserveis.icgc.cat/contextmaps/icgc_delimitacio_estandard.json",
+        "style": "https://geoserveis.icgc.cat/styles/icgc_delimitacio_estandard.json",
         "icon": "https://openicgc.github.io/img/icgc_delimitacio_estandard.png"
     },
     {
         "name": "Orto",
         "styleid": 1,
-        "style": "https://geoserveis.icgc.cat/contextmaps/icgc_orto_hibrida.json",
+        "style": "https://geoserveis.icgc.cat/styles/icgc_orto_hibrida.json",
         "icon": "https://openicgc.github.io/img/orto.png"
     },
     {

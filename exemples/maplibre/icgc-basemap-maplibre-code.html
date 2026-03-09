@@ -108,8 +108,8 @@
     &#x3C;meta charset='utf-8'/&#x3E;
     &#x3C;title&#x3E;Exemple MapLibre i ContextMaps ICGC&#x3C;/title&#x3E;
     &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/&#x3E;
-    &#x3C;script src="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js"&#x3E;&#x3C;/script&#x3E;
-    &#x3C;link href="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css" rel="stylesheet"/&#x3E;
+    &#x3C;script src="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.js"&#x3E;&#x3C;/script&#x3E;
+    &#x3C;link href="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.css" rel="stylesheet"/&#x3E;
     &#x3C;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/&#x3E;
     &#x3C;style&#x3E;
         body {
@@ -180,7 +180,7 @@
     &#x3C;script&#x3E;
        const map = new maplibregl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
+            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json',
            center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 14,
@@ -205,7 +205,7 @@
         const button = document.getElementById('bt_pitch');
         function switchLayer(layer) {
             const layerId = layer.target.id;
-                map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+                map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
         }
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());

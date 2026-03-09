@@ -127,7 +127,7 @@
                let  isRotating = false;
                 const map = new Map({
                     container: 'map',
-                    style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
+                    style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json',
                     center: [2.174689, 41.403806],
                     zoom: 15.93,
                     maxZoom: 18,
@@ -230,7 +230,7 @@
                 const button = document.getElementById('bt_pitch');
                 function switchLayer(layer) {
                     const layerId = layer.target.id;
-                    map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+                    map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
                 }
                 function canviaPerspectiva() {
                     const pitch = parseInt(map.getPitch());

@@ -12,7 +12,7 @@
     "sources": {
       "openmaptiles": {
         "type": "vector",
-        "url": "https://geoserveis.icgc.cat/contextmaps/basemap.json"
+        "url": "https://geoserveis.icgc.cat/styles/basemap.json"
       },
 
       "terrainICGC": {
@@ -35,8 +35,8 @@
     }
 
     },
-    "sprite": "https://geoserveis.icgc.cat/contextmaps/sprites/sprite@1",
-    "glyphs": "https://geoserveis.icgc.cat/contextmaps/glyphs/{fontstack}/{range}.pbf",
+    "sprite": "https://geoserveis.icgc.cat/styles/sprites/sprite@1",
+    "glyphs": "https://geoserveis.icgc.cat/styles/glyphs/{fontstack}/{range}.pbf",
     "layers": [
       {
         "id": "background",

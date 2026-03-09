@@ -5,8 +5,8 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/98/three.min.js"></script>
     <script src="/vendors/js/GLTFLoader.js"></script>
-    <script src="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
@@ -74,7 +74,7 @@
        let  isRotating = false;
         const map = new maplibregl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
+            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json',
             center: [2.174689, 41.403806],
             zoom: 15.93,
             maxZoom: 18,
@@ -177,7 +177,7 @@
         const button = document.getElementById('bt_pitch');
         function switchLayer(layer) {
             const layerId = layer.target.id;
-            map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+            map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
         }
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());

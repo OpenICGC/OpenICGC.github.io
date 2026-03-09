@@ -3,8 +3,8 @@
     <meta charset='utf-8' />
     <title>Exemple MapLibre i ContextMaps ICGC</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
@@ -75,7 +75,7 @@
     <script>
        const map = new maplibregl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
+            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json',
            center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 14,
@@ -100,7 +100,7 @@
         const button = document.getElementById('bt_pitch');
         function switchLayer(layer) {
             const layerId = layer.target.id;
-                map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+                map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
         }
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());
