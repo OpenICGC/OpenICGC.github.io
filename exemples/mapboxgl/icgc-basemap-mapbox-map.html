@@ -61,7 +61,7 @@
 
 <body>
     <div id='menu'>
-        <input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard' checked='checked'>
+        <input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard_general' checked='checked'>
         <label for='icgc_mapa_estandard'>Mapa estàndard</label><br>
         <input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris'>
         <label for='icgc_mapa_base_gris'>Mapa base gris</label><br>
@@ -82,7 +82,7 @@
 
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json',
+            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard_general.json',
             center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 18,
