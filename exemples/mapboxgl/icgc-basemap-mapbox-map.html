@@ -61,16 +61,16 @@
 
 <body>
     <div id='menu'>
-        <input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard' checked='checked'>
+        <input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard_general' checked='checked'>
         <label for='icgc_mapa_estandard'>Mapa estàndard</label><br>
         <input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris'>
         <label for='icgc_mapa_base_gris'>Mapa base gris</label><br>
-        <input id='icgc_delimitacio_estandard' type='radio' name='rtoggle' value='icgc_delimitacio_estandard'>
-        <label for='icgc_delimitacio_estandard'>Delimitació estàndard</label><br>
-        <input id='icgc_xarxa_viaria_estandard' type='radio' name='rtoggle' value='icgc_xarxa_viaria_estandard'>
-        <label for='icgc_xarxa_viaria_estandard'>Xarxa viària estàndard</label><br>
-        <input id='icgc_arees_poblament' type='radio' name='rtoggle' value='icgc_arees_poblament'>
-        <label for='icgc_arees_poblament'>Àrees poblament</label><br>
+        <input id='icgc_mapa_estandard_general' type='radio' name='rtoggle' value='icgc_mapa_estandard_general'>
+        <label for='icgc_mapa_estandard_general'>Topogràfic</label><br>
+        <input id='icgc_orto_estandard' type='radio' name='rtoggle' value='icgc_orto_estandard'>
+        <label for='icgc_orto_estandard'>Ortofoto</label><br>
+        <input id='icgc_orto_estandard_gris' type='radio' name='rtoggle' value='icgc_orto_estandard_gris'>
+        <label for='icgc_orto_estandard_gris'>Ortofoto gris</label><br>
         <input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida'>
         <label for='icgc_orto_hibrida'>Orto híbrida</label>
     </div>
@@ -79,11 +79,10 @@
     </div>
     <div id="map"></div>
     <script>
-          mapboxgl.accessToken =
-                    'pk.eyJ1IjoiZ2Vvc3RhcnRlcnMiLCJhIjoiY2w1aHJvZzh5MDEydjNqcDVndGJ3azJicyJ9.MteLRa-TQ6YfSotrVWvtgQ';
+
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
+            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard_general.json',
             center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 18,
@@ -108,7 +107,7 @@
         const button = document.getElementById('bt_pitch');
         function switchLayer(layer) {
             const layerId = layer.target.id;
-            map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+            map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
         }
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());

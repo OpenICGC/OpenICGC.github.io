@@ -15,8 +15,8 @@
         "url": "https://tilemaps.icgc.cat/tileserver/limits-catalunya-tilejson.json"
       }
     },
-    "sprite": "https://geoserveis.icgc.cat/contextmaps/sprites/sprite@1",
-    "glyphs": "https://geoserveis.icgc.cat/contextmaps/glyphs/{fontstack}/{range}.pbf",
+    "sprite": "https://geoserveis.icgc.cat/styles/sprites/sprite@1",
+    "glyphs": "https://geoserveis.icgc.cat/styles/glyphs/{fontstack}/{range}.pbf",
     "layers": [
       {
         "id": "background",

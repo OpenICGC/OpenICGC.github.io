@@ -115,6 +115,11 @@
               const hibrid = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-hibrida/MON3857NW/{z}/{x}/{y}.png', {
                   maxZoom: 20
               });
+
+
+               const geologic = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/geologic/MON3857NW/{z}/{x}/{y}.png', {
+                  maxZoom: 20
+              });
               const map = L.map('map', {
                   attributionControl: false,
                   minZoom: 6,
@@ -130,7 +135,8 @@
                   'Estàndard': estandard,
                   'Orto': orto,
                   'Orto gris': ortogris,
-                  'Orto híbrida': hibrid
+                  'Orto híbrida': hibrid,
+                  "Geològic":geologic
               };
               const layerControl = L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
           &#x3C;/script&#x3E;

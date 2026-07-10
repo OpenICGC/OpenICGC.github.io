@@ -1,13 +1,14 @@
 <html lang="ca">
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GR9JCZYNFH"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-GR9JCZYNFH');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-GR9JCZYNFH');
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,12 +23,14 @@
             height: 100%;
             margin: 0;
         }
+
         #map {
             width: 100%;
             height: 100%;
         }
     </style>
 </head>
+
 <body>
     <div id="map"></div>
     <script>
@@ -56,6 +59,10 @@
         const hibrid = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-hibrida/MON3857NW/{z}/{x}/{y}.png', {
             maxZoom: 20
         });
+
+        const geologic = L.tileLayer('https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/geologic/MON3857NW/{z}/{x}/{y}.png', {
+            maxZoom: 20
+        });
         const map = L.map('map', {
             attributionControl: false,
             attribution: 'Institut Cartogràfic i Geològic de Catalunya CC-BY-SA-3',
@@ -72,9 +79,11 @@
             'Estàndard': estandard,
             'Orto': orto,
             'Orto gris': ortogris,
-            'Orto híbrida': hibrid
+            'Orto híbrida': hibrid,
+            "Geològic": geologic
         };
         const layerControl = L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
     </script>
 </body>
+
 </html>

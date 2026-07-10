@@ -1,4 +1,5 @@
 <html lang="ca">
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GR9JCZYNFH"></script>
@@ -41,24 +42,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
     integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <style>
     body {
       margin: 0;
     }
+
     .soft {
       background-color: #f7f7f7
     }
+
     .titol {
       padding: 15px
     }
+
     .container {
       border: 1px solid #f7f7f7
     }
+
     li.L0,
     li.L1,
     li.L2,
@@ -71,6 +76,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP" height="0" width="0"
@@ -83,10 +89,12 @@
         <br>
         <div>
           <p>
-            <a  target ="_blank" 
- href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/exemples/mapboxgl/icgc-basemap-mapbox-map.html">Veure codi font
+            <a target="_blank"
+              href="https://github.com/OpenICGC/OpenICGC.github.io/blob/master/exemples/mapboxgl/icgc-basemap-mapbox-map.html">Veure
+              codi font
               <i class="fab fa-github"></i></a>
-            <a href="/exemples/mapboxgl/icgc-basemap-mapbox-map.html">pantalla completa <i class="fas fa-expand"></i></a>
+            <a href="/exemples/mapboxgl/icgc-basemap-mapbox-map.html">pantalla completa <i
+                class="fas fa-expand"></i></a>
           </p>
         </div>
       </div>
@@ -156,12 +164,12 @@
     &#x3C;label for='icgc_mapa_estandard'&#x3E;Mapa estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
     &#x3C;input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris'&#x3E;
     &#x3C;label for='icgc_mapa_base_gris'&#x3E;Mapa base gris&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='icgc_delimitacio_estandard' type='radio' name='rtoggle' value='icgc_delimitacio_estandard'&#x3E;
-    &#x3C;label for='icgc_delimitacio_estandard'&#x3E;Delimitació estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='icgc_xarxa_viaria_estandard' type='radio' name='rtoggle' value='icgc_xarxa_viaria_estandard'&#x3E;
-    &#x3C;label for='icgc_xarxa_viaria_estandard'&#x3E;Xarxa viària estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='icgc_arees_poblament' type='radio' name='rtoggle' value='icgc_arees_poblament'&#x3E;
-    &#x3C;label for='icgc_arees_poblament'&#x3E;Àrees poblament&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_mapa_estandard_general' type='radio' name='rtoggle' value='icgc_mapa_estandard_general'&#x3E;
+    &#x3C;label for='icgc_mapa_estandard_general'&#x3E;Topogràfic&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_orto_estandard' type='radio' name='rtoggle' value='icgc_orto_estandard'&#x3E;
+    &#x3C;label for='icgc_orto_estandard'&#x3E;Ortofoto&#x3C;/label&#x3E;&#x3C;br&#x3E;
+    &#x3C;input id='icgc_orto_estandard_gris' type='radio' name='rtoggle' value='icgc_orto_estandard_gris'&#x3E;
+    &#x3C;label for='icgc_orto_estandard_gris'&#x3E;Ortofoto gris&#x3C;/label&#x3E;&#x3C;br&#x3E;
     &#x3C;input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida'&#x3E;
     &#x3C;label for='icgc_orto_hibrida'&#x3E;Orto híbrida&#x3C;/label&#x3E;
     &#x3C;/div&#x3E;
@@ -172,7 +180,7 @@
     &#x3C;script&#x3E;
        const map = new mapboxgl.Map({
             container: 'map',
-            style: 'https://geoserveis.icgc.cat/contextmaps/icgc_mapa_estandard.json',
+            style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json',
            center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 14,
@@ -197,7 +205,7 @@
         const button = document.getElementById('bt_pitch');
         function switchLayer(layer) {
             const layerId = layer.target.id;
-                map.setStyle('https://geoserveis.icgc.cat/contextmaps/' + layerId + '.json');
+                map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
         }
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());
@@ -217,4 +225,5 @@
     </div>
   </div>
 </body>
+
 </html>
