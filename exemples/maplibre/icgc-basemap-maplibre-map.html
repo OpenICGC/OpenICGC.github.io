@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset='utf-8' />
     <title>Exemple MapLibre i ContextMaps ICGC</title>
@@ -11,6 +12,7 @@
             margin: 0;
             padding: 0;
         }
+
         #map {
             position: absolute;
             top: 0;
@@ -18,6 +20,7 @@
             width: 100%;
             height: 100%
         }
+
         #menu {
             position: absolute;
             z-index: 1000;
@@ -31,6 +34,7 @@
             -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
             box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
         }
+
         #div_pitch {
             position: absolute;
             right: 10px;
@@ -38,6 +42,7 @@
             width: 30px;
             z-index: 100;
         }
+
         .sliderClass {
             position: absolute;
             left: 10px;
@@ -53,41 +58,42 @@
         }
     </style>
 </head>
+
 <body>
     <div id='menu'>
-        <input id='icgc_mapa_estandard' type='radio' name='rtoggle' value='icgc_mapa_estandard_general' checked='checked'>
-        <label for='icgc_mapa_estandard'>Mapa estàndard</label><br>
-        <input id='icgc_mapa_base_gris' type='radio' name='rtoggle' value='icgc_mapa_base_gris'>
-        <label for='icgc_mapa_base_gris'>Mapa base gris</label><br>
-        <input id='icgc_mapa_estandard_general' type='radio' name='rtoggle' value='icgc_mapa_estandard_general'>
-        <label for='icgc_mapa_estandard_general'>Topogràfic</label><br>
-        <input id='icgc_orto_estandard' type='radio' name='rtoggle' value='icgc_orto_estandard'>
-        <label for='icgc_orto_estandard'>Ortofoto</label><br>
-        <input id='icgc_orto_estandard_gris' type='radio' name='rtoggle' value='icgc_orto_estandard_gris'>
-        <label for='icgc_orto_estandard_gris'>Ortofoto gris</label><br>
-        <input id='icgc_orto_hibrida' type='radio' name='rtoggle' value='icgc_orto_hibrida'>
-        <label for='icgc_orto_hibrida'>Orto híbrida</label>
+        <input id='mapa-base-estandard' type='radio' name='rtoggle' value='mapa-base-topografic' checked='checked'>
+        <label for='mapa-base-estandard'>Mapa estàndard</label><br>
+        <input id='mapa-base-estandard-gris' type='radio' name='rtoggle' value='mapa-base-estandard-gris'>
+        <label for='mapa-base-estandard-gris'>Mapa base gris</label><br>
+        <input id='mapa-base-topografic' type='radio' name='rtoggle' value='mapa-base-topografic'>
+        <label for='mapa-base-topografic'>Topogràfic</label><br>
+        <input id='mapa-base-orto' type='radio' name='rtoggle' value='mapa-base-orto'>
+        <label for='mapa-base-orto'>Ortofoto</label><br>
+        <input id='mapa-base-orto-gris' type='radio' name='rtoggle' value='mapa-base-orto-gris'>
+        <label for='mapa-base-orto-gris'>Ortofoto gris</label><br>
+        <input id='mapa-base-orto-hibrida' type='radio' name='rtoggle' value='mapa-base-orto-hibrida'>
+        <label for='mapa-base-orto-hibrida'>Orto híbrida</label>
     </div>
     <div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl">
         <button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"></button>
     </div>
     <div id="map"></div>
     <script>
-       const map = new maplibregl.Map({
+        const map = new maplibregl.Map({
             container: 'map',
             style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard_general.json',
-           center: [1.1464, 41.706],
+            center: [1.1464, 41.706],
             zoom: 7.4,
             maxZoom: 18,
             hash: true,
             pitch: 0,
-			attributionControl: false
+            attributionControl: false
         });
         map.on('load', function () {
             map.addControl(new maplibregl.NavigationControl());
-			map.addControl(new maplibregl.AttributionControl({
-               compact: true
-			}));
+            map.addControl(new maplibregl.AttributionControl({
+                compact: true
+            }));
             map.addControl(new maplibregl.GeolocateControl({
                 positionOptions: {
                     enableHighAccuracy: true,
@@ -100,7 +106,7 @@
         const button = document.getElementById('bt_pitch');
         function switchLayer(layer) {
             const layerId = layer.target.id;
-                map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
+            map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
         }
         function canviaPerspectiva() {
             const pitch = parseInt(map.getPitch());
@@ -109,10 +115,11 @@
                 'pitch': pitch
             })
         };
-        for (let  i = 0; i < inputs.length; i++) {
+        for (let i = 0; i < inputs.length; i++) {
             inputs[i].onclick = switchLayer;
         }
         button.onclick = canviaPerspectiva;
     </script>
 </body>
+
 </html>
