@@ -1,14 +1,15 @@
 {
-    "backgrounds": [{
+    "backgrounds": [
+        {
             "name": "Icgc",
             "styleid": 0,
-            "style": "https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json",
+            "style": "https://geoserveis.icgc.cat/styles/mapa-base-estandard.json",
             "icon": "https://openicgc.github.io/img/icgc.png"
         },
         {
-            "name": "icgc_mapa_base_gris",
+            "name": "mapa-base-estandard-gris",
             "styleid": 1,
-            "style": "https://geoserveis.icgc.cat/styles/icgc_mapa_base_gris.json",
+            "style": "https://geoserveis.icgc.cat/styles/mapa-base-estandard-gris.json",
             "icon": "https://openicgc.github.io/img/icgc_mapa_base_gris.png"
         },
         {
@@ -32,13 +33,8 @@
         {
             "name": "Hibrid",
             "styleid": 4,
-            "style": "https://geoserveis.icgc.cat/styles/icgc_orto_hibrida.json",
+            "style": "https://geoserveis.icgc.cat/styles/mapa-base-orto-hibrida.json",
             "icon": "https://openicgc.github.io/img/hibrid.png"
         }
-        
-
-
     ]
-
-
 }

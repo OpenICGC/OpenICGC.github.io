@@ -1,198 +1,214 @@
+<!DOCTYPE html>
+<html>
 
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8"/>
-        <title>Contextmaps Kepler.gl</title>
+<head>
+  <meta charset="UTF-8" />
+  <title>Contextmaps Kepler.gl</title>
 
-        <!--Uber Font-->
-        <link rel="stylesheet" href="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css">
+  <!--Uber Font-->
+  <link rel="stylesheet" href="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css">
 
-        <!--MapBox css-->
-        <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
+  <!--MapBox css-->
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
 
-        <!-— facebook open graph tags -->
-        <meta property="og:url" content="http://kepler.gl/" />
-        <meta property="og:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool" />
-        <meta property="og:description" content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets." />
-        <meta property="og:site_name" content="kepler.gl" />
-        <meta property="og:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
+  <!-- facebook open graph tags -->
+  <meta property="og:url" content="http://kepler.gl/" />
+  <meta property="og:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool" />
+  <meta property="og:description"
+    content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets." />
+  <meta property="og:site_name" content="kepler.gl" />
+  <meta property="og:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
 
-        <!-— twitter card tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@uber">
-        <meta name="twitter:creator" content="@uber">
-        <meta name="twitter:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool">
-        <meta name="twitter:description" content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets.">
-        <meta name="twitter:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
+  <!-- twitter card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uber">
+  <meta name="twitter:creator" content="@uber">
+  <meta name="twitter:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool">
+  <meta name="twitter:description"
+    content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets.">
+  <meta name="twitter:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
 
-        <!-- Load React/Redux -->
-        <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" crossorigin></script>
-        <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" crossorigin></script>
-        <script src="https://unpkg.com/react-redux@7.1.3/dist/react-redux.min.js" crossorigin></script>
-        <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" crossorigin></script>
+  <!-- Load React/Redux -->
+  <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" crossorigin></script>
+  <script src="https://unpkg.com/react-redux@7.1.3/dist/react-redux.min.js" crossorigin></script>
+  <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" crossorigin></script>
 
-        <!-- Load Kepler.gl 
+  <!-- Load Kepler.gl 
         <script src="https://unpkg.com/kepler.gl@2.5.5/umd/keplergl.min.js" crossorigin></script>
 -->
-        <script src="https://tilemaps.icgc.cat/tileserver/keplergl/keplergl.2.5.1.ICGC.min.js"></script>
+  <script src="https://tilemaps.icgc.cat/tileserver/keplergl/keplergl.2.5.1.ICGC.min.js"></script>
 
-        <style type="text/css">
-          body {margin: 0; padding: 0; overflow: hidden;}
-          #headerLogoICGC {
-   position: absolute;
-   bottom: 10px;
-   left: 45%;
-   z-index: 1000
- }
-        </style>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
-        <!--MapBox token-->
-        <script>
-         
-         // const MAPBOX_TOKEN = '';
-          const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl. Edit this file and fill out MAPBOX_TOKEN with your access key';
-        </script>
+    #headerLogoICGC {
+      position: absolute;
+      bottom: 10px;
+      left: 45%;
+      z-index: 1000
+    }
+  </style>
 
-        <!-- GA: Delete this as you wish, However to pat ourselves on the back, we only track anonymous pageview to understand how many people are using kepler.gl. -->
-       
-      </head>
-      <body>
-        <!-- We will put our React component inside this div. -->
-        <div id="headerLogoICGC">
-          <a title="Institut Catogràfic i Geològic de Catalunya" href="https://www.icgc.cat" target="_blank">
-            <img width="130px" src="https://betaserver.icgc.cat/ulldeltemps/css/images/icgc.png" class="logo">
-          </a>
-        </div>
-      
-        <div id="app">
-          <!-- Kepler.gl map will be placed here-->
-        </div>
+  <!--MapBox token-->
+  <script>
 
-        <!-- Load our React component. -->
-        <script>
-          /* Validate Mapbox Token */
-          if ((MAPBOX_TOKEN || '') === '' || MAPBOX_TOKEN === 'PROVIDE_MAPBOX_TOKEN') {
-            alert(WARNING_MESSAGE);
+    const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFybmF0b24iLCJhIjoiY2w1aHU5MmI1MDF0MDNjcDVsZnFsOWFraSJ9.luD5EMeBioJp95DkAKqBYQ';
+    const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl. Edit this file and fill out MAPBOX_TOKEN with your access key';
+  </script>
+
+  <!-- GA: Delete this as you wish, However to pat ourselves on the back, we only track anonymous pageview to understand how many people are using kepler.gl. -->
+
+</head>
+
+<body>
+  <!-- We will put our React component inside this div. -->
+  <div id="headerLogoICGC">
+    <a title="Institut Catogràfic i Geològic de Catalunya" href="https://www.icgc.cat" target="_blank">
+      <img width="130px" src="https://betaserver.icgc.cat/ulldeltemps/css/images/icgc.png" class="logo">
+    </a>
+  </div>
+
+  <div id="app">
+    <!-- Kepler.gl map will be placed here-->
+  </div>
+
+  <!-- Load our React component. -->
+  <script>
+    /* Validate Mapbox Token */
+    if ((MAPBOX_TOKEN || '') === '' || MAPBOX_TOKEN === 'PROVIDE_MAPBOX_TOKEN') {
+      alert(WARNING_MESSAGE);
+    }
+
+    /** STORE **/
+    const reducers = (function createReducers(redux, keplerGl) {
+      return redux.combineReducers({
+        // mount keplerGl reducer
+        keplerGl: keplerGl.keplerGlReducer.initialState({
+          uiState: {
+            locale: "ca",
+            readOnly: false,
+            currentModal: null
           }
+        })
+      });
+    }(Redux, KeplerGl));
 
-          /** STORE **/
-          const reducers = (function createReducers(redux, keplerGl) {
-            return redux.combineReducers({
-              // mount keplerGl reducer
-              keplerGl: keplerGl.keplerGlReducer.initialState({
-                uiState: {
-                  locale: "ca",
-                  readOnly: false,
-                  currentModal: null
-                }
-              })
-            });
-          }(Redux, KeplerGl));
+    const middleWares = (function createMiddlewares(keplerGl) {
+      return keplerGl.enhanceReduxMiddleware([
+        // Add other middlewares here
+      ]);
+    }(KeplerGl));
 
-          const middleWares = (function createMiddlewares(keplerGl) {
-            return keplerGl.enhanceReduxMiddleware([
-              // Add other middlewares here
-            ]);
-          }(KeplerGl));
+    const enhancers = (function craeteEnhancers(redux, middles) {
+      return redux.applyMiddleware(...middles);
+    }(Redux, middleWares));
 
-          const enhancers = (function craeteEnhancers(redux, middles) {
-            return redux.applyMiddleware(...middles);
-          }(Redux, middleWares));
+    const store = (function createStore(redux, enhancers) {
+      const initialState = {};
 
-          const store = (function createStore(redux, enhancers) {
-            const initialState = {};
+      return redux.createStore(
+        reducers,
+        initialState,
+        redux.compose(enhancers)
+      );
+    }(Redux, enhancers));
+    /** END STORE **/
 
-            return redux.createStore(
-              reducers,
-              initialState,
-              redux.compose(enhancers)
-            );
-          }(Redux, enhancers));
-          /** END STORE **/
+    /** COMPONENTS **/
+    var KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
+      var LogoSvg = "";
 
-          /** COMPONENTS **/
-          var KeplerElement = (function makeKeplerElement(react, keplerGl, mapboxToken) {
-            var LogoSvg = "";
+      return function App() {
+        var rootElm = react.useRef(null);
+        var _useState = react.useState({
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+        var windowDimension = _useState[0];
+        var setDimension = _useState[1];
+        react.useEffect(function sideEffect() {
+          function handleResize() {
+            setDimension({ width: window.innerWidth, height: window.innerHeight });
+          };
+          window.addEventListener('resize', handleResize);
+          return function () { window.removeEventListener('resize', handleResize); };
+        }, []);
+        return react.createElement(
+          'div',
+          { style: { position: 'absolute', left: 0, width: '100vw', height: '100vh' } },
 
-            return function App() {
-              var rootElm = react.useRef(null);
-              var _useState = react.useState({
-                width: window.innerWidth,
-                height: window.innerHeight
-              });
-              var windowDimension = _useState[0];
-              var setDimension = _useState[1];
-              react.useEffect(function sideEffect(){
-                function handleResize() {
-                  setDimension({width: window.innerWidth, height: window.innerHeight});
-                };
-                window.addEventListener('resize', handleResize);
-                return function() {window.removeEventListener('resize', handleResize);};
-              }, []);
-              return react.createElement(
-                'div',
-                {style: {position: 'absolute', left: 0, width: '100vw', height: '100vh'}},
-                
-                react.createElement(keplerGl.KeplerGl, {
-                  mapboxApiAccessToken: mapboxToken,
-                  id: "map",
-                  width: windowDimension.width,
-                  height: windowDimension.height,
-                  appName: "ContextMaps & Kepler.GL",
+          react.createElement(keplerGl.KeplerGl, {
+            mapboxApiAccessToken: mapboxToken,
+            id: "map",
+            width: windowDimension.width,
+            height: windowDimension.height,
+            appName: "ContextMaps & Kepler.GL",
             appWebsite: "https://icgc.cat/",
             version: "v1.0.0"
 
-                })
-              )
-            }
-          }(React, KeplerGl, MAPBOX_TOKEN));
+          })
+        )
+      }
+    }(React, KeplerGl, MAPBOX_TOKEN));
 
-          const app = (function createReactReduxProvider(react, reactRedux, KeplerElement) {
-            return react.createElement(
-              reactRedux.Provider,
-              {store},
-              react.createElement(KeplerElement, null)
-            )
-          }(React, ReactRedux, KeplerElement));
-          /** END COMPONENTS **/
+    const app = (function createReactReduxProvider(react, reactRedux, KeplerElement) {
+      return react.createElement(
+        reactRedux.Provider,
+        { store },
+        react.createElement(KeplerElement, null)
+      )
+    }(React, ReactRedux, KeplerElement));
+    /** END COMPONENTS **/
 
-          /** Render **/
-          (function render(react, reactDOM, app) {
-            reactDOM.render(app, document.getElementById('app'));
-          }(React, ReactDOM, app));
-        </script>
-        <!-- The next script will show how to interact directly with Kepler map store -->
-        <script>
-          /**
-           * Customize map.
-           * In the following section you can use the store object to dispatch Kepler.gl actions
-           * to add new data and customize behavior
-           */
-          (function customize(keplerGl, store) {
-            const datasets = [];
-            const config = {"version":"v1","config":{"visState":{"filters":[],"layers":[],
-            "interactionConfig":{"tooltip":{"fieldsToShow":{},"compareMode":false,"compareType":"absolute","enabled":true},"brush":{"size":0.5,"enabled":false},"geocoder":{"enabled":false},"coordinate":{"enabled":false}},"layerBlending":"normal","splitMaps":[],"animationConfig":{"currentTime":null,"speed":1}},"mapState":{"bearing":0,"dragRotate":false,"latitude":41.75925664504067,"longitude":0.7991020905454174,"pitch":0,"zoom":7.3388021082079185,"isSplit":false},"mapStyle":{"styleType":"gbhyw3","topLayerGroups":{},"visibleLayerGroups":{"label":true,"road":true,"building":true,"water":true,"land":true},"threeDBuildingColor":[230.92517894351974,227.2005792831404,223.47597962276103],
-            "mapStyles":{"gbhyw3":{"accessToken":null,"custom":true,"icon":"https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png","id":"gbhyw3","label":"ICGC","url":"https://geoserveis.icgc.cat/styles/icgc_mapa_estandard.json"}}}}};
+    /** Render **/
+    (function render(react, reactDOM, app) {
+      reactDOM.render(app, document.getElementById('app'));
+    }(React, ReactDOM, app));
+  </script>
+  <!-- The next script will show how to interact directly with Kepler map store -->
+  <script>
+    /**
+     * Customize map.
+     * In the following section you can use the store object to dispatch Kepler.gl actions
+     * to add new data and customize behavior
+     */
+    (function customize(keplerGl, store) {
+      const datasets = [];
+      const config = {
+        "version": "v1", "config": {
+          "visState": {
+            "filters": [], "layers": [],
+            "interactionConfig": { "tooltip": { "fieldsToShow": {}, "compareMode": false, "compareType": "absolute", "enabled": true }, "brush": { "size": 0.5, "enabled": false }, "geocoder": { "enabled": false }, "coordinate": { "enabled": false } }, "layerBlending": "normal", "splitMaps": [], "animationConfig": { "currentTime": null, "speed": 1 }
+          }, "mapState": { "bearing": 0, "dragRotate": false, "latitude": 41.75925664504067, "longitude": 0.7991020905454174, "pitch": 0, "zoom": 7.3388021082079185, "isSplit": false }, "mapStyle": {
+            "styleType": "gbhyw3", "topLayerGroups": {}, "visibleLayerGroups": { "label": true, "road": true, "building": true, "water": true, "land": true }, "threeDBuildingColor": [230.92517894351974, 227.2005792831404, 223.47597962276103],
+            "mapStyles": { "gbhyw3": { "accessToken": null, "custom": true, "icon": "https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_estandard.png", "id": "gbhyw3", "label": "ICGC", "url": "https://geoserveis.icgc.cat/styles/mapa-base-estandard.json" } }
+          }
+        }
+      };
 
-            const loadedData = keplerGl.KeplerGlSchema.load(
-              datasets,
-              config
-            );
+      const loadedData = keplerGl.KeplerGlSchema.load(
+        datasets,
+        config
+      );
 
-            store.dispatch(keplerGl.addDataToMap({
-              datasets: loadedData.datasets,
-              config: loadedData.config,
-              options: {
-                centerMap: false
-              }
-            }));
-          }(KeplerGl, store))
-        </script>
-      </body>
-    </html>
-  
+      store.dispatch(keplerGl.addDataToMap({
+        datasets: loadedData.datasets,
+        config: loadedData.config,
+        options: {
+          centerMap: false
+        }
+      }));
+    }(KeplerGl, store))
+  </script>
+</body>
+
+</html>

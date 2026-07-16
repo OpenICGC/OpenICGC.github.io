@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
@@ -24,7 +25,7 @@
       "esri/views/MapView"
     ], function (esriConfig, Map, VectorTileLayer, MapView) {
       var vtlayer = new VectorTileLayer({
-        url: "https://betaserver.icgc.cat/vectortiles/styles/icgc_mapa_estandard.json"
+        url: "https://betaserver.icgc.cat/vectortiles/styles/mapa-base-estandard.json"
       });
       var map = new Map({
         layers: [vtlayer]
