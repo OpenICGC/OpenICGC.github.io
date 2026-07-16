@@ -11,61 +11,61 @@
   <!--MapBox css-->
   <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
 
-  <!-— facebook open graph tags -->
-    <meta property="og:url" content="http://kepler.gl/" />
-    <meta property="og:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool" />
-    <meta property="og:description"
-      content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets." />
-    <meta property="og:site_name" content="kepler.gl" />
-    <meta property="og:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="800" />
+  <!-- facebook open graph tags -->
+  <meta property="og:url" content="http://kepler.gl/" />
+  <meta property="og:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool" />
+  <meta property="og:description"
+    content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets." />
+  <meta property="og:site_name" content="kepler.gl" />
+  <meta property="og:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
 
-    <!-— twitter card tags -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:site" content="@uber">
-      <meta name="twitter:creator" content="@uber">
-      <meta name="twitter:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool">
-      <meta name="twitter:description"
-        content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets.">
-      <meta name="twitter:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
+  <!-- twitter card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uber">
+  <meta name="twitter:creator" content="@uber">
+  <meta name="twitter:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool">
+  <meta name="twitter:description"
+    content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets.">
+  <meta name="twitter:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png" />
 
-      <!-- Load React/Redux -->
-      <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" crossorigin></script>
-      <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" crossorigin></script>
-      <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" crossorigin></script>
-      <script src="https://unpkg.com/react-redux@7.1.3/dist/react-redux.min.js" crossorigin></script>
-      <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" crossorigin></script>
+  <!-- Load React/Redux -->
+  <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" crossorigin></script>
+  <script src="https://unpkg.com/react-redux@7.1.3/dist/react-redux.min.js" crossorigin></script>
+  <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" crossorigin></script>
 
-      <!-- Load Kepler.gl 
+  <!-- Load Kepler.gl 
         <script src="https://unpkg.com/kepler.gl@2.5.5/umd/keplergl.min.js" crossorigin></script>
 -->
-      <script src="https://tilemaps.icgc.cat/tileserver/keplergl/keplergl.2.5.1.ICGC.min.js"></script>
+  <script src="https://tilemaps.icgc.cat/tileserver/keplergl/keplergl.2.5.1.ICGC.min.js"></script>
 
-      <style type="text/css">
-        body {
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-        }
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
-        #headerLogoICGC {
-          position: absolute;
-          bottom: 10px;
-          left: 45%;
-          z-index: 1000
-        }
-      </style>
+    #headerLogoICGC {
+      position: absolute;
+      bottom: 10px;
+      left: 45%;
+      z-index: 1000
+    }
+  </style>
 
-      <!--MapBox token-->
-      <script>
+  <!--MapBox token-->
+  <script>
 
-        // const MAPBOX_TOKEN = '';
-        const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl. Edit this file and fill out MAPBOX_TOKEN with your access key';
-      </script>
+    const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFybmF0b24iLCJhIjoiY2w1aHU5MmI1MDF0MDNjcDVsZnFsOWFraSJ9.luD5EMeBioJp95DkAKqBYQ';
+    const WARNING_MESSAGE = 'Please Provide a Mapbox Token in order to use Kepler.gl. Edit this file and fill out MAPBOX_TOKEN with your access key';
+  </script>
 
-      <!-- GA: Delete this as you wish, However to pat ourselves on the back, we only track anonymous pageview to understand how many people are using kepler.gl. -->
+  <!-- GA: Delete this as you wish, However to pat ourselves on the back, we only track anonymous pageview to understand how many people are using kepler.gl. -->
 
 </head>
 

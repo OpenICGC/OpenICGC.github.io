@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>Deckgl RGB PointCloud + Mapbox</title>
   <script src="https://unpkg.com/deck.gl@^7.0.0/dist.min.js"></script>
@@ -9,6 +10,7 @@
       background-color: #000000;
       margin: 0;
     }
+
     #map {
       height: 100vh;
       width: 100%;
@@ -16,17 +18,18 @@
     }
   </style>
 </head>
+
 <body>
-<div id="map"></div>
+  <div id="map"></div>
 </body>
 <script type="text/javascript">
   const { MapboxLayer, PointCloudLayer } = deck;
   accessToken = 'no cal';
   const map = new mapboxgl.Map({
     container: 'map',
-//REPLACE THIS WITH THE MAPBOX STYLE URL OF YOUR CHOICE   
-    style: 'https://geoserveis.icgc.cat/styles/icgc_mapa_estandard_general.json',
-    center: [0.902638,41.251877],
+    //REPLACE THIS WITH THE MAPBOX STYLE URL OF YOUR CHOICE   
+    style: 'https://geoserveis.icgc.cat/styles/mapa-estandar-general.json',
+    center: [0.902638, 41.251877],
     zoom: 13.40,
     bearing: 0,
     pitch: 45
@@ -44,4 +47,5 @@
     }));
   });
 </script>
+
 </html>
