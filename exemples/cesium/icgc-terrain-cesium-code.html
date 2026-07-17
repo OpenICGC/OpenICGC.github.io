@@ -86,8 +86,8 @@
     <div class="soft">
       <pre>
       <code class="prettyprint linenums">
-        &#x3C;html lang="ca"&#x3E;
-&#x3C;head&#x3E;
+  &#x3C;html lang="ca"&#x3E;
+  &#x3C;head&#x3E;
   &#x3C;title&#x3E;Terreny 5M&#x3C;/title&#x3E;
   &#x3C;meta charset="utf-8" /&#x3E;
   &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
@@ -135,15 +135,15 @@
   &#x3C;script&#x3E;
     function initApp() {
       const terrain30M = new Cesium.CesiumTerrainProvider({
-        url: 'https://api.maptiler.com/tiles/terrain-quantized-mesh/?key=QLOqi8gs14T1s1yjnRMO'
+        url: 'https://api.maptiler.com/tiles/terrain-quantized-mesh/?key=XXXXXXXXX'
       });
       const terrain5M = new Cesium.CesiumTerrainProvider({
-        url: 'https://geoserveis.icgc.cat/servei/catalunya/icgc2m/terrenys/'
+        url: 'https://geoserveis.icgc.cat/servei/catalunya/icgc5m/terrenys/'
       });
       map = new Cesium.Viewer('map', {
         imageryProvider: new Cesium.OpenStreetMapImageryProvider({
-          url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
-          fileExtension: 'jpeg',
+          url: 'https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/',
+          fileExtension: 'png',
           maximumLevel: 19,
           credit: 'Institut Cartogràfic i Geològic de Catalunya'
         }),

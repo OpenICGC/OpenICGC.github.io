@@ -47,17 +47,16 @@
             const map = new mapicgcgl.Map({
                 container: "map",
                 style: data.Styles.ORTO,
-                center: [0.973374, 42.168171],
-                zoom: 16.2,
-                maxZoom: 19,
+                 center: [1.71611, 42.23818],
+                 zoom: 14.03,
+                 pitch: 85,
+                 bearing: -74.4,
                 hash: true,
-                pitch: 82,
-                bearing: -59.7,
+                maxZoom:20
             });
             map.on("load", () => {
                 map.addFullscreenControl()
                 map.addNavigationControl()
-                
                 map.addGeolocateControl(
                     {
                         positionOptions: {
@@ -68,23 +67,17 @@
                 );
                 map.addTerrainICGC(data.Terrains.ICGC5M);
                 map.setSky()
-
-
             })
             const layerList = document.getElementById('menu');
             const inputs = layerList.getElementsByTagName('input');
-
             function switchLayer(layer) {
-               
                 const layerId = layer.target.id;
                 console.log('layer', layerId)
                 map.addTerrainICGC(data.Terrains[layerId]);
             }
-
             for (let i = 0; i < inputs.length; i++) {
                 inputs[i].onclick = switchLayer;
             }
-
         }
         initMap();
     </script>

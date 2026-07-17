@@ -50,12 +50,12 @@
         url: 'https://api.maptiler.com/tiles/terrain-quantized-mesh/?key=QLOqi8gs14T1s1yjnRMO'
       });
       const terrain5M = new Cesium.CesiumTerrainProvider({
-        url: 'https://geoserveis.icgc.cat/servei/catalunya/icgc2m/terrenys/'
+        url: 'https://geoserveis.icgc.cat/servei/catalunya/icgc5m/terrenys/'
       });
       map = new Cesium.Viewer('map', {
         imageryProvider: new Cesium.OpenStreetMapImageryProvider({
-          url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
-          fileExtension: 'jpeg',
+          url: 'https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/',
+          fileExtension: 'png',
           maximumLevel: 19,
           credit: 'Institut Cartogràfic i Geològic de Catalunya'
         }),

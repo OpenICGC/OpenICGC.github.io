@@ -1,5 +1,4 @@
 <html lang="ca">
-
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GR9JCZYNFH"></script>
@@ -51,19 +50,15 @@
     body {
       margin: 0;
     }
-
     .soft {
       background-color: #f7f7f7
     }
-
     .titol {
       padding: 15px
     }
-
     .container {
       border: 1px solid #f7f7f7
     }
-
     li.L0,
     li.L1,
     li.L2,
@@ -76,7 +71,6 @@
     }
   </style>
 </head>
-
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS4TSP" height="0" width="0"
@@ -109,8 +103,8 @@
             &#x3C;meta charset='utf-8' /&#x3E;
             &#x3C;title&#x3E;Exemple terrenys i MapICGC GL JS&#x3C;/title&#x3E;
             &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /&#x3E;
-            &#x3C;script src='https://api.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.js'&#x3E;&#x3C;/script&#x3E;
-            &#x3C;link href='https://api.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css' rel='stylesheet' /&#x3E;
+            &#x3C;script src='https://eines.icgc.cat/recursos/mapicgc-gl-js/mapicgc-gl'&#x3E;&#x3C;/script&#x3E;
+            &#x3C;link href='https://eines.icgc.cat/recursos/mapicgc-gl-js/mapicgc-gl' rel='stylesheet' /&#x3E;
             &#x3C;style&#x3E;
                 body {
                     margin: 0;
@@ -149,17 +143,16 @@
               const map = new mapicgcgl.Map({
                   container: "map",
                   style: data.Styles.ORTO,
-                  center: [0.973374, 42.168171],
-                  zoom: 16.69,
-                  maxZoom: 19,
+                  center: [1.71611, 42.23818],
+                  zoom: 14.03,
+                  pitch: 85,
+                  bearing: -74.4,
                   hash: true,
-                  pitch: 82,
-                  bearing: -59.7,
+                  maxZoom:20
               });
               map.on("load", () => {
                   map.addFullscreenControl()
                   map.addNavigationControl()
-                  
                   map.addGeolocateControl(
                       {
                           positionOptions: {
@@ -170,23 +163,17 @@
                   );
                   map.addTerrainICGC(data.Terrains.ICGC5M);
                   map.setSky()
-  
-  
               })
               const layerList = document.getElementById('menu');
               const inputs = layerList.getElementsByTagName('input');
-  
               function switchLayer(layer) {
-                 
                   const layerId = layer.target.id;
                   console.log('layer', layerId)
                   map.addTerrainICGC(data.Terrains[layerId]);
               }
-  
               for (let i = 0; i < inputs.length; i++) {
                   inputs[i].onclick = switchLayer;
               }
-  
           }
           initMap();
             &#x3C;/script&#x3E;
@@ -196,5 +183,4 @@
     </div>
   </div>
 </body>
-
 </html>
