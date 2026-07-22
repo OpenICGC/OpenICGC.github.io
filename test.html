@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GR9JCZYNFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GR9JCZYNFH');
+  </script>
+
+  <!-- Capçalera amb logo -->
+  <div style="display: flex; justify-content: center; align-items: center; height: 15vh; background: #f8f9fa; border-bottom: 2px solid #ffc300;">
+    <a href="https://www.icgc.cat/ca" target="_blank">
+      <img id="logos" src="https://eines.icgc.cat/recursos/logos/icgc_gencat_logos_color.png" alt="Logos ICGC" height="80px">
+    </a>
+  </div>
+
+  <title>Recursos ICGC en obert</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="author" content="Institut Cartogràfic i Geològic de Catalunya">
+
+  <!-- SEO -->
+  <meta name="description" content="Explora els recursos oberts de l'Institut Cartogràfic i Geològic de Catalunya: mapes, dades i serveis cartogràfics accessibles per a tothom.">
+  <meta name="keywords" content="Catalunya, visor, cartografia, mapes, ICGC, dades obertes, geoinformació, GIS">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="ca">
+
+  <!-- Geolocalització -->
+  <meta name="geo.region" content="ES-CT">
+  <meta name="geo.placename" content="Barcelona">
+  <meta name="geo.position" content="41.363892,2.186279">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Recursos ICGC en obert">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://openicgc.github.io/capture.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:url" content="https://openicgc.github.io/">
+  <meta property="og:description" content="Explora mapes, dades i serveis cartogràfics oberts de l'ICGC per a ús lliure.">
+  <meta property="og:site_name" content="Institut Cartogràfic i Geològic de Catalunya">
+  <meta property="fb:app_id" content="620717167980164">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ICGCat">
+  <meta name="twitter:title" content="Recursos ICGC en obert">
+  <meta name="twitter:description" content="Consulta mapes i serveis cartogràfics oberts de l'ICGC.">
+  <meta name="twitter:image" content="https://openicgc.github.io/capture.png">
+
+  <!-- Icons -->
+  <link id="manifest" rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Institut Cartogràfic i Geològic de Catalunya",
+      "url": "https://openicgc.github.io/",
+      "logo": "https://openicgc.github.io/capture.png",
+      "description": "Explora els mapes i serveis cartogràfics oberts de l'ICGC.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Parc de Montjuïc",
+        "addressLocality": "Barcelona",
+        "addressRegion": "Catalunya",
+        "postalCode": "08038",
+        "addressCountry": "ES"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+34 935 67 15 00",
+        "contactType": "customer service",
+        "availableLanguage": ["ca", "es", "en"]
+      },
+      "sameAs": [
+        "https://twitter.com/ICGCat",
+        "https://www.linkedin.com/company/icgcat"
+      ]
+    }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+  <style>
+    /* RESET I BASE */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Oxygen', sans-serif;
+      background-color: #f4f6f9;
+      color: #1e2a3a;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1300px;
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 2rem 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    /* NAVBAR */
+    .navbar-custom {
+      background: #2c3e50 !important;
+      border-radius: 12px;
+      padding: 0.8rem 1.5rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-custom h4 {
+      color: white;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .navbar-custom small {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #cfd8e6;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .navbar-custom small a {
+      color: #ffc300;
+      text-decoration: none;
+    }
+
+    .navbar-custom small a:hover {
+      text-decoration: underline;
+    }
+
+    /* MENÚ TAULA DE CONTINGUTS */
+    .nav-toc {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 0.5rem 1.2rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #e9ecef;
+    }
+
+    .nav-toc ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin: 0;
+      padding: 0.4rem 0;
+    }
+
+    .nav-toc ul li .dropdown-toggle {
+      background: transparent;
+      border: none;
+      color: #1e2a3a;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.3rem 0;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .nav-toc ul li .dropdown-toggle:hover {
+      border-bottom-color: #ffc300;
+    }
+
+    .nav-toc ul li .dropdown-menu {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      padding: 0.6rem 0;
+      min-width: 220px;
+      border: none;
+      margin-top: 0.3rem;
+      position: absolute;
+      display: none;
+      z-index: 1000;
+    }
+
+    .nav-toc ul li .dropdown-menu li a {
+      display: block;
+      padding: 0.4rem 1.2rem;
+      color: #1e2a3a;
+      font-weight: 500;
+      transition: 0.15s;
+      text-decoration: none;
+    }
+
+    .nav-toc ul li .dropdown-menu li a:hover {
+      background: #ffc300;
+      color: #1e2a3a;
+      text-decoration: none;
+    }
+
+    .nav-toc ul li {
+      position: relative;
+    }
+
+    /* ALERT / CARDS */
+    .alert-default {
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 16px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: 0.2s;
+    }
+
+    .alert-default:hover {
+      border-color: #ffc300;
+    }
+
+    .alert-default h5 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #1e2a3a;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .alert-default h5 i {
+      color: #ffc300;
+    }
+
+    .hed {
+      background: #ffc300;
+      color: #1e2a3a;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .row {
+      border-bottom: 1px solid #f0f2f5;
+      padding: 1rem 0;
+      margin: 0;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .col img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+      object-fit: cover;
+      transition: 0.2s;
+    }
+
+    .col img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .cropt {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 0.8rem;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .cropt .badge {
+      font-weight: 500;
+      background: #e9ecef;
+      color: #1e2a3a;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .cropt .badge-primary {
+      background: #2c3e50;
+      color: white;
+    }
+
+    /* ENLLAÇOS */
+    a {
+      color: #f58921;
+      transition: 0.15s;
+    }
+
+    a:hover {
+      color: #d9771a;
+      text-decoration: none;
+    }
+
+    .text-highlight {
+      color: #f58921;
+    }
+
+    .text-highlight:hover {
+      color: #d9771a;
+    }
+
+    .btn-copy {
+      cursor: pointer;
+      margin-left: 0.3rem;
+      color: #6c757d;
+      transition: 0.15s;
+      display: inline-block;
+    }
+
+    .btn-copy:hover {
+      color: #f58921;
+    }
+
+    /* BOTONS FLOTANTS */
+    #accessibility-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      border: 2px solid #ffc300;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #accessibility-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    #accessibility-btn img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .accessibility-menu {
+      position: fixed;
+      top: 5rem;
+      right: 1rem;
+      background: #2c3e50;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: all 0.2s ease;
+    }
+
+    .accessibility-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .accessibility-menu li button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 0.95rem;
+      padding: 0.4rem 0.6rem;
+      width: 100%;
+      text-align: left;
+      border-radius: 6px;
+      transition: 0.15s;
+      cursor: pointer;
+    }
+
+    .accessibility-menu li button:hover {
+      background: #ffc300;
+      color: #1e2a3a;
+    }
+
+    [aria-hidden="true"] {
+      display: none !important;
+    }
+
+    #scroll-up-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: white;
+      border: 2px solid #ffc300;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: 0.2s;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    #scroll-up-btn.show {
+      display: flex;
+    }
+
+    #scroll-up-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    #scroll-up-btn img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* HIGH CONTRAST */
+    .high-contrast {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+
+    .high-contrast .container {
+      background: #111 !important;
+      color: #fff !important;
+    }
+
+    .high-contrast .alert-default {
+      background: #1a1a1a !important;
+      border-color: #444 !important;
+      color: #fff !important;
+    }
+
+    .high-contrast .hed {
+      background: #e5e500 !important;
+      color: #000 !important;
+    }
+
+    .high-contrast .navbar-custom {
+      background: #222 !important;
+    }
+
+    .high-contrast .nav-toc {
+      background: #1a1a1a !important;
+      border-color: #444 !important;
+    }
+
+    .high-contrast .nav-toc ul li .dropdown-toggle {
+      color: #fff !important;
+    }
+
+    .high-contrast .nav-toc ul li .dropdown-menu {
+      background: #222 !important;
+    }
+
+    .high-contrast .nav-toc ul li .dropdown-menu li a {
+      color: #fff !important;
+    }
+
+    .high-contrast .nav-toc ul li .dropdown-menu li a:hover {
+      background: #e5e500 !important;
+      color: #000 !important;
+    }
+
+    .high-contrast a,
+    .high-contrast .text-highlight {
+      color: #e5e500 !important;
+    }
+
+    .high-contrast a:hover,
+    .high-contrast .text-highlight:hover {
+      color: #fff !important;
+      background: #e5e500 !important;
+    }
+
+    .high-contrast .badge-primary {
+      background: #e5e500 !important;
+      color: #000 !important;
+    }
+
+    .high-contrast .btn-copy {
+      color: #e5e500 !important;
+    }
+
+    .high-contrast .btn-copy:hover {
+      color: #fff !important;
+    }
+
+    /* RESPONSIVE */
+    @media screen and (max-width: 576px) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .navbar-custom h4 {
+        font-size: 1.1rem;
+      }
+
+      .alert-default {
+        padding: 1.2rem;
+      }
+
+      .col img {
+        max-width: 100%;
+        margin-top: 0.5rem;
+      }
+
+      .nav-toc ul {
+        gap: 0.8rem;
+      }
+
+      .nav-toc ul li .dropdown-toggle {
+        font-size: 0.95rem;
+      }
+
+      #accessibility-btn,
+      #scroll-up-btn {
+        width: 40px;
+        height: 40px;
+      }
+
+      #accessibility-btn img,
+      #scroll-up-btn img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .accessibility-menu {
+        right: 0.5rem;
+        top: 4.5rem;
+        min-width: 150px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- NAVBAR PRINCIPAL -->
+    <nav class="navbar-custom">
+      <h4>
+        Benvinguts i benvingudes als recursos ICGC en obert
+        <small>
+          Aquí trobareu el recull d'eines, estils i tessel·les,
+          <a href="https://github.com/OpenICGC" target="_blank">
+            <span class="text-highlight">codi</span>
+            <i class="fab fa-github" data-tooltip="GitHub OpenICGC"></i>
+          </a>
+          i exemples basats en dades ICGC.
+          <br>
+          Tots els repositoris de l'ICGC s'estan desenvolupant i mantenint per donar suport a les iniciatives de
+          geoinformació i cartografia a Catalunya per part de l'Institut Cartogràfic i Geològic de Catalunya (ICGC).
+          <br>
+          Podeu visitar <a href="https://www.icgc.cat/ca" target="_blank"><span class="text-highlight">la nostra pàgina web</span></a> per
+          obtenir més informació.
+        </small>
+      </h4>
+    </nav>
+
+    <!-- TAULA DE CONTINGUTS -->
+    <nav class="nav-toc">
+      <ul>
+        <li class="dropdown">
+          <button class="dropdown-toggle" onclick="toggleDropdown(this)">
+            <b>Taula de continguts</b>
+          </button>
+          <ul class="dropdown-menu" style="display: none;">
+            <li><a href="#Repositoris">Repositoris</a></li>
+            <li><a href="#MapaBaseRaster">Mapes Base Raster</a></li>
+            <li><a href="#MapaBaseVector">Mapes Base Vector</a></li>
+            <li><a href="#Terrenys">Terrenys</a></li>
+            <li><a href="#Contacte">Contacte</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- REPOSITORIS -->
+    <div id="Repositoris" class="alert-default">
+      <h5><b>Repositoris</b> <a href="https://github.com/OpenICGC" target="_blank"><i class="fab fa-github"></i></a></h5>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>
+          <div class="row">
+            <div class="col">
+              <b>MapICGC GL JS</b><br>
+              <span style="font-size: 0.95rem; color: #1e2a3a;">
+                La biblioteca MapICGC GL JS, creada com a envoltori de MapLibreGL, ofereix noves funcions específiques
+                en un entorn ICGC. Simplifica el desenvolupament integrant característiques com tessel·les vectorials i imatges
+                satel·litals, i incorpora de manera immediata estils, terrenys i dades ICGC.
+              </span>
+              <br>
+              <a href="https://openicgc.github.io/mapicgc-doc/" target="_blank"><span class="text-highlight">Documentació MapICGC GL JS</span></a><br>
+              <a href="https://github.com/OpenICGC/mapicgc-gl-js" target="_blank"><span class="text-highlight">Biblioteca MapICGC GL JS</span></a><br>
+              <a href="https://github.com/OpenICGC/extended-mapicgc-gl-js-viewer" target="_blank"><span class="text-highlight">Visor MapICGC GL JS</span></a>
+              <br><br>
+              <b>Plantilles MapICGC GL JS</b><br>
+              <a href="https://github.com/OpenICGC/basic-mapicgc-gl-js-viewer-js" target="_blank"><span class="text-highlight">Vanilla JS</span></a><br>
+              <a href="https://github.com/OpenICGC/basic-mapicgc-gl-js-viewer-react" target="_blank"><span class="text-highlight">React</span></a><br>
+              <a href="https://github.com/OpenICGC/basic-mapicgc-gl-js-viewer-svelte" target="_blank"><span class="text-highlight">Svelte</span></a>
+            </div>
+            <div>
+              <img src="https://raw.githubusercontent.com/OpenICGC/mapicgc-doc/master/docs/assets/cartography2.png" alt="MapICGC" height="120px">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col">
+              <b>API Territorial</b><br>
+              <span style="font-size: 0.95rem; color: #1e2a3a;">
+                Interfície de Programació d'Aplicacions que integra diverses fonts de dades geogràfiques
+                per proporcionar informació precisa del territori a partir de coordenades.
+              </span>
+              <br>
+              <a href="https://www.icgc.cat/ca/Eines-i-visors/Recursos-desenvolupadors/API-Territorial" target="_blank"><span class="text-highlight">Informació</span></a><br>
+              <a href="https://api.icgc.cat/territorial/docs#/Elements/" target="_blank"><span class="text-highlight">Documentació API Territorial</span></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col">
+              <b>Geocoder</b><br>
+              <span style="font-size: 0.95rem; color: #1e2a3a;">
+                El Geocodificador ICGC permet obtenir coordenades d'un lloc a Catalunya a partir de l'adreça postal o topònim.
+                També permet geocodificació inversa.
+              </span>
+              <br>
+              <a href="https://openicgc.github.io/geocodificador-doc/" target="_blank"><span class="text-highlight">Documentació Geocoder</span></a><br>
+              <a href="https://openicgc.github.io/geocodificador-doc/visor/" target="_blank"><span class="text-highlight">Visor Geocoder</span></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col">
+              <b>Apps ICGC</b><br>
+              <a href="https://github.com/OpenICGC/catalunya-offline-v3" target="_blank"><span class="text-highlight">Catalunya Offline</span></a>
+              <br>
+              <span style="font-size: 0.95rem; color: #1e2a3a;">
+                Aplicació mòbil per explorar el territori, marcar punts d'interès i enregistrar rutes amb GPS, fins i tot sense cobertura.
+              </span>
+              <br>
+              <a href="https://github.com/OpenICGC/Geo-SIV" target="_blank"><span class="text-highlight">Geo-SIV</span></a>
+              <br>
+              <span style="font-size: 0.95rem; color: #1e2a3a;">
+                Programari per l'avaluació preliminar de Sistemes d'Intercanvi geotèrmic en circuit Vertical tancat.
+              </span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col">
+              <b>Plugins ICGC</b><br>
+              <a href="https://github.com/OpenICGC/QgisPlugin" target="_blank"><span class="text-highlight">Qgis Plugin</span></a>
+              <br>
+              <span style="font-size: 0.95rem; color: #1e2a3a;">
+                Plugin d'accés a dades obertes de l'ICGC. Proporciona cerques de geocodificació.
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- MAPA BASE RASTER -->
+    <div id="MapaBaseRaster" class="alert-default">
+      <h5><b>Mapes Base Raster</b> <i class="fas fa-map"></i></h5>
+      <hr>
+      <div>
+        <h6>Informació:</h6>
+        <a href="https://www.icgc.cat/ca/Geoinformacio-i-mapes/Servei-de-Mapa-Base" target="_blank">https://www.icgc.cat/ca/Geoinformacio-i-mapes/Servei-de-Mapa-Base</a>
+        <p></p>
+        <h6>Atribució:</h6>
+        <ul>
+          <li><strong>Capes vectorials:</strong> Catalunya ©ICGC. Llicència CC-BY (<a href="https://www.icgc.cat/ca/LICGC/Informacio-publica/Transparencia/Reutilitzacio-de-la-informacio">atribució</a>) / Resta món ©OpenMapTiles ©OpenStreetMap contributors. Llicència ODbL (<a href="https://osmfoundation.org/wiki/Licence/Attribution_Guidelines" target="_blank">atribució</a>).</li>
+          <li><strong>Capes d'imatge:</strong> Catalunya ©ICGC. Llicència CC-BY (<a href="https://www.icgc.cat/ca/LICGC/Informacio-publica/Transparencia/Reutilitzacio-de-la-informacio">atribució</a>)</li>
+        </ul>
+        <h6>Exemples integració amb:</h6>
+        <ul>
+          <li><a href="/exemples/mapicgcgljs/icgc-raster-mapicgc-code.html" target="_blank"><span class="text-highlight">MapICGC GL JS</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/leaflet/icgc-raster-leaflet-code.html" target="_blank"><span class="text-highlight">Leaflet</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/esri/icgc-raster-esri-code.html" target="_blank"><span class="text-highlight">ArcGIS API Js</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/google/icgc-basemap-google-code.html" target="_blank"><span class="text-highlight">Google Maps</span> <i class="fas fa-code"></i></a></li>
+        </ul>
+      </div>
+
+      <ul style="list-style: none; padding-left: 0;">
+        <li class="hed">WMTS</li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Topogràfic</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_topo.jpg" alt="Topogràfic"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Topogràfic Gris</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic-gris/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/topografic-gris/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_topo_gris.jpg" alt="Topogràfic Gris"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Estàndard</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/estandard/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/estandard/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_estandard_0.jpg" alt="Estàndard"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Simplificat</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/simplificat/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/simplificat/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_simplificat.jpg" alt="Simplificat"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Administratiu</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/admistratiu/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/admistratiu/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_administratiu.jpg" alt="Administratiu"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Orto</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto.jpg" alt="Orto"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Orto Gris</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-gris/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-gris/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto_gris.jpg" alt="Orto Gris"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Orto Híbrida</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-hibrida/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/orto-hibrida/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto_hibida.jpg" alt="Orto Híbrida"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Mapa Base Geològic</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/geologic/MON3857NW/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/mapa-base/wmts/geologic/MON3857NW/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2026-04/mapabase_geologic.jpg" alt="Geològic"></div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="cropt">
+        <small>Integrable amb:</small>
+        <span class="badge badge-primary">MapICGC GL JS</span>
+        <span class="badge badge-primary">Leaflet</span>
+        <span class="badge badge-primary">OpenLayers</span>
+        <span class="badge badge-primary">MapLibre GL JS</span>
+        <span class="badge badge-primary">MapBox GL JS</span>
+        <span class="badge badge-primary">ArcGIS API JS</span>
+        <span class="badge badge-primary">Cesium JS</span>
+        <span class="badge badge-primary">Google Maps</span>
+      </div>
+    </div>
+
+    <!-- MAPA BASE VECTOR -->
+    <div id="MapaBaseVector" class="alert-default">
+      <h5><b>Mapes Base Vector</b> <i class="fas fa-globe"></i></h5>
+      <hr>
+      <div>
+        <h6>Informació:</h6>
+        <a href="https://www.icgc.cat/ca/Geoinformacio-i-mapes/Servei-de-Mapa-Base" target="_blank">https://www.icgc.cat/ca/Geoinformacio-i-mapes/Servei-de-Mapa-Base</a>
+        <p></p>
+        <h6>Atribució:</h6>
+        <ul>
+          <li><strong>Capes vectorials:</strong> Catalunya ©ICGC. Llicència CC-BY (<a href="https://www.icgc.cat/ca/LICGC/Informacio-publica/Transparencia/Reutilitzacio-de-la-informacio">atribució</a>) / Resta món ©OpenMapTiles ©OpenStreetMap contributors. Llicència ODbL (<a href="https://osmfoundation.org/wiki/Licence/Attribution_Guidelines" target="_blank">atribució</a>).</li>
+          <li><strong>Capes d'imatge:</strong> Catalunya ©ICGC. Llicència CC-BY (<a href="https://www.icgc.cat/ca/LICGC/Informacio-publica/Transparencia/Reutilitzacio-de-la-informacio">atribució</a>)</li>
+          <li><strong>Terreny:</strong> © Mapterhorn (<a href="https://mapterhorn.com/attribution">atribució</a>)</li>
+        </ul>
+        <h6>Exemples integració amb:</h6>
+        <ul>
+          <li><a href="/exemples/mapicgcgljs/icgc-basemap-mapicgc-code.html" target="_blank"><span class="text-highlight">MapICGC GL JS</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/mapicgcgljs/icgc-basemap3D-mapicgc-code.html" target="_blank"><span class="text-highlight">MapICGC GL JS i model 3D</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/maplibre/icgc-basemap-maplibre-code.html" target="_blank"><span class="text-highlight">MapLibre GL JS</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/mapboxgl/icgc-basemap-mapbox-code.html" target="_blank"><span class="text-highlight">MapBox GL JS</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/esri/icgc-basemap-esri-code.html" target="_blank"><span class="text-highlight">ArcGIS API JS</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/keplergl/icgc-basemap-keplergl-map.html" target="_blank"><span class="text-highlight">KeplerGL</span></a></li>
+        </ul>
+      </div>
+
+      <ul style="list-style: none; padding-left: 0;">
+        <li class="hed">Llista d'estils disponibles</li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Topogràfic</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-topografic.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-topografic.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_topo.jpg" alt="Topogràfic"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Estàndard</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-estandard.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-estandard.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_estandard_0.jpg" alt="Estàndard"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Estàndard Gris</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-estandard-gris.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-estandard-gris.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-12/mapabase_estandard_gris.jpg" alt="Estàndard Gris"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Estàndard Gris Rebaixat</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-estandard-gris-rebaixat.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-estandard-gris-rebaixat.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-12/mapabase_estandard_gris.jpg" alt="Estàndard Gris Rebaixat"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Simplificat</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-simplificat.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-simplificat.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_simplificat.jpg" alt="Simplificat"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Administratiu</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-administratiu.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-administratiu.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_administratiu.jpg" alt="Administratiu"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Orto</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-orto.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-orto.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto.jpg" alt="Orto"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Orto Gris</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-orto-gris.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-orto-gris.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto_gris.jpg" alt="Orto Gris"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Orto Híbrida</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-orto-hibrida.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-orto-hibrida.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2024-10/mapabase_orto_hibida.jpg" alt="Orto Híbrida"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Geològic</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/mapa-base-geologic.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/mapa-base-geologic.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://icgc-web-pro.s3.eu-central-1.amazonaws.com/produccio/s3fs-public/2026-04/mapabase_geologic.jpg" alt="Geològic"></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>Ombra fosca</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/styles/icgc_mapa_base_fosc.json</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/styles/icgc_mapa_base_fosc.json" title="Copiar enllaç"></span>
+            </div>
+            <div class="col"><img src="https://visors.icgc.cat/contextmaps/imatges_estil/icgc_mapa_base_fosc.png" alt="Ombra fosca"></div>
+          </div>
+        </li>
+      </ul>
+
+      <div>
+        <h6>Editors d'estils:</h6>
+        <ul>
+          <li><a href="https://maputnik.github.io/editor/?style=https://geoserveis.icgc.cat/styles/mapa-base-estandard.json" target="_blank"><span class="text-highlight">Maputnik</span> <i class="fas fa-edit"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="cropt">
+        <small><a href="icgc-styles-world-min.json" target="_blank"><span class="text-highlight">Llista styles min</span></a> | <a href="icgc-styles-world-all.json" target="_blank"><span class="text-highlight">Llista styles all</span></a></small>
+        <small>Integrable amb:</small>
+        <span class="badge badge-primary">MapICGC GL JS</span>
+        <span class="badge badge-primary">MapLibre GL</span>
+        <span class="badge badge-primary">MapBox GL</span>
+        <span class="badge badge-primary">ArcGIS API</span>
+        <span class="badge badge-primary">KeplerGL</span>
+      </div>
+    </div>
+
+    <!-- TERRENYS -->
+    <div id="Terrenys" class="alert-default">
+      <h5><b>Terrenys</b> <i class="fas fa-chart-area"></i></h5>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><b>ICGC Terreny 5m (Cesium JS)</b><br>
+          <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/icgc5m/terrenys/</span>
+          <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/icgc5m/terrenys/" title="Copiar enllaç"></span>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col"><b>ICGC Terreny-RGB dem 5m (MapLibreGL JS)</b><br>
+              <span class="text-highlight">https://geoserveis.icgc.cat/servei/catalunya/contextmaps-terreny-5m-rgb/wmts/{z}/{x}/{y}.png</span>
+              <span class="far fa-clipboard btn-copy js-copy" data-copy="https://geoserveis.icgc.cat/servei/catalunya/contextmaps-terreny-5m-rgb/wmts/{z}/{x}/{y}.png" title="Copiar enllaç"></span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <h6>Exemples 3D integració amb:</h6>
+        <ul>
+          <li><a href="/exemples/mapicgcgljs/icgc-terrain-rgb-mapicgc-code.html" target="_blank"><span class="text-highlight">MapICGC GL JS</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/cesium/icgc-terrain-cesium-code.html" target="_blank"><span class="text-highlight">Cesium JS</span> <i class="fas fa-code"></i></a></li>
+          <li><a href="/exemples/maplibre/icgc-terrain-rgb-maplibre-code.html" target="_blank"><span class="text-highlight">MapLibre GL JS V2</span> <i class="fas fa-code"></i></a></li>
+        </ul>
+      </div>
+      <div class="cropt">
+        <small>Integrable amb:</small>
+        <span class="badge badge-primary">MapICGC GL JS</span>
+        <span class="badge badge-primary">Cesium JS</span>
+        <span class="badge badge-primary">MapLibre GL JS</span>
+        <span class="badge badge-primary">MapBox GL JS</span>
+      </div>
+    </div>
+
+    <!-- CONTACTE -->
+    <div id="Contacte" class="alert-default">
+      <h5><b>Contacte</b> <i class="fas fa-envelope"></i></h5>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>
+          <div class="row">
+            <div class="col">
+              <span style="font-size: 1rem; color: #1e2a3a;">
+                Si teniu preguntes, suggeriments o comentaris, no dubteu a posar-vos en contacte amb nosaltres a través del correu <a href="mailto:openicgc@icgc.cat" target="_top"><span class="text-highlight">openicgc@icgc.cat</span></a>,
+                les nostres pàgines de <a href="https://github.com/OpenICGC" target="_blank"><span class="text-highlight">GitHub</span></a> o visitant el nostre lloc web oficial a <a href="https://www.icgc.cat/ca" target="_blank"><span class="text-highlight">ICGC</span></a>.
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 1.5rem 0 0.5rem; color: #6c757d; font-size: 0.85rem; border-top: 1px solid #e9ecef;">
+      <span>© 2025 Institut Cartogràfic i Geològic de Catalunya</span>
+    </footer>
+  </div>
+
+  <!-- BOTONS FLOTANTS -->
+  <button id="accessibility-btn" aria-label="Accessibility options" aria-expanded="false" aria-controls="accessibility-menu">
+    <img src="img/accessibility-icon.png" alt="Accessibility icon">
+  </button>
+  <div id="accessibility-menu" class="accessibility-menu" aria-hidden="true">
+    <ul>
+      <li><button id="increase-contrast-btn">Activar el contrast</button></li>
+    </ul>
+  </div>
+  <button id="scroll-up-btn"><img src="img/slide-up.png" alt="Scroll up"></button>
+
+  <!-- SCRIPTS (Vanilla JS) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // =====================
+      // ACCESSIBILITY MENU
+      // =====================
+      const accessibilityBtn = document.getElementById('accessibility-btn');
+      const accessibilityMenu = document.getElementById('accessibility-menu');
+      const increaseContrastBtn = document.getElementById('increase-contrast-btn');
+
+      if (accessibilityBtn && accessibilityMenu) {
+        accessibilityBtn.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+          accessibilityMenu.setAttribute('aria-hidden', !expanded);
+          this.setAttribute('aria-expanded', !expanded);
+        });
+      }
+
+      if (increaseContrastBtn) {
+        increaseContrastBtn.addEventListener('click', function() {
+          document.body.classList.toggle('high-contrast');
+        });
+      }
+
+      // =====================
+      // SCROLL UP BUTTON
+      // =====================
+      const scrollUpBtn = document.getElementById('scroll-up-btn');
+      if (scrollUpBtn) {
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) {
+            scrollUpBtn.classList.add('show');
+          } else {
+            scrollUpBtn.classList.remove('show');
+          }
+        });
+
+        scrollUpBtn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // =====================
+      // DROPDOWN MENU
+      // =====================
+      window.toggleDropdown = function(button) {
+        const dropdownMenu = button.nextElementSibling;
+        if (dropdownMenu) {
+          const isHidden = dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '';
+          dropdownMenu.style.display = isHidden ? 'block' : 'none';
+        }
+      };
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(event) {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(function(dropdown) {
+          const menu = dropdown.querySelector('.dropdown-menu');
+          if (menu && !dropdown.contains(event.target)) {
+            menu.style.display = 'none';
+          }
+        });
+      });
+
+      // =====================
+      // COPY TO CLIPBOARD (Vanilla JS)
+      // =====================
+      function copyToClipboard(text, element) {
+        const originalTitle = element.getAttribute('data-original-title') || 'Copiar enllaç';
+        
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          // Modern API
+          navigator.clipboard.writeText(text).then(function() {
+            element.setAttribute('data-original-title', 'Copiat!');
+            // Show tooltip manually (since we don't have Bootstrap's JS)
+            showTooltip(element, 'Copiat!');
+            setTimeout(function() {
+              element.setAttribute('data-original-title', originalTitle);
+            }, 2000);
+          }).catch(function() {
+            fallbackCopy(text, element, originalTitle);
+          });
+        } else {
+          // Fallback method
+          fallbackCopy(text, element, originalTitle);
+        }
+      }
+
+      function fallbackCopy(text, element, originalTitle) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        textArea.style.top = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          const successful = document.execCommand('copy');
+          const msg = successful ? 'Copiat!' : 'Ups, no copiat!';
+          element.setAttribute('data-original-title', msg);
+          showTooltip(element, msg);
+          setTimeout(function() {
+            element.setAttribute('data-original-title', originalTitle);
+          }, 2000);
+        } catch (err) {
+          console.log('Oops, unable to copy');
+        }
+        document.body.removeChild(textArea);
+      }
+
+      // Simple tooltip simulator (since we removed Bootstrap's JS)
+      function showTooltip(element, message) {
+        // Try to use Bootstrap's tooltip if available, otherwise fallback
+        if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+          // If Bootstrap is loaded, we can use it
+          const tooltip = bootstrap.Tooltip.getInstance(element);
+          if (tooltip) {
+            tooltip.setContent({ '.tooltip-inner': message });
+            tooltip.show();
+          }
+        } else {
+          // Simple fallback: change title and show a brief alert-style tooltip
+          const oldTitle = element.getAttribute('title');
+          element.setAttribute('title', message);
+          // We'll just rely on the title attribute
+          setTimeout(function() {
+            element.setAttribute('title', oldTitle || 'Copiar enllaç');
+          }, 2000);
+        }
+      }
+
+      // Attach copy event listeners
+      document.querySelectorAll('.js-copy').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          const textToCopy = this.getAttribute('data-copy');
+          if (textToCopy) {
+            copyToClipboard(textToCopy, this);
+          }
+        });
+      });
+
+      // =====================
+      // TOOLTIP SIMULATOR FOR GITHUB ICON
+      // =====================
+      document.querySelectorAll('[data-tooltip]').forEach(function(el) {
+        el.setAttribute('title', el.getAttribute('data-tooltip'));
+      });
+
+      // =====================
+      // SERVICE WORKER
+      // =====================
+      if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register('serviceworker.js').then(function(reg) {
+          // Registration successful
+        }).catch(function(err) {
+          // Registration failed
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
