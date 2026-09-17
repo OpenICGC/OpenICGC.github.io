@@ -46,7 +46,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
     integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous">
     </script>
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -101,128 +102,32 @@
     </div>
     <iframe src="/exemples/maplibre/icgc-basemap-maplibre-map.html" frameborder=0 width="100%" height="500"></iframe>
     <hr>
-    <div class="soft">
-      <pre><code class="prettyprint linenums">
-        &#x3C;html&#x3E;
-&#x3C;head&#x3E;
-    &#x3C;meta charset='utf-8'/&#x3E;
-    &#x3C;title&#x3E;Exemple MapLibre i ContextMaps ICGC&#x3C;/title&#x3E;
-    &#x3C;meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/&#x3E;
-    &#x3C;script src="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.js"&#x3E;&#x3C;/script&#x3E;
-    &#x3C;link href="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.css" rel="stylesheet"/&#x3E;
-    &#x3C;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/&#x3E;
-    &#x3C;style&#x3E;
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%
-        }
-        #menu {
-            position: absolute;
-            z-index: 1000;
-            background: #fff;
-            padding: 10px;
-            font-family: 'Open Sans', sans-serif;
-            top: 5px;
-            left: 5px;
-            border-radius: 7px;
-            -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
-            -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
-            box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.75);
-        }
-        #div_pitch {
-            position: absolute;
-            right: 10px;
-            top: 142px;
-            width: 30px;
-            z-index: 100;
-        }
-        .sliderClass {
-            position: absolute;
-            left: 10px;
-            top: 79px;
-            width: 130px;
-            z-index: 100;
-            display: none;
-            background-color: white;
-            padding: 10px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            opacity: 0.9;
-        }
-    &#x3C;/style&#x3E;
-&#x3C;/head&#x3E;
-&#x3C;body&#x3E;
-    &#x3C;div id='menu'&#x3E;
-    &#x3C;input id='mapa-base-estandard' type='radio' name='rtoggle' value='mapa-base-estandard' checked='checked'&#x3E;
-    &#x3C;label for='mapa-base-estandard'&#x3E;Mapa estàndard&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='mapa-base-estandard-gris' type='radio' name='rtoggle' value='mapa-base-estandard-gris'&#x3E;
-    &#x3C;label for='mapa-base-estandard-gris'&#x3E;Mapa base gris&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='mapa-base-topografic' type='radio' name='rtoggle' value='mapa-base-topografic'&#x3E;
-    &#x3C;label for='mapa-base-topografic'&#x3E;Topogràfic&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='mapa-base-orto' type='radio' name='rtoggle' value='mapa-base-orto'&#x3E;
-    &#x3C;label for='mapa-base-orto'&#x3E;Ortofoto&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='mapa-base-orto-gris' type='radio' name='rtoggle' value='mapa-base-orto-gris'&#x3E;
-    &#x3C;label for='mapa-base-orto-gris'&#x3E;Ortofoto gris&#x3C;/label&#x3E;&#x3C;br&#x3E;
-    &#x3C;input id='mapa-base-orto-hibrida' type='radio' name='rtoggle' value='mapa-base-orto-hibrida'&#x3E;
-    &#x3C;label for='mapa-base-orto-hibrida'&#x3E;Orto híbrida&#x3C;/label&#x3E;
-    &#x3C;/div&#x3E;
-    &#x3C;div id='div_pitch' class="mapboxgl-ctrl-group mapboxgl-ctrl"&#x3E;
-        &#x3C;button id="bt_pitch" title="Perspectiva" class="mapboxgl-ctrl-icon glyphicon glyphicon-road"&#x3E;&#x3C;/button&#x3E;
-    &#x3C;/div&#x3E;
-    &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-    &#x3C;script&#x3E;
-       const map = new maplibregl.Map({
-            container: 'map',
-            style: 'https://geoserveis.icgc.cat/styles/mapa-base-estandard.json',
-           center: [1.1464, 41.706],
-            zoom: 7.4,
-            maxZoom: 14,
-            hash: true,
-            pitch: 0,
-			attributionControl: false
-        });
-        map.on('load', function () {
-            map.addControl(new maplibregl.NavigationControl());
-			map.addControl(new maplibregl.AttributionControl({
-               compact: true
-			}));
-            map.addControl(new maplibregl.GeolocateControl({
-                positionOptions: {
-                    enableHighAccuracy: true,
-                    watchPosition: true
-                }
-            }));
-        });
-        const layerList = document.getElementById('menu');
-        const inputs = layerList.getElementsByTagName('input');
-        const button = document.getElementById('bt_pitch');
-        function switchLayer(layer) {
-            const layerId = layer.target.id;
-                map.setStyle('https://geoserveis.icgc.cat/styles/' + layerId + '.json');
-        }
-        function canviaPerspectiva() {
-            const pitch = parseInt(map.getPitch());
-            pitch == 60 ? pitch = 0 : pitch = pitch + 30;
-            map.easeTo({
-                'pitch': pitch
-            })
-        };
-        for (let  i = 0; i &#x3C; inputs.length; i++) {
-            inputs[i].onclick = switchLayer;
-        }
-        button.onclick = canviaPerspectiva;
-    &#x3C;/script&#x3E;
-&#x3C;/body&#x3E;
-&#x3C;/html&#x3E;
-    </code></pre>
-    </div>
+ <pre><code id="codi-carregat" class="language-html">Carregant...</code></pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+
+  <script>
+    // 1. Carregar el codi de l'altre fitxer
+    fetch('icgc-basemap-maplibre-map.html')
+      .then(response => response.text())
+      .then(html => {
+        const bloc = document.getElementById('codi-carregat');
+        bloc.textContent = html;
+        Prism.highlightElement(bloc);
+      });
+
+    // 2. Traduir el botó de copiar
+    const observador = new MutationObserver(() => {
+      document.querySelectorAll('.copy-to-clipboard-button').forEach(btn => {
+        if (btn.textContent === 'Copy') btn.textContent = 'Copiar';
+        if (btn.textContent === 'Copied!') btn.textContent = 'Copiat!';
+      });
+    });
+    observador.observe(document.body, { childList: true, subtree: true });
+  </script>
+
   </div>
 </body>
 
